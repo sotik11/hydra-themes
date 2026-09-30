@@ -499,6 +499,43 @@ body {
   ) !important;
 }
 
+/* ---- Achievement notification (the unlock pop-up) ---------------------- */
+/* Colours only: sizes, positions and every animation (slide-in, rare shine,
+   trophy overlay) stay Hydra's own. */
+.achievement-notification__outer-container {
+  border: 1px solid rgba(31, 185, 128, 0.35) !important;
+  border-radius: 8px !important;
+  box-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(31, 185, 128, 0.12) !important;
+}
+.achievement-notification__container {
+  background: linear-gradient(94deg, #0a0f0c 0%, #12241b 100%) !important;
+  box-shadow: inset 3px 0 0 #e0b64a !important;
+}
+.achievement-notification--platinum .achievement-notification__container {
+  background: linear-gradient(94deg, #0a0f0c -25%, #0c5a40 100%) !important;
+}
+.achievement-notification__icon {
+  box-shadow: 0 0 0 1px rgba(224, 182, 74, 0.55) !important;
+}
+.achievement-notification--rare .achievement-notification__icon {
+  box-shadow:
+    0 0 0 1px rgba(224, 182, 74, 0.8),
+    0 0 12px rgba(224, 182, 74, 0.35) !important;
+}
+.achievement-notification--platinum .achievement-notification__icon {
+  box-shadow:
+    0 0 0 1px rgba(31, 185, 128, 0.8),
+    0 0 12px rgba(31, 185, 128, 0.35) !important;
+}
+.achievement-notification__title {
+  color: #eef5f1 !important;
+}
+.achievement-notification__chip {
+  background: #1db980 !important;
+}
+
 /* ---- Big banner (game + profile) — heights live in :root at the top ---- */
 .game-details__hero,
 .game-details__hero-image {
