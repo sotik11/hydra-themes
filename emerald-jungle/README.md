@@ -1,0 +1,28 @@
+# Emerald Jungle — v1.0
+
+A dark emerald theme with gold accents for Hydra Launcher.
+
+- Palette: base `#0a0f0c` / `#12241b`, emerald `#1db980` → `#12996a`, gold `#e0b64a`.
+- Frosted-glass section headers, gold markers on active items, emerald hover states.
+- Taller hero banner (500px) on game and profile pages.
+- Achievement sound: `achievement.wav` (Hydra's default sound).
+
+Built for vanilla Hydra. A few rules target features of the
+[sotik11/hydra](https://github.com/sotik11/hydra) fork (localizations, the all-badges
+modal, localization sources) — on vanilla those selectors simply match nothing.
+
+## Install
+
+1. Copy `theme.css`.
+2. In Hydra: **Settings → Appearance → Create**, name it `Emerald Jungle`, paste the CSS, save.
+3. Optional: in the theme editor, upload `achievement.wav` as the achievement sound.
+
+## Store package (hydrathemes.shop)
+
+Hydra fetches store files by the lower-cased theme name:
+
+- `<store>/themes/emerald jungle/theme.css`
+- `<store>/themes/emerald jungle/achievement.wav` (tries `wav`, `mp3`, `ogg`, `m4a`)
+
+The folder name is `emerald jungle` — **with a space**. Any other name and Hydra
+finds neither the CSS nor the sound.
