@@ -6,6 +6,14 @@
    Vanilla-compatible: overrides concrete classes with !important.
    ========================================================================== */
 
+/* ---- Settings: edit these to taste ------------------------------------ */
+:root {
+  /* Banner height on game pages (Hydra's own is 350px). */
+  --ej-game-banner-height: 500px;
+  /* Banner height on profile pages. */
+  --ej-profile-banner-height: 500px;
+}
+
 /* ---- App background -------------------------------------------------- */
 body {
   background-color: #0a0f0c !important;
@@ -138,9 +146,9 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
 
-/* Only the section HEADER shows the glass; the body keeps its dark background
-   (opaque __content), so each section reads as an emerald header over a dark
-   panel — the look from the catalogue filters. */
+/* Only the section HEADER shows the glass; the body is an opaque surface, so
+   each section reads as an emerald header over a darker panel — the look from
+   the catalogue filters. */
 .filter-section__button,
 .filter-section__header,
 .sidebar-section__header,
@@ -148,11 +156,63 @@ body {
   background: transparent !important;
 }
 
+/* Lift collapsible sections off the page: stronger outline and a gold hairline
+   between header and (black) body. The hairline is an inset shadow, so a
+   collapsed (0-height) body hides it. */
+.filter-section,
+.sidebar-section,
+.profile-section {
+  border-color: rgba(31, 185, 128, 0.35) !important;
+}
+/* Settings → Emulation console cards: section outline (hover = download-source
+   look, see the row hover group below). */
+.console-card {
+  border: 1px solid rgba(31, 185, 128, 0.35) !important;
+}
+/* Game page "Released / Publisher" strip: same outline as the sections. */
+.description-header {
+  border: 1px solid rgba(31, 185, 128, 0.35) !important;
+  border-radius: 12px !important;
+}
+.filter-section__content,
+.sidebar-section__content,
+.profile-section__content {
+  box-shadow: inset 0 1px 0 rgba(224, 182, 74, 0.55) !important;
+}
+
+/* System requirements tabs: pill buttons sat on the gold hairline — drop them. */
+.requirement__button-container {
+  padding-top: 8px !important;
+}
+
+/* ---- Game reviews ------------------------------------------------------ */
+/* "Review locked" notice: permanent glass, like the section headers. */
+.review-gate-notice {
+  background: rgba(31, 185, 128, 0.12) !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+  border: 1px solid rgba(31, 185, 128, 0.35) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+/* Each review on a black card. */
+.game-details__review-item {
+  background-color: #0d0d0d !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
+/* Gold dividers: above the vote buttons, between reviews, above the section. */
+.game-details__review-actions,
+.game-details__reviews-section {
+  border-top-color: rgba(224, 182, 74, 0.55) !important;
+}
+.game-details__reviews-separator {
+  background: rgba(224, 182, 74, 0.55) !important;
+}
+
 /* Brighten the section header on hover (emerald, no gold border). */
 .filter-section__button:hover,
 .sidebar-section__header:hover,
-.profile-section__header:hover,
-.profile-section__button:hover {
+.profile-section__header:hover {
   background: rgba(31, 185, 128, 0.16) !important;
 }
 
@@ -199,12 +259,16 @@ body {
     rgba(12, 61, 44, 0.55) 100%
   ) !important;
   border-right: 1px solid #0a0f0c !important;
-  border-bottom: 1px solid rgba(31, 185, 128, 0.45) !important;
+  border-bottom: 1px solid rgba(224, 182, 74, 0.55) !important;
 }
 /* Remove the 8px dark gap above the profile (Windows/Linux only — keep the
    macOS traffic-light offset). */
 .sidebar:not(.sidebar--darwin) {
   padding-top: 0 !important;
+}
+/* Keep the first menu item's highlight off the gold seam under the profile. */
+.sidebar__content {
+  padding-top: 8px !important;
 }
 /* Hover/open fills the whole block (drop the button's rounding so the glass
    reaches every edge). */
@@ -290,6 +354,34 @@ body {
   box-shadow: inset 3px 0 0 #e0b64a !important;
 }
 
+/* Profile filters (library / souvenirs tabs): framed like the catalogue and
+   library toggles, with the current value as the emerald "active segment";
+   the menu matches the other dropdowns. */
+.filter-dropdown__trigger {
+  background: #0d0d0d !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 10px !important;
+  padding: 0 8px 0 12px !important;
+}
+.filter-dropdown__trigger:hover,
+.filter-dropdown__trigger--open {
+  border-color: rgba(31, 185, 128, 0.35) !important;
+}
+.filter-dropdown__value {
+  background: rgba(31, 185, 128, 0.22) !important;
+  border: 1px solid rgba(31, 185, 128, 0.4) !important;
+  border-radius: 7px !important;
+  padding: 4px 10px !important;
+  color: #fafafa !important;
+}
+.filter-dropdown__option:hover {
+  background: rgba(31, 185, 128, 0.28) !important;
+}
+.filter-dropdown__option--active {
+  background: rgba(31, 185, 128, 0.28) !important;
+  box-shadow: inset 3px 0 0 #e0b64a !important;
+}
+
 /* Settings left nav (same idea): emerald hover, green + gold stripe on active. */
 .settings__sidebar-button:hover {
   background: rgba(31, 185, 128, 0.28) !important;
@@ -331,12 +423,39 @@ body {
   border-radius: 8px !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
+/* ...and a progress bar: the earned share is filled with emerald glass. The
+   width comes from --earned-points-progress (e.g. "10.9%"), which the
+   sotik11/hydra fork sets on the panel; without it the fill is 0% — a no-op on
+   vanilla. The comparison panel (__grid) is left alone. */
+/* No overflow:hidden here — it lets the flex parent shrink the strip and clip
+   its text; the fill is rounded to the frame instead. */
+.achievement-panel:not(.achievement-panel__grid) {
+  position: relative !important;
+}
+.achievement-panel:not(.achievement-panel__grid)::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  border-radius: 7px 0 0 7px;
+  width: var(--earned-points-progress, 0%);
+  background: rgba(31, 185, 128, 0.22);
+  backdrop-filter: blur(10px) saturate(1.2);
+  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  pointer-events: none;
+  transition: width 0.4s ease;
+}
+.achievement-panel__content,
+.achievement-panel__link {
+  position: relative;
+  z-index: 1;
+}
 /* Catalogue rows + notifications: dark at rest, emerald wash + gold ring on
    hover (inset ring = no layout shift, works with or without a base border). */
 .game-item:hover,
 .notification-item:hover,
 .settings-download-sources__item:hover,
 .settings-localization-sources__item:has(.checkbox-field__input:checked):hover,
+.console-card:hover,
 .achievement-panel:hover {
   background: rgba(31, 185, 128, 0.12) !important;
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.5) !important;
@@ -351,7 +470,7 @@ body {
   ) !important;
   backdrop-filter: blur(14px) saturate(1.1) !important;
   -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
-  border-bottom: 1px solid rgba(31, 185, 128, 0.35) !important;
+  border-bottom: 1px solid rgba(224, 182, 74, 0.55) !important;
 }
 
 /* ---- Settings: active theme card = frosted glass --------------------- */
@@ -380,21 +499,22 @@ body {
   ) !important;
 }
 
-/* ---- Big banner (game + profile) ------------------------------------ */
+/* ---- Big banner (game + profile) — heights live in :root at the top ---- */
 .game-details__hero,
 .game-details__hero-image {
-  height: 500px !important;
-  min-height: 500px !important;
+  height: var(--ej-game-banner-height) !important;
+  min-height: var(--ej-game-banner-height) !important;
 }
+/* The image wrapper runs 34px past the hero (same offset as Hydra's own). */
 .game-details__hero-image-wrapper {
-  height: 534px !important;
-  max-height: 534px !important;
+  height: calc(var(--ej-game-banner-height) + 34px) !important;
+  max-height: calc(var(--ej-game-banner-height) + 34px) !important;
 }
 .game-details__hero-image {
   object-position: top !important;
 }
 .profile-hero__content-box {
-  min-height: 500px !important;
+  min-height: var(--ej-profile-banner-height) !important;
 }
 .profile-hero__background-overlay {
   flex: 1 1 auto !important;
