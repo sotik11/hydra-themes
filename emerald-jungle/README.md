@@ -31,12 +31,16 @@ The banner heights sit at the very top of `theme.css`:
 
 Change the numbers, save the theme, done.
 
-## Store package (hydrathemes.shop)
+## Store (hydrathemes.shop)
 
-Hydra fetches store files by the lower-cased theme name:
+Themes reach the store through a pull request to
+[hydralauncher/hydra-themes](https://github.com/hydralauncher/hydra-themes), as a folder
+`themes/Emerald Jungle-<friend code>/` with:
 
-- `<store>/themes/emerald jungle/theme.css`
-- `<store>/themes/emerald jungle/achievement.wav` (tries `wav`, `mp3`, `ogg`, `m4a`)
+- `theme.css`
+- `screenshot.png` (or jpg, jpeg, webp, avif, heic, heif)
+- `achievement.wav` (optional; Hydra also accepts mp3, ogg, m4a)
 
-The folder name is `emerald jungle` — **with a space**. Any other name and Hydra
-finds neither the CSS nor the sound.
+The store's validation checks that the friend code belongs to a real Hydra user and that
+the theme name is unique. The site serves the theme under its lower-cased name
+(`emerald jungle`), which is where Hydra fetches `theme.css` and the achievement sound from.
