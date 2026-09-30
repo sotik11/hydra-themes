@@ -20,12 +20,14 @@ selectors simply match nothing.
 
 ## Customize
 
-The banner heights sit at the very top of `theme.css`:
+The adjustable values sit at the very top of `theme.css`:
 
 ```css
 :root {
-  --ej-game-banner-height: 500px;
-  --ej-profile-banner-height: 500px;
+  --ej-game-banner-height: 500px;       /* game page banner */
+  --ej-profile-banner-height: 500px;    /* profile banner */
+  --ej-button-radius: 999px;            /* button corners; 999px = pill */
+  --ej-profile-button-padding-y: 18.5px; /* sidebar profile block height */
 }
 ```
 
