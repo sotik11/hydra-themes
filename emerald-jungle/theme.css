@@ -286,10 +286,10 @@ body {
   border: 1px solid rgba(31, 185, 128, 0.35) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
-/* The review prompt is darker and flat — a step below a hovered achievement
-   row in the sidebar. */
+/* The review prompt is flat neutral dark grey — the colour of the language
+   table header in the game sidebar (white 2% + 5% over the black body). */
 .review-prompt-banner {
-  background: #0b1d16 !important;
+  background: #1e1e1e !important;
 }
 /* Each review on a black card with a soft emerald outline (softer than the
    sections': there are many of them in a row). */
