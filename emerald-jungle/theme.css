@@ -466,7 +466,7 @@ body {
 .achievements__item:has(
     .achievements__item-image:not(.achievements__item-image--locked)
   ) {
-  background-color: rgba(31, 185, 128, 0.16) !important;
+  background-color: rgba(31, 185, 128, 0.08) !important;
   box-shadow: inset 3px 0 0 #e0b64a !important;
 }
 
