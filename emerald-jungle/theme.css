@@ -446,6 +446,12 @@ body {
 .notifications__tab-underline {
   background: #e0b64a !important;
 }
+/* Dismiss (×) on a notification: the same emerald look on hover. */
+.notification-item__dismiss:hover {
+  background-color: rgba(31, 185, 128, 0.22) !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.4) !important;
+  color: #fafafa !important;
+}
 
 /* Profile tabs (Library / Reviews / …): gold baseline. */
 .profile-content__tabs {
