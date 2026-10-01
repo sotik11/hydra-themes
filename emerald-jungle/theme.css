@@ -138,6 +138,27 @@ body {
   color: #fafafa !important;
 }
 
+/* Image viewers (game screenshots, fullscreen media, the fork's souvenirs):
+   close and prev/next buttons take the active-toggle look. Solid fill, since
+   the arrows can sit over the picture itself. */
+.fullscreen-media-modal__close-button,
+.gallery-lightbox__close-button,
+.gallery-lightbox__nav-button,
+.profile-souvenir-lightbox__close-button,
+.profile-souvenir-lightbox__nav-button {
+  background-color: #113326 !important;
+  border-color: transparent !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.5) !important;
+  color: #fafafa !important;
+}
+.fullscreen-media-modal__close-button:hover,
+.gallery-lightbox__close-button:hover,
+.gallery-lightbox__nav-button:hover,
+.profile-souvenir-lightbox__close-button:hover,
+.profile-souvenir-lightbox__nav-button:hover {
+  background-color: #17422f !important;
+}
+
 /* ---- Library grid cards: rounding + emerald hover glow --------------- */
 .library-game-card,
 .library-game-card-large {
