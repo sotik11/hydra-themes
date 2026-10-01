@@ -77,16 +77,20 @@ body {
   border-color: rgba(224, 182, 74, 0.8) !important;
   background: rgba(224, 182, 74, 0.08) !important;
 }
-/* Game page action buttons (under the banner): dark translucent backing, no
-   outline — transparent ones vanish over a light banner. No blur: the panel
-   is already a backdrop root, so a nested blur would have nothing to blur. */
+/* Game page action buttons (under the banner): the exact look of Hydra's own
+   hero buttons (edit / cloud save) — dark backing, hairline border and a dark
+   halo, so they stay visible over light and near-black banners alike. */
 .hero-panel-actions__action {
-  background: rgba(10, 15, 12, 0.62) !important;
-  border-color: transparent !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8) !important;
+  color: #f0f1f7 !important;
 }
 .hero-panel-actions__action:hover {
-  background: rgba(10, 15, 12, 0.8) !important;
-  border-color: transparent !important;
+  background: rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
