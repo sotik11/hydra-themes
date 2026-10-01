@@ -453,9 +453,15 @@ body {
   color: #fafafa !important;
 }
 
-/* Profile tabs (Library / Reviews / …): gold baseline. */
-.profile-content__tabs {
-  border-bottom-color: rgba(224, 182, 74, 0.55) !important;
+/* Profile tabs (Library / Reviews / …): same as the notifications tabs —
+   gold underline on the active tab, emerald counter. */
+.profile-content__tab-badge {
+  background-color: rgba(31, 185, 128, 0.22) !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.4) !important;
+  color: #fafafa !important;
+}
+.profile-content__tab-underline {
+  background: #e0b64a !important;
 }
 
 /* Profile filters (library / souvenirs tabs): framed like the catalogue and
