@@ -528,11 +528,11 @@ body {
     0 0 18px rgba(31, 185, 128, 0.12) !important;
 }
 .achievement-notification__container {
-  background: linear-gradient(94deg, #0a0f0c 0%, #12241b 100%) !important;
+  background: linear-gradient(180deg, #163527 0%, #12281e 100%) !important;
   box-shadow: inset 3px 0 0 #e0b64a !important;
 }
 .achievement-notification--platinum .achievement-notification__container {
-  background: linear-gradient(94deg, #0a0f0c -25%, #0c5a40 100%) !important;
+  background: linear-gradient(94deg, #163527 -25%, #0c6b4b 100%) !important;
 }
 .achievement-notification__icon {
   box-shadow: 0 0 0 1px rgba(224, 182, 74, 0.55) !important;
