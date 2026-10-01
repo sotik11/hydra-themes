@@ -77,6 +77,16 @@ body {
   border-color: rgba(224, 182, 74, 0.8) !important;
   background: rgba(224, 182, 74, 0.08) !important;
 }
+/* Game page action buttons (under the banner): filled emerald with a gold
+   outline — transparent ones vanish over a light banner. */
+.hero-panel-actions__action {
+  background: linear-gradient(180deg, #163527 0%, #12281e 100%) !important;
+  border-color: rgba(224, 182, 74, 0.55) !important;
+}
+.hero-panel-actions__action:hover {
+  background: linear-gradient(180deg, #1d4633 0%, #173527 100%) !important;
+  border-color: rgba(224, 182, 74, 0.85) !important;
+}
 
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
    emerald tint + gold hover as the catalogue rows (never plain black). */
