@@ -121,6 +121,15 @@ body {
   color: #fafafa !important;
 }
 
+/* Checked checkboxes: the active-segment look instead of a white box. The
+   fill is solid (the segment's emerald tint over its black tray) so it reads
+   the same on the page, on glass modals and on cards. */
+.checkbox-field__checkbox.checked {
+  background-color: #113326 !important;
+  border-color: rgba(31, 185, 128, 0.5) !important;
+  color: #fafafa !important;
+}
+
 /* ---- Library grid cards: rounding + emerald hover glow --------------- */
 .library-game-card,
 .library-game-card-large {
