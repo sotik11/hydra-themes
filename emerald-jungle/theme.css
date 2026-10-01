@@ -95,9 +95,12 @@ body {
   background: rgba(31, 185, 128, 0.12) !important;
 }
 
-/* Active segmented toggles (catalogue "Modern/Classics", library "All/PC/…"). */
+/* Active segmented toggles (catalogue "Modern/Classics", library "All/PC/…")
+   and active view-mode buttons (library, the fork's wishlist page). */
 .catalogue-mode-toggle__option--active,
-.library-category-filter__option--active {
+.library-category-filter__option--active,
+.library-view-options__option.active,
+.wishlist__view-button--active {
   background: rgba(31, 185, 128, 0.22) !important;
   border-color: rgba(31, 185, 128, 0.4) !important;
   color: #fafafa !important;
