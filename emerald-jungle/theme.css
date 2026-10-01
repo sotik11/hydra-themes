@@ -502,6 +502,11 @@ body {
 .profile-content__tab-underline {
   background: #e0b64a !important;
 }
+/* Game options modal, asset tabs (Icon / Logo / Banner / Cover): same gold
+   underline on the active tab. */
+.game-assets-settings__asset-tab-underline {
+  background: #e0b64a !important;
+}
 
 /* Profile filters (library / souvenirs tabs): framed like the catalogue and
    library toggles, with the current value as the emerald "active segment";
