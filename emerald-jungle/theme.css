@@ -359,6 +359,11 @@ body {
   box-shadow: inset 3px 0 0 #e0b64a !important;
 }
 
+/* Profile tabs (Library / Reviews / …): gold baseline. */
+.profile-content__tabs {
+  border-bottom-color: rgba(224, 182, 74, 0.55) !important;
+}
+
 /* Profile filters (library / souvenirs tabs): framed like the catalogue and
    library toggles, with the current value as the emerald "active segment";
    the menu matches the other dropdowns. */
