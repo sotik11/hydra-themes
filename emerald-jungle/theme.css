@@ -495,11 +495,10 @@ body {
 }
 
 /* ---- Page content backgrounds (own bg over .container__content) ------ */
+/* Game page: drop its own gradient so it shows the shared app background,
+   same as the profile page. */
 .game-details__description-container {
-  background: linear-gradient(0deg, #0a0f0c 60%, #12241b 100%) !important;
-}
-.profile-content {
-  background-color: #0a0f0c !important;
+  background: transparent !important;
 }
 .settings__content {
   background: radial-gradient(
