@@ -341,6 +341,11 @@ body {
 .sidebar-profile__dropdown {
   margin-top: 4px !important;
 }
+/* Its items: the same emerald hover as the sidebar game list; "Sign out"
+   keeps its red. */
+.sidebar-profile__dropdown-item:hover:not(.sidebar-profile__dropdown-item--danger) {
+  background-color: rgba(31, 185, 128, 0.16) !important;
+}
 
 /* Sidebar search field: thin white ring (inset = no layout shift). */
 .sidebar__search-row .text-field-container__text-field {
