@@ -159,6 +159,16 @@ body {
   background-color: #17422f !important;
 }
 
+/* Tooltips (react-tooltip, used app-wide): emerald like the viewer buttons
+   and fully opaque — the stock grey at 0.9 opacity is barely visible here.
+   The arrow inherits the background. */
+.react-tooltip {
+  --rt-opacity: 1;
+  background-color: #113326 !important;
+  color: #fafafa !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.5) !important;
+}
+
 /* ---- Library grid cards: rounding + emerald hover glow --------------- */
 .library-game-card,
 .library-game-card-large {
