@@ -182,6 +182,14 @@ body {
   box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.5) !important;
 }
 
+/* Video progress bar. Hydra uses the browser's native <video controls>, and
+   the played segment lives in the browser's internal shadow DOM — out of
+   reach for CSS. The only handle is the whole timeline, so it is tinted with
+   a filter: the white played part turns gold, the rest a dim gold. */
+video::-webkit-media-controls-timeline {
+  filter: sepia(1) saturate(9) hue-rotate(-18deg) brightness(0.86);
+}
+
 /* ---- Library grid cards: rounding + emerald hover glow --------------- */
 .library-game-card,
 .library-game-card-large {
