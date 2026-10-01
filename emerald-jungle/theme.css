@@ -588,6 +588,13 @@ body {
   border: 1px solid rgba(31, 185, 128, 0.14) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
+/* Achievements page: the unlocked-achievements progress bar is gold, like the
+   bar on unlocked rows (a fully completed game keeps its platinum variant). */
+.achievements-content__user-summary__container__stats__progress-bar:not(
+    .achievements-content__user-summary__container__stats__progress-bar--platinum
+  ) {
+  background-color: #e0b64a !important;
+}
 /* "Earned points" strip: the look of the selected sidebar row — emerald
    fill, emerald outline, gold bar on the left. */
 .achievement-panel {
