@@ -595,27 +595,28 @@ body {
   ) {
   background-color: #e0b64a !important;
 }
-/* "Earned points" strip: the look of the selected sidebar row — emerald
-   fill, emerald outline, gold bar on the left. */
+/* "Earned points" strip: the active-toggle look — emerald fill and outline
+   (no gold bar: the unlocked rows below already carry it). */
 .achievement-panel {
   background: rgba(31, 185, 128, 0.22) !important;
   border: 1px solid rgba(31, 185, 128, 0.4) !important;
   border-radius: 7px !important;
-  box-shadow: inset 3px 0 0 #e0b64a !important;
+  box-shadow: none !important;
 }
 /* ...and a progress bar: the earned share is filled with emerald glass. The
    width comes from --earned-points-progress (e.g. "10.9%"), which the
    sotik11/hydra fork sets on the panel; without it the fill is 0% — a no-op on
    vanilla. The comparison panel (__grid) is left alone. */
 /* No overflow:hidden here — it lets the flex parent shrink the strip and clip
-   its text. The fill starts right after the gold bar. */
+   its text; the fill is rounded to the frame instead. */
 .achievement-panel:not(.achievement-panel__grid) {
   position: relative !important;
 }
 .achievement-panel:not(.achievement-panel__grid)::before {
   content: "";
   position: absolute;
-  inset: 0 auto 0 3px;
+  inset: 0 auto 0 0;
+  border-radius: 6px 0 0 6px;
   width: var(--earned-points-progress, 0%);
   background: rgba(31, 185, 128, 0.4);
   backdrop-filter: blur(10px) saturate(1.2);
