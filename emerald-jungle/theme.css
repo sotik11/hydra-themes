@@ -405,10 +405,12 @@ body {
 }
 
 /* Settings left nav (same idea): emerald hover, green + gold stripe on active. */
-.settings__sidebar-button:hover {
+.settings__sidebar-button:hover,
+.game-options-modal__sidebar-button:hover {
   background: rgba(31, 185, 128, 0.28) !important;
 }
-.settings__sidebar-button--active {
+.settings__sidebar-button--active,
+.game-options-modal__sidebar-button--active {
   background: rgba(31, 185, 128, 0.28) !important;
   box-shadow: inset 3px 0 0 #e0b64a !important;
 }
@@ -512,12 +514,13 @@ body {
 .game-details__description-container {
   background: transparent !important;
 }
-.settings__content {
-  background: radial-gradient(
-    130% 130% at 50% 0%,
-    #12241b 0%,
-    #0a0f0c 62%
-  ) !important;
+/* Settings: nav column and content both show the shared app background, so
+   the column is no longer a black slab. Same for the game options modal,
+   whose nav column shows the modal's glass. */
+.settings__sidebar,
+.settings__content,
+.game-options-modal__sidebar {
+  background: transparent !important;
 }
 
 /* ---- Achievement notification (the unlock pop-up) ---------------------- */
