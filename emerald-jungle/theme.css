@@ -441,6 +441,10 @@ body {
   background: rgba(31, 185, 128, 0.28) !important;
   box-shadow: inset 3px 0 0 #e0b64a !important;
 }
+/* Divider between the settings nav groups: gold. */
+.settings__sidebar-divider {
+  background: rgba(224, 182, 74, 0.55) !important;
+}
 
 /* Generic dropdown menu (platform/sort-filter menu) + context menus (game
    right-click, profile menu): emerald hover; destructive items stay red. */
