@@ -77,14 +77,16 @@ body {
   border-color: rgba(224, 182, 74, 0.8) !important;
   background: rgba(224, 182, 74, 0.08) !important;
 }
-/* Game page action buttons (under the banner): filled emerald with a gold
-   outline — transparent ones vanish over a light banner. */
+/* Game page action buttons (under the banner): dark translucent backing with
+   a gold outline — transparent ones vanish over a light banner. No blur: the
+   panel is already a backdrop root, so a nested blur would have nothing to
+   blur. */
 .hero-panel-actions__action {
-  background: linear-gradient(180deg, #163527 0%, #12281e 100%) !important;
+  background: rgba(10, 15, 12, 0.62) !important;
   border-color: rgba(224, 182, 74, 0.55) !important;
 }
 .hero-panel-actions__action:hover {
-  background: linear-gradient(180deg, #1d4633 0%, #173527 100%) !important;
+  background: rgba(10, 15, 12, 0.8) !important;
   border-color: rgba(224, 182, 74, 0.85) !important;
 }
 
