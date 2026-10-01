@@ -536,6 +536,16 @@ body {
   background: rgba(224, 182, 74, 0.55) !important;
 }
 
+/* Profile "Change banner" menu: hovered/focused item looks like a sidebar
+   row (the first item is focused as soon as the menu opens). */
+.upload-background-image-button__menu-item:hover:not(:disabled),
+.upload-background-image-button__menu-item:focus {
+  background-color: rgba(31, 185, 128, 0.22) !important;
+  box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.4) !important;
+  border-radius: 7px !important;
+  color: #fafafa !important;
+}
+
 /* Generic dropdown menu (platform/sort-filter menu): emerald hover. */
 .dropdown-menu__item:hover,
 .dropdown-menu__item:focus {
