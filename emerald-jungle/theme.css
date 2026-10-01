@@ -161,6 +161,19 @@ body {
   background: transparent !important;
 }
 
+/* Section headers (catalogue filters, game sidebar, profile) get an opaque
+   emerald fill — over the dark app background plain glass reads as black. */
+.filter-section__button,
+.sidebar-section__header,
+.profile-section__header {
+  background: linear-gradient(180deg, #163527 0%, #12281e 100%) !important;
+}
+.filter-section__button:hover,
+.sidebar-section__header:hover,
+.profile-section__header:hover {
+  background: linear-gradient(180deg, #1d4633 0%, #173527 100%) !important;
+}
+
 /* Lift collapsible sections off the page: stronger outline and a gold hairline
    between header and (black) body. The hairline is an inset shadow, so a
    collapsed (0-height) body hides it. */
@@ -214,12 +227,6 @@ body {
   background: rgba(224, 182, 74, 0.55) !important;
 }
 
-/* Brighten the section header on hover (emerald, no gold border). */
-.filter-section__button:hover,
-.sidebar-section__header:hover,
-.profile-section__header:hover {
-  background: rgba(31, 185, 128, 0.16) !important;
-}
 
 /* Collections dropdown: emerald hover, and a gold left stripe on the active
    item (this menu marks it with a class, so no code change needed). Undo the
