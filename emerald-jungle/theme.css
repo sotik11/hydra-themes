@@ -288,27 +288,18 @@ body {
 }
 /* The review prompt is the one block that asks the user something: a soft
    gold outline sets it apart from the informational strips around it. The
-   fill is painted glass — the page behind is flat, so a real backdrop blur
-   would show nothing: translucent emerald base, a diagonal sheen, a light top
-   edge and a faint bottom shade. */
+   fill copies the hovered profile block: the header gradient under a
+   translucent white layer. */
 .review-prompt-banner {
   border-color: rgba(224, 182, 74, 0.45) !important;
   background:
-    linear-gradient(
-      115deg,
-      rgba(255, 255, 255, 0.11) 0%,
-      rgba(255, 255, 255, 0.02) 30%,
-      rgba(255, 255, 255, 0) 48%,
-      rgba(255, 255, 255, 0.05) 100%
-    ),
+    linear-gradient(rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.12)),
     linear-gradient(
       180deg,
-      rgba(31, 185, 128, 0.2) 0%,
-      rgba(12, 61, 44, 0.34) 100%
+      rgba(29, 185, 128, 0.3) 0%,
+      rgba(12, 61, 44, 0.55) 100%
     ) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
 /* Each review on a black card with a soft emerald outline (softer than the
    sections': there are many of them in a row). */
