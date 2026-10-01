@@ -77,17 +77,16 @@ body {
   border-color: rgba(224, 182, 74, 0.8) !important;
   background: rgba(224, 182, 74, 0.08) !important;
 }
-/* Game page action buttons (under the banner): dark translucent backing with
-   a gold outline — transparent ones vanish over a light banner. No blur: the
-   panel is already a backdrop root, so a nested blur would have nothing to
-   blur. */
+/* Game page action buttons (under the banner): dark translucent backing, no
+   outline — transparent ones vanish over a light banner. No blur: the panel
+   is already a backdrop root, so a nested blur would have nothing to blur. */
 .hero-panel-actions__action {
   background: rgba(10, 15, 12, 0.62) !important;
-  border-color: rgba(224, 182, 74, 0.55) !important;
+  border-color: transparent !important;
 }
 .hero-panel-actions__action:hover {
   background: rgba(10, 15, 12, 0.8) !important;
-  border-color: rgba(224, 182, 74, 0.85) !important;
+  border-color: transparent !important;
 }
 
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
