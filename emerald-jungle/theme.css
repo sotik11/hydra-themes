@@ -100,6 +100,12 @@ body {
 .hero-panel-actions__action:hover {
   background: rgba(0, 0, 0, 0.5) !important;
 }
+/* Hydra's own hero buttons (edit / cloud save) get the same gold outline on
+   hover that the action buttons inherit from .button--outline. */
+.game-details__edit-custom-game-button:hover,
+.game-details__cloud-sync-button:hover:not(:disabled) {
+  border-color: rgba(224, 182, 74, 0.8) !important;
+}
 
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
    emerald tint + gold hover as the catalogue rows (never plain black). */
