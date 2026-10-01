@@ -286,6 +286,11 @@ body {
   border: 1px solid rgba(31, 185, 128, 0.35) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
 }
+/* The review prompt is the one block that asks the user something: a soft
+   gold outline sets it apart from the informational strips around it. */
+.review-prompt-banner {
+  border-color: rgba(224, 182, 74, 0.45) !important;
+}
 /* Each review on a black card with a soft emerald outline (softer than the
    sections': there are many of them in a row). */
 .game-details__review-item {
