@@ -31,7 +31,8 @@ The adjustable values sit at the very top of `theme.css`:
 }
 ```
 
-Change the numbers, save the theme, done.
+Change the numbers, save the theme, done. The same block also holds the theme's
+colours (emerald fills, outlines, gold) as variables, if you want to retint it.
 
 ## Store (hydrathemes.shop)
 
