@@ -144,14 +144,18 @@ body {
   color: #fafafa !important;
 }
 
-/* Image viewers (game screenshots, fullscreen media, the fork's souvenirs):
-   close and prev/next buttons take the active-toggle look. Solid fill, since
-   the arrows can sit over the picture itself. */
+/* Image viewers (game screenshots, fullscreen media, the fork's souvenirs)
+   and the game page gallery (arrows, expand, play icons): round buttons take
+   the active-toggle look. Solid fill, since they sit over the picture. */
 .fullscreen-media-modal__close-button,
 .gallery-lightbox__close-button,
 .gallery-lightbox__nav-button,
 .profile-souvenir-lightbox__close-button,
-.profile-souvenir-lightbox__nav-button {
+.profile-souvenir-lightbox__nav-button,
+.gallery-slider__button,
+.gallery-slider__expand-button,
+.gallery-slider__video-play-icon,
+.gallery-slider__play-overlay {
   background-color: #113326 !important;
   border-color: transparent !important;
   box-shadow: inset 0 0 0 1px rgba(31, 185, 128, 0.5) !important;
@@ -161,7 +165,10 @@ body {
 .gallery-lightbox__close-button:hover,
 .gallery-lightbox__nav-button:hover,
 .profile-souvenir-lightbox__close-button:hover,
-.profile-souvenir-lightbox__nav-button:hover {
+.profile-souvenir-lightbox__nav-button:hover,
+.gallery-slider__button:hover,
+.gallery-slider__expand-button:hover,
+.gallery-slider__video-play-button:hover .gallery-slider__video-play-icon {
   background-color: #17422f !important;
 }
 
