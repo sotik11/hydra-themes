@@ -341,10 +341,11 @@ body {
 .sidebar-profile__dropdown {
   margin-top: 4px !important;
 }
-/* Its items: the same emerald hover as the sidebar game list; "Sign out"
-   keeps its red. */
+/* Its items: the hover of the sidebar game list, as a solid colour (that
+   tint over the sidebar background) so it doesn't grey out on the menu's own
+   backing; "Sign out" keeps its red. */
 .sidebar-profile__dropdown-item:hover:not(.sidebar-profile__dropdown-item--danger) {
-  background-color: rgba(31, 185, 128, 0.16) !important;
+  background-color: #0e2d20 !important;
 }
 
 /* Sidebar search field: thin white ring (inset = no layout shift). */
