@@ -45,9 +45,9 @@
   --ej-gold: #e0b64a;
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
-  /* Earned-points progress fill. Once everything is earned the fill turns
-     gold (a touch dimmer than --ej-gold) and its text and icon switch to the
-     dark tone; the emerald outline stays. */
+  /* Earned-points progress fill. Once everything is earned the fill and the
+     outline turn gold (a touch dimmer than --ej-gold) and the text and icon
+     switch to the dark tone. */
   --ej-progress-fill: rgba(31, 185, 128, 0.4);
   --ej-progress-fill-complete: #cba541;
   --ej-on-gold: #1c1606;
@@ -711,6 +711,11 @@ video::-webkit-media-controls-timeline {
     calc((var(--earned-points-progress, 0%) - 99.99%) * 10000),
     100%
   );
+  border-color: color-mix(
+    in srgb,
+    var(--ej-progress-fill-complete) var(--ej-points-complete),
+    var(--ej-active-outline)
+  ) !important;
 }
 /* On solid gold the light text and the white points icon would vanish, so
    both go dark at 100% (currentColor = the normal inherited text colour). */
