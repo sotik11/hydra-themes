@@ -45,9 +45,10 @@
   --ej-gold: #e0b64a;
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
-  /* Earned-points progress fill, and its colour once everything is earned. */
+  /* Earned-points progress fill. Once everything is earned the strip turns
+     solid gold (--ej-gold) and its text and icon switch to this dark tone. */
   --ej-progress-fill: rgba(31, 185, 128, 0.4);
-  --ej-progress-fill-complete: rgba(224, 182, 74, 0.5);
+  --ej-on-gold: #1c1606;
 }
 
 /* ---- App background -------------------------------------------------- */
@@ -710,9 +711,23 @@ video::-webkit-media-controls-timeline {
   );
   border-color: color-mix(
     in srgb,
-    var(--ej-gold-line) var(--ej-points-complete),
+    var(--ej-gold) var(--ej-points-complete),
     var(--ej-active-outline)
   ) !important;
+}
+/* On solid gold the light text and the white points icon would vanish, so
+   both go dark at 100% (currentColor = the normal inherited text colour). */
+.achievement-panel:not(.achievement-panel__grid) .achievement-panel__content {
+  color: color-mix(
+    in srgb,
+    var(--ej-on-gold) var(--ej-points-complete),
+    currentColor
+  );
+}
+.achievement-panel:not(.achievement-panel__grid)
+  .achievement-panel__content-icon
+  [fill="white"] {
+  fill: color-mix(in srgb, var(--ej-on-gold) var(--ej-points-complete), white);
 }
 .achievement-panel:not(.achievement-panel__grid)::before {
   content: "";
@@ -722,7 +737,7 @@ video::-webkit-media-controls-timeline {
   width: var(--earned-points-progress, 0%);
   background: color-mix(
     in srgb,
-    var(--ej-progress-fill-complete) var(--ej-points-complete),
+    var(--ej-gold) var(--ej-points-complete),
     var(--ej-progress-fill)
   );
   backdrop-filter: blur(10px) saturate(1.2);
