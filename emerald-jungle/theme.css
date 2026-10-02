@@ -45,6 +45,9 @@
   --ej-gold: #e0b64a;
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
+  /* Earned-points progress fill, and its colour once everything is earned. */
+  --ej-progress-fill: rgba(31, 185, 128, 0.4);
+  --ej-progress-fill-complete: rgba(224, 182, 74, 0.5);
 }
 
 /* ---- App background -------------------------------------------------- */
@@ -694,16 +697,34 @@ video::-webkit-media-controls-timeline {
    vanilla. The comparison panel (__grid) is left alone. */
 /* No overflow:hidden here — it lets the flex parent shrink the strip and clip
    its text; the fill is rounded to the frame instead. */
+/* CSS has no "if the variable equals 100%", so --ej-points-complete does it
+   with arithmetic: 0% for any progress below 100%, 100% at exactly 100%. It
+   then picks between the emerald and the gold colours through color-mix(), so
+   a fully completed game gets a gold strip. */
 .achievement-panel:not(.achievement-panel__grid) {
   position: relative !important;
+  --ej-points-complete: clamp(
+    0%,
+    calc((var(--earned-points-progress, 0%) - 99.99%) * 10000),
+    100%
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--ej-gold-line) var(--ej-points-complete),
+    var(--ej-active-outline)
+  ) !important;
 }
 .achievement-panel:not(.achievement-panel__grid)::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
-  border-radius: 6px 0 0 6px;
+  border-radius: 6px;
   width: var(--earned-points-progress, 0%);
-  background: rgba(31, 185, 128, 0.4);
+  background: color-mix(
+    in srgb,
+    var(--ej-progress-fill-complete) var(--ej-points-complete),
+    var(--ej-progress-fill)
+  );
   backdrop-filter: blur(10px) saturate(1.2);
   -webkit-backdrop-filter: blur(10px) saturate(1.2);
   pointer-events: none;
