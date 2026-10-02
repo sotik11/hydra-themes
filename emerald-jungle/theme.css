@@ -678,12 +678,15 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-gold) !important;
 }
 /* "Earned points" strip: the active-toggle look — emerald fill and outline
-   (no gold bar: the unlocked rows below already carry it). */
+   (no gold bar: the unlocked rows below already carry it). Inset by the
+   list's own 16px padding, so it lines up with the achievement rows. */
 .achievement-panel {
   background: var(--ej-active-fill) !important;
   border: 1px solid var(--ej-active-outline) !important;
   border-radius: var(--ej-active-radius) !important;
   box-shadow: none !important;
+  width: calc(100% - 32px) !important;
+  margin: 0 16px !important;
 }
 /* ...and a progress bar: the earned share is filled with emerald glass. The
    width comes from --earned-points-progress (e.g. "10.9%"), which the
