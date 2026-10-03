@@ -1068,31 +1068,19 @@ video::-webkit-media-controls-timeline {
   border-radius: 0 4px 4px 0;
 }
 
-/* Top header bar (every page): emerald, like the active toggle, with the
-   richest of the theme's pictures along it. Layers, top to bottom: a light
-   shade on the left that continues the one on the profile block; the picture
-   (--ej-header-picture) at the bar's height, starting at the left edge — the
-   profile block ends with the same picture's right end, so the two join; the
-   emerald fill itself. */
+/* Top header bar (every page): emerald, like the active toggle. */
 .header {
-  background:
-    linear-gradient(90deg, rgba(8, 30, 22, 0.15) 0, rgba(8, 30, 22, 0) 220px),
-    var(--ej-header-picture) left bottom / auto 100% repeat-x,
-    linear-gradient(
-      180deg,
-      rgba(29, 185, 128, 0.3) 0%,
-      rgba(12, 61, 44, 0.55) 100%
-    ) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(29, 185, 128, 0.3) 0%,
+    rgba(12, 61, 44, 0.55) 100%
+  ) !important;
   backdrop-filter: blur(14px) saturate(1.1) !important;
   -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
   border-bottom: 1px solid var(--ej-gold-line) !important;
 }
-/* Its title (page or game name): capitals, slightly spaced; a dark shadow
-   keeps it readable over the picture. */
+/* Its title (page or game name): capitals, slightly spaced. */
 .header__title {
-  text-shadow:
-    0 1px 3px rgba(4, 16, 11, 0.9),
-    0 0 10px rgba(4, 16, 11, 0.7) !important;
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
   font-weight: 700 !important;
