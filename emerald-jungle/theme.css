@@ -58,7 +58,7 @@
      tones (the row's dark start would vanish on the dark bar). */
   --ej-title-fill: linear-gradient(90deg, #1db980 0%, #e0b64a 100%);
   /* The Play button on the game page: the same idea with more gold in it. */
-  --ej-play-fill: linear-gradient(90deg, #17895f 0%, #7f9d49 45%, #d4ad42 100%);
+  --ej-play-fill: linear-gradient(90deg, #17895f 0%, #7f9d49 60%, #d4ad42 100%);
   /* Emerald outline of sections, cards and strips. */
   --ej-outline: rgba(31, 185, 128, 0.35);
   /* Hover/selected fill of dropdown and settings menu items. */
