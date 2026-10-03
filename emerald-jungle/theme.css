@@ -1052,6 +1052,10 @@ video::-webkit-media-controls-timeline {
 .settings-integration-card__progress-fill {
   background: var(--ej-download-fill) !important;
 }
+/* Toasts: the timer line under a toast takes the same fill. */
+.toast__progress::-webkit-progress-value {
+  background: var(--ej-download-fill) !important;
+}
 /* The small bars belong to paused and waiting downloads (the one in progress
    has the big bar), so nothing runs along them. */
 .download-group__progress-bar--small .download-group__progress-fill::after {
