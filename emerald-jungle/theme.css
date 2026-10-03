@@ -350,13 +350,16 @@ body {
   background: rgba(31, 185, 128, 0.12) !important;
 }
 
-/* Active segmented toggles (catalogue "Modern/Classics", library "All/PC/…"),
-   active view-mode buttons (library, the fork's wishlist page) and the
-   library's pressed "installed only" button. */
+/* Active segmented toggles (catalogue "Modern/Classics", library "All/PC/…",
+   the scan-games modal's "Automatic/Manual" and its picked match), active
+   view-mode buttons (library, the fork's wishlist page) and the library's
+   pressed "installed only" button. */
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
 .library-view-options__option.active,
 .wishlist__view-button--active,
+.scan-games-modal__mode-option--active,
+.scan-games-modal__choice--active,
 .library-installed-filter__button[aria-pressed="true"] {
   background: var(--ej-active-fill) !important;
   border-color: var(--ej-active-outline) !important;
