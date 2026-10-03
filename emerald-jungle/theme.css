@@ -72,6 +72,8 @@
      highlight runs along it. */
   --ej-download-fill: linear-gradient(90deg, #e9fff4 0%, #7fe0a3 10%, #1db980 55%, #12996a 100%);
   --ej-bar-sheen-period: 3.5s;
+  /* Thickness of the download bar on the game page (Hydra's own is 3px). */
+  --ej-game-progress-height: 8px;
 }
 
 /* ---- App background -------------------------------------------------- */
@@ -879,6 +881,18 @@ video::-webkit-media-controls-timeline {
   100% {
     left: 100%;
   }
+}
+/* Game page: the hairline at the bottom of the panel under the banner becomes
+   a thick gold bar over a faint track, like the unlocked-achievements bar. */
+.hero-panel__progress-bar {
+  height: var(--ej-game-progress-height) !important;
+}
+.hero-panel__progress-bar::-webkit-progress-bar {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+.hero-panel__progress-bar::-webkit-progress-value {
+  background-color: var(--ej-gold) !important;
+  border-radius: 0 4px 4px 0;
 }
 
 /* Top header bar (every page): emerald, like the active toggle. */
