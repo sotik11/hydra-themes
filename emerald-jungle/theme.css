@@ -51,6 +51,18 @@
   --ej-progress-fill: rgba(31, 185, 128, 0.4);
   --ej-progress-fill-complete: #cba541;
   --ej-on-gold: #1c1606;
+  /* Sheen: the soft diagonal highlight that crosses covers and sidebar rows
+     on hover. */
+  --ej-sheen: linear-gradient(
+    115deg,
+    transparent 36%,
+    rgba(127, 224, 163, 0.16) 44%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(224, 182, 74, 0.16) 56%,
+    transparent 64%
+  );
+  /* How long one pass of the sheen takes. */
+  --ej-sheen-duration: 1.1s;
 }
 
 /* ---- App background -------------------------------------------------- */
@@ -238,6 +250,40 @@ video::-webkit-media-controls-timeline {
     0 6px 20px var(--ej-menu-fill),
     inset 0 0 0 1px rgba(224, 182, 74, 0.45) !important;
   transform: translateY(-2px) !important;
+}
+
+/* ---- Cover sheen ------------------------------------------------------ */
+/* Home, library and profile covers: when the pointer enters, a soft diagonal
+   highlight crosses the cover once (no loop) and the card lifts a little. The
+   highlight waits off-canvas on the left and snaps back without a transition,
+   so it never runs backwards on leave. */
+.game-card {
+  position: relative;
+}
+.game-card::after,
+.library-game-card__wrapper::after,
+.library-game-card-large::after,
+.user-library-game__wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+  transition: none;
+}
+.game-card:hover::after,
+.library-game-card__wrapper:hover::after,
+.library-game-card-large:hover::after,
+.user-library-game__wrapper:hover::after {
+  transform: translateX(130%);
+  transition: transform var(--ej-sheen-duration) ease-in-out;
+}
+.game-card:hover,
+.library-game-card__wrapper:hover,
+.user-library-game__wrapper:hover {
+  transform: translateY(-3px);
 }
 
 /* ---- Bottom panel ---------------------------------------------------- */
