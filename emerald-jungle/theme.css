@@ -1047,6 +1047,11 @@ video::-webkit-media-controls-timeline {
   transform: skewX(-25deg);
   animation: ej-bar-sheen var(--ej-bar-sheen-period) ease-in-out infinite;
 }
+/* Settings → Integrations: the import bar of an integration card (Steam
+   library sync) takes the same fill as the download bars. */
+.settings-integration-card__progress-fill {
+  background: var(--ej-download-fill) !important;
+}
 /* The small bars belong to paused and waiting downloads (the one in progress
    has the big bar), so nothing runs along them. */
 .download-group__progress-bar--small .download-group__progress-fill::after {
