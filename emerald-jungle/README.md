@@ -36,9 +36,8 @@ colours (emerald fills, outlines, gold) as variables, if you want to retint it.
 
 ## Artwork
 
-The sunset picture in the sidebar profile block and the night sky (full on the Downloads
-page; dimmed, without the horizon, on the game page, Home, Catalogue, Library and
-Wishlist) are inline SVG, embedded in `theme.css` as `--ej-*` variables at its top.
+The sunset picture in the sidebar profile block and the night sky behind the Downloads
+and game pages are inline SVG, embedded in `theme.css` as `--ej-*` variables at its top.
 Both are drawn for this theme. The palm silhouettes on the night-sky horizon come from
 [PhyloPic](https://www.phylopic.org) — images released under CC0 1.0 or the Public Domain
 Mark, simplified to fit (Sabal causiarum by Mason McNair; Cocos nucifera).
