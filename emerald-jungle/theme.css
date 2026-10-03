@@ -20,6 +20,9 @@
   /* Vertical padding of the sidebar profile button — sized so the profile
      block lines up with the top header bar. */
   --ej-profile-button-padding-y: 18.5px;
+  /* The look of the top header bar as an opaque fill (the bar itself is tinted
+     glass): used where the page background must not show through. */
+  --ej-bar-solid: linear-gradient(180deg, #10422f 0%, #0b281e 100%);
   /* Fill of section headers, strips and the achievement pop-up. */
   --ej-header-fill: linear-gradient(180deg, #163527 0%, #12281e 100%);
   /* ...and its hover. */
@@ -568,11 +571,12 @@ video::-webkit-media-controls-timeline {
   border-radius: 12px !important;
   padding: 12px 16px !important;
 }
-/* Replies under a review: emerald cards (solid tint, hairline, top highlight),
-   so they read as nested under the black review card. The fill is opaque —
-   the starry page background must not show through. */
+/* Replies under a review: painted like the top header bar (hairline, top
+   highlight), so they read as nested under the black review card. The fill
+   is the bar's opaque twin — the starry page background must not show
+   through. */
 .game-details__reply-item {
-  background: #0a231a !important;
+  background: var(--ej-bar-solid) !important;
   border: 1px solid rgba(31, 185, 128, 0.2) !important;
   border-radius: 12px !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
