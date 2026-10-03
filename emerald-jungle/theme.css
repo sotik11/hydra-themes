@@ -676,6 +676,12 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(31, 185, 128, 0.25) !important;
 }
 
+/* Catalogue "Sort by": the same frame. This one is a native <select>, so only
+   the button can be styled — the open list is drawn by the browser. */
+.catalogue__sort-select .select-field {
+  border-color: rgba(31, 185, 128, 0.25) !important;
+}
+
 /* Sidebar filter menu (platform / sort, the ⚙ button): emerald hover, green +
    gold stripe on the checked items. */
 .sidebar-filter-menu__item:hover,
