@@ -473,6 +473,17 @@ video::-webkit-media-controls-timeline {
 .library-game-card__wrapper:hover {
   transform: scale(1.05);
 }
+/* Room for that zoom: Hydra leaves 4px around the grid (enough for its own
+   2%), so the scrolling box gets a wider margin at the top, left and bottom —
+   the negative margins keep the grid where it was. The "scrolled" shadow
+   follows the new top edge. */
+.library__games-scroll {
+  padding: 12px 4px 12px 8px !important;
+  margin: -12px -4px -4px -8px !important;
+}
+.library__scroll-shadow {
+  top: -12px !important;
+}
 
 /* ---- Bottom panel ---------------------------------------------------- */
 .bottom-panel {
