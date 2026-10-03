@@ -87,12 +87,11 @@
   --ej-notification-sheen-period: 3.5s;
   /* Thickness of the download bar on the game page (Hydra's own is 3px). */
   --ej-game-progress-height: 8px;
-  /* How much the night sky is dimmed on the pages that use it as a backdrop
-     (game page, Home, Catalogue, Library, Wishlist): 0 = as on the Downloads
+  /* How much the night sky is dimmed on the game page: 0 = as on the Downloads
      page, 1 = black. */
   --ej-night-dim: 0.5;
-  /* Night-sky page background (the Downloads page; the backdrop pages use the
-     sky without the horizon), in four pieces:
+  /* Night-sky page background (the Downloads page; the game page uses the sky
+     without the horizon), in four pieces:
      the horizon (4000x220 inline SVG, shown once along the bottom edge: a hazy
      far ridge, a thin mist, a dark tree line with a few palms, fireflies), the
      moon, and two sparse star tiles. Set a piece to none to drop it. */
@@ -153,17 +152,10 @@ body {
       #0f3626 100%
     ) !important;
 }
-/* The game page, Home, Catalogue, Library and Wishlist get the same sky,
-   cropped to its upper part — stars and the moon, no horizon — and dimmed by
-   a dark veil (--ej-night-dim), so it stays a backdrop and does not pull
-   attention from the page. (The wishlist page is a feature of the
-   sotik11/hydra fork; on vanilla its selectors match nothing.) */
-.container__content:has(.game-details__wrapper),
-.container__content:has(.home__content),
-.container__content:has(.catalogue),
-.container__content:has(.library__content),
-.container__content:has(.wishlist),
-.container__content:has(.wishlist__empty) {
+/* The game page gets the same sky, cropped to its upper part — stars and the
+   moon, no horizon — and dimmed by a dark veil (--ej-night-dim), so it stays
+   a backdrop and does not pull attention from the page. */
+.container__content:has(.game-details__wrapper) {
   background:
     linear-gradient(
       rgba(5, 11, 8, var(--ej-night-dim)),
