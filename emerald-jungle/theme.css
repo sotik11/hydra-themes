@@ -866,9 +866,11 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-gold) !important;
 }
 /* Counters in the section headers of the catalogue filters and the profile
-   column: the same emerald counter. */
+   (the side column and the library tab's "Pinned" / "All games" headings):
+   the same emerald counter. */
 .filter-section__header-count,
-.profile-section__count {
+.profile-section__count,
+.profile-content__section-badge {
   background-color: var(--ej-active-fill) !important;
   box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
   color: var(--ej-active-text) !important;
