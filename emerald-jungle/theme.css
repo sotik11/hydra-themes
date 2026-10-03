@@ -87,7 +87,11 @@
   --ej-notification-sheen-period: 3.5s;
   /* Thickness of the download bar on the game page (Hydra's own is 3px). */
   --ej-game-progress-height: 8px;
-  /* Night-sky page background (the Downloads page), in four pieces:
+  /* How much the night sky is dimmed on the game page: 0 = as on the Downloads
+     page, 1 = black. */
+  --ej-night-dim: 0.5;
+  /* Night-sky page background (the Downloads page; the game page uses the sky
+     without the horizon), in four pieces:
      the horizon (4000x220 inline SVG, shown once along the bottom edge: a hazy
      far ridge, a thin mist, a dark tree line with a few palms, fireflies), the
      moon, and two sparse star tiles. Set a piece to none to drop it. */
@@ -149,6 +153,20 @@ body {
       #0c2a1d 85%,
       #0f3626 100%
     ) !important;
+}
+/* The game page gets the same sky, cropped to its upper part — stars and the
+   moon, no horizon — and dimmed by a dark veil (--ej-night-dim), so it stays
+   a backdrop and does not pull attention from the page. */
+.container__content:has(.game-details__wrapper) {
+  background:
+    linear-gradient(
+      rgba(5, 11, 8, var(--ej-night-dim)),
+      rgba(5, 11, 8, var(--ej-night-dim))
+    ),
+    var(--ej-night-moon) 88% 9vh / 160px 160px no-repeat,
+    var(--ej-night-stars) 0 0 / 860px 860px repeat,
+    var(--ej-night-stars-small) 0 0 / 520px 520px repeat,
+    linear-gradient(180deg, #030806 0%, #05100b 45%, #081a12 100%) !important;
 }
 
 /* ---- Title bar (top strip): dark, no glass. */
