@@ -74,6 +74,10 @@
   --ej-bar-sheen-period: 3.5s;
   /* Thickness of the download bar on the game page (Hydra's own is 3px). */
   --ej-game-progress-height: 8px;
+  /* Picture along the bottom of the top header bar (600x70 inline SVG tile,
+     repeated sideways: jungle canopy with palms). Swap the url() for another
+     tile, or set it to none. */
+  --ej-header-picture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 70'%3E%3Cpath d='M0 46Q19 28 38 47Q53 34 68 45Q90 24 112 48Q129 32 146 46Q166 26 186 47Q200 35 214 45Q237 22 260 48Q278 30 296 46Q312 34 328 47Q349 25 370 46Q385 33 400 48Q422 27 444 46Q462 31 480 47Q500 24 520 45Q540 29 560 47Q580 30 600 46V70H0Z' fill='%2317694b'/%3E%3Cg fill='none' stroke-linecap='round' stroke='%231f8a63'%3E%3Cpath d='M118 64Q120 46 125 27M352 64Q350 48 345 31M505 64Q507 47 512 29' stroke-width='2.4'/%3E%3Cpath d='M125 27Q116 19.8 107 25.2M125 27Q117.8 14.4 108.8 14.4M125 27Q125.9 16.2 131.3 12.6M125 27Q134 18.9 143 21.6M125 27Q134 26.1 140.3 32.4M125 27Q117.8 27 112.4 33.3M345 31Q352.5 25 360 29.5M345 31Q351 20.5 358.5 20.5M345 31Q344.3 22 339.8 19M345 31Q337.5 24.3 330 26.5M345 31Q337.5 30.3 332.3 35.5M345 31Q351 31 355.5 36.3M512 29Q503.5 22.2 495 27.3M512 29Q505.2 17.1 496.7 17.1M512 29Q512.9 18.8 518 15.4M512 29Q520.5 21.4 529 23.9M512 29Q520.5 28.2 526.5 34.1M512 29Q505.2 29 500.1 35' stroke-width='2.6'/%3E%3C/g%3E%3Cpath d='M0 60Q25 46 50 61Q68 52 86 60Q115 44 144 62Q164 50 184 60Q210 45 236 61Q258 51 280 60Q310 43 340 62Q359 52 378 60Q405 46 432 61Q453 50 474 60Q504 47 534 61Q567 45 600 60V70H0Z' fill='%23082119'/%3E%3C/svg%3E");
   /* Picture for empty states (150x60 inline SVG: a gold sun over the
      jungle). Swap the url() for any other image. */
   --ej-empty-picture: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 60'%3E%3Ccircle cx='78' cy='32' r='16' fill='%23e0b64a'/%3E%3Cpath d='M0 50Q22 36 44 46T88 44T130 42T150 47V60H0Z' fill='%2317694b'/%3E%3Cpath d='M0 56Q30 45 60 52T118 50T150 54V60H0Z' fill='%230f4a35'/%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M36 55Q38 40 43 28' stroke='%230f4a35' stroke-width='2.2'/%3E%3Cpath d='M43 28Q34 22 26 27M43 28Q36 17 27 17M43 28Q44 18 50 13M43 28Q51 20 60 22M43 28Q52 27 58 33' stroke='%231db980' stroke-width='2.4'/%3E%3Cpath d='M112 56Q111 44 107 35' stroke='%230f4a35' stroke-width='2'/%3E%3Cpath d='M107 35Q115 30 122 34M107 35Q113 25 121 25M107 35Q106 26 101 22M107 35Q99 29 92 32M107 35Q99 35 95 40' stroke='%231db980' stroke-width='2.2'/%3E%3C/g%3E%3C/svg%3E");
@@ -948,13 +952,32 @@ video::-webkit-media-controls-timeline {
   border-radius: 0 4px 4px 0;
 }
 
-/* Top header bar (every page): emerald, like the active toggle. */
+/* Top header bar (every page): emerald, like the active toggle, with a jungle
+   skyline along its bottom edge. Layers, top to bottom: a dark fade on the
+   left so the title stays readable; the canopy tile (--ej-header-picture),
+   repeated sideways at the bar's height; a gold sun with a soft halo, half
+   hidden behind the canopy; the emerald fill itself. */
 .header {
-  background: linear-gradient(
-    180deg,
-    rgba(29, 185, 128, 0.3) 0%,
-    rgba(12, 61, 44, 0.55) 100%
-  ) !important;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 30, 22, 0.92) 0%,
+      rgba(8, 30, 22, 0.6) 22%,
+      rgba(8, 30, 22, 0) 50%
+    ),
+    var(--ej-header-picture) left bottom / auto 100% repeat-x,
+    radial-gradient(
+      circle at 72% 46%,
+      var(--ej-gold) 0,
+      var(--ej-gold) 15px,
+      rgba(224, 182, 74, 0.28) 16.5px,
+      transparent 70px
+    ),
+    linear-gradient(
+      180deg,
+      rgba(29, 185, 128, 0.3) 0%,
+      rgba(12, 61, 44, 0.55) 100%
+    ) !important;
   backdrop-filter: blur(14px) saturate(1.1) !important;
   -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
   border-bottom: 1px solid var(--ej-gold-line) !important;
