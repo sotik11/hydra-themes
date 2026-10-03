@@ -1,4 +1,4 @@
-# Emerald Jungle — v1.1
+# Emerald Jungle — v1.2
 
 A dark emerald theme with gold accents for Hydra Launcher.
 
