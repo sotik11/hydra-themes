@@ -841,12 +841,14 @@ video::-webkit-media-controls-timeline {
 }
 
 /* Sort dropdown (library "Sort by"): emerald hover + gold stripe on the
-   selected radio item (Radix marks it data-state="checked"). */
+   selected radio item (Radix marks it data-state="checked"). The selected
+   item of the library source dropdown gets the same stripe. */
 .library-select__item:hover,
 .library-select__item[data-highlighted] {
   background-color: var(--ej-menu-fill) !important;
 }
-.library-select__item[data-state="checked"] {
+.library-select__item[data-state="checked"],
+.library-multi-select__item[data-state="checked"] {
   background-color: var(--ej-menu-fill) !important;
   box-shadow: inset 3px 0 0 var(--ej-gold) !important;
 }
