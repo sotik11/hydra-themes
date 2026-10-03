@@ -35,16 +35,10 @@
   --ej-selected-fill: linear-gradient(90deg, #0f4a35 0%, #17895f 55%, #b8943a 100%);
   --ej-selected-outline: rgba(64, 214, 156, 0.85);
   --ej-selected-glow: rgba(127, 224, 163, 0.35);
-  /* Background of the profile dropdown menu (top-left of the window). */
-  --ej-profile-menu-fill:
-    radial-gradient(90% 45% at 100% 0%, rgba(184, 148, 58, 0.16), transparent 70%),
-    linear-gradient(
-      180deg,
-      rgba(31, 128, 92, 0.85) 0%,
-      rgba(18, 72, 54, 0.85) 28%,
-      rgba(10, 22, 17, 0.88) 62%,
-      rgba(7, 11, 9, 0.9) 100%
-    );
+  /* Background of the profile dropdown menu (top-left of the window): a small
+     picture stretched over the menu — emerald on the top left, a hint of gold
+     on the top right, near-black below. Swap the url() for another image. */
+  --ej-profile-menu-fill: url("data:image/webp;base64,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");
   /* The Play button on the game page: the same idea with more gold in it. */
   --ej-play-fill: linear-gradient(90deg, #17895f 0%, #7f9d49 45%, #d4ad42 100%);
   /* Emerald outline of sections, cards and strips. */
@@ -634,11 +628,11 @@ video::-webkit-media-controls-timeline {
 /* Profile dropdown: drop it a touch below the green seam (top:100% puts it
    flush on the border). Its background is the look the stock glass gets when
    it opens over a selected sidebar row — emerald at the top (with a hint of
-   gold on the right) melting into near-black — made permanent, whatever is
-   underneath. Hydra's own blur stays. */
+   gold on the right) melting into near-black — made permanent: a picture of
+   exactly that, stretched to the menu. */
 .sidebar-profile__dropdown {
   margin-top: 4px !important;
-  background: var(--ej-profile-menu-fill) !important;
+  background: #0a0f0c var(--ej-profile-menu-fill) center / 100% 100% no-repeat !important;
 }
 /* Its items hover like the sidebar rows (active-toggle look); "Sign out"
    keeps its red. */
