@@ -104,6 +104,25 @@ body {
   border-radius: var(--ej-active-radius) !important;
   color: var(--ej-active-text) !important;
 }
+/* ...and the sheen crosses the row once when the pointer enters it (same
+   highlight as on the covers). */
+.sidebar__menu-item {
+  position: relative;
+  overflow: hidden;
+}
+.sidebar__menu-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+  transition: none;
+}
+.sidebar__menu-item:hover::after {
+  transform: translateX(130%);
+  transition: transform var(--ej-sheen-duration) ease-in-out;
+}
 /* The selected row: the same, plus the gold accent bar. */
 .sidebar__menu-item--active {
   box-shadow:
