@@ -36,14 +36,11 @@ colours (emerald fills, outlines, gold) as variables, if you want to retint it.
 
 ## Artwork
 
-The pictures in the sidebar profile block, the "Released / Publisher" strip and the
-section headers (night rainforest, small WebP images) and the night sky behind the
-Downloads page (inline SVG) are embedded in `theme.css` as `--ej-*` variables at its top.
-The scenery is made for this theme. The animal and plant silhouettes come from
-[PhyloPic](https://www.phylopic.org) — only images released under CC0 1.0 or the Public
-Domain Mark, simplified to fit — with thanks to their contributors: Margot Michaud,
-Myriam Ramirez, Yan Wong, Xavier A. Jenkins, Lucas Damásio, Steven Traver, Beth Reinke,
-Jack Mayer Wood, Ferran Sayol, Andy Wilson, Mason McNair and others.
+The sunset picture in the sidebar profile block and the night sky behind the Downloads
+and game pages are inline SVG, embedded in `theme.css` as `--ej-*` variables at its top.
+Both are drawn for this theme. The palm silhouettes on the night-sky horizon come from
+[PhyloPic](https://www.phylopic.org) — images released under CC0 1.0 or the Public Domain
+Mark, simplified to fit (Sabal causiarum by Mason McNair; Cocos nucifera).
 
 ## Store (hydrathemes.shop)
 
