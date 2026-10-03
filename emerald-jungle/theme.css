@@ -865,6 +865,14 @@ video::-webkit-media-controls-timeline {
 .profile-content__tab-underline {
   background: var(--ej-gold) !important;
 }
+/* Counters in the section headers of the catalogue filters and the profile
+   column: the same emerald counter. */
+.filter-section__header-count,
+.profile-section__count {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
 /* Game options modal, asset tabs (Icon / Logo / Banner / Cover): same gold
    underline on the active tab. */
 .game-assets-settings__asset-tab-underline {
