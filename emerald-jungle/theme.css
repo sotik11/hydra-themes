@@ -935,6 +935,11 @@ video::-webkit-media-controls-timeline {
   transform: skewX(-25deg);
   animation: ej-bar-sheen var(--ej-bar-sheen-period) ease-in-out infinite;
 }
+/* The small bars belong to paused and waiting downloads (the one in progress
+   has the big bar), so nothing runs along them. */
+.download-group__progress-bar--small .download-group__progress-fill::after {
+  display: none;
+}
 /* One pass takes the first 40% of the period, the rest is a pause. */
 @keyframes ej-bar-sheen {
   0% {
