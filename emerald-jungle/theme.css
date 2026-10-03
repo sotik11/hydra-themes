@@ -657,16 +657,21 @@ video::-webkit-media-controls-timeline {
 
 /* Collections dropdown: emerald hover, and a gold left stripe on the active
    item (this menu marks it with a class, so no code change needed). Undo the
-   gold outline the trigger button inherited from .button--outline. */
+   gold outline the trigger button inherited from .button--outline. The
+   library source dropdown next to it ("All libraries") takes the same frame
+   and the same emerald highlight. */
 .collections-filter__item:hover,
-.collections-filter__item:focus {
+.collections-filter__item:focus,
+.library-multi-select__item:hover,
+.library-multi-select__item[data-highlighted] {
   background-color: var(--ej-menu-fill) !important;
 }
 .collections-filter__item--active {
   background-color: var(--ej-menu-fill) !important;
   box-shadow: inset 3px 0 0 var(--ej-gold) !important;
 }
-.collections-filter__trigger {
+.collections-filter__trigger,
+.library-multi-select__trigger {
   border-color: rgba(31, 185, 128, 0.25) !important;
 }
 
