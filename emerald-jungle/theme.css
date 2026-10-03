@@ -241,6 +241,18 @@ body {
 .sidebar__menu-item--active .sidebar__menu-item-button {
   font-weight: 600 !important;
 }
+/* Game list markers at rest: the favourite heart is red (Hydra's error red,
+   as on "Sign out"), the installed tick is emerald. On a hovered or selected
+   row both stay white, as Hydra draws them. */
+.sidebar__menu-item:not(:hover):not(.sidebar__menu-item--active)
+  .sidebar__game-favorite-icon {
+  color: #e11d48 !important;
+  opacity: 1 !important;
+}
+.sidebar__menu-item:not(:hover):not(.sidebar__menu-item--active)
+  .sidebar__game-installed-icon {
+  color: #1db980 !important;
+}
 
 /* ---- Buttons --------------------------------------------------------- */
 /* Pill shape for a softer, more modern look */
