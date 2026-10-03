@@ -50,6 +50,8 @@
   --ej-gold: #e0b64a;
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
+  /* Silver hairlines: dividers between the sections of a settings page. */
+  --ej-silver-line: rgba(200, 208, 216, 0.5);
   /* Earned-points progress fill. Once everything is earned the fill and the
      outline turn gold (a touch dimmer than --ej-gold) and the text and icon
      switch to the dark tone. */
@@ -773,6 +775,11 @@ video::-webkit-media-controls-timeline {
 /* Divider between the settings nav groups: gold. */
 .settings__sidebar-divider {
   background: var(--ej-gold-line) !important;
+}
+/* Dividers between the sections of a settings page: the same hairline, in
+   silver. */
+.settings-context-panel__divider {
+  border-top-color: var(--ej-silver-line) !important;
 }
 
 /* Profile "Change banner" menu: hovered/focused item looks like a sidebar
