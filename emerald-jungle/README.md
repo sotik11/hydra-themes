@@ -42,6 +42,10 @@ Both are drawn for this theme. The palm silhouettes on the night-sky horizon com
 [PhyloPic](https://www.phylopic.org) — images released under CC0 1.0 or the Public Domain
 Mark, simplified to fit (Sabal causiarum by Mason McNair; Cocos nucifera).
 
+The header title is set in [Sora](https://fonts.google.com/specimen/Sora) ExtraBold
+(Latin subset), embedded in `theme.css` — © The Sora Project Authors, SIL Open Font
+License 1.1. Sora has no Cyrillic; titles in other scripts use Hydra's own font.
+
 ## Store (hydrathemes.shop)
 
 Themes reach the store through a pull request to
