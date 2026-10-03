@@ -793,14 +793,15 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
-/* Sidebar search field: thin white ring (inset = no layout shift); gold while
-   hovered or focused. */
+/* Sidebar search field: thin white ring (inset = no layout shift); the ring
+   turns gold while hovered or focused (Hydra's own border is hidden then, so
+   the line stays 1px). */
 .sidebar__search-row .text-field-container__text-field {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
 }
 .sidebar__search-row .text-field-container__text-field:hover,
 .sidebar__search-row .text-field-container__text-field--focused {
-  border-color: var(--ej-gold-line) !important;
+  border-color: transparent !important;
   box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
 }
 
