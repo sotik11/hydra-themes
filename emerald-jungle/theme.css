@@ -54,6 +54,9 @@
   /* ...and its distance from the left and right edges of the sidebar (Hydra's
      own is 16px; smaller = wider menu). */
   --ej-profile-menu-inset: 8px;
+  /* The header title: the same emerald → gold run in the palette's light
+     tones (the row's dark start would vanish on the dark bar). */
+  --ej-title-fill: linear-gradient(90deg, #1db980 0%, #e0b64a 100%);
   /* The Play button on the game page: the same idea with more gold in it. */
   --ej-play-fill: linear-gradient(90deg, #17895f 0%, #7f9d49 45%, #d4ad42 100%);
   /* Emerald outline of sections, cards and strips. */
@@ -1072,13 +1075,23 @@ video::-webkit-media-controls-timeline {
   border-bottom: 1px solid var(--ej-gold-line) !important;
 }
 /* Its title (page or game name): Sora ExtraBold, larger, capitals, slightly
-   spaced. */
+   spaced, and painted with the emerald → gold run of the selected sidebar row
+   (--ej-title-fill). The title shrinks to its text, so every title runs the
+   whole way from emerald to gold; Hydra's own width limit still cuts long
+   ones with an ellipsis. */
 .header__title {
   font-family: "Sora", "Noto Sans", sans-serif !important;
   font-size: 1.5em !important;
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
+  width: fit-content !important;
+  max-width: calc(100% - 28px) !important;
+  background: var(--ej-title-fill) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
 }
 
 /* ---- Settings: active theme card = frosted glass --------------------- */
