@@ -593,6 +593,13 @@ video::-webkit-media-controls-timeline {
   border-radius: 12px !important;
   padding: 12px 16px !important;
 }
+/* "Similar games" covers: the same emerald frame as the review cards. The
+   cover is clipped to the rounded corners. */
+.similar-games__card {
+  border: 1px solid rgba(31, 185, 128, 0.25) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
 /* Replies under a review: glass cards (emerald tint, hairline, top highlight),
    so they read as nested inside the black review card. No blur — the page
    behind is flat. */
