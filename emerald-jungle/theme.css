@@ -87,7 +87,7 @@
   --ej-notification-sheen-period: 3.5s;
   /* Thickness of the download bar on the game page (Hydra's own is 3px). */
   --ej-game-progress-height: 8px;
-  /* Night-sky page background (Downloads and the game page), in four pieces:
+  /* Night-sky page background (the Downloads page), in four pieces:
      the horizon (4000x220 inline SVG, shown once along the bottom edge: a hazy
      far ridge, a thin mist, a dark tree line with a few palms, fireflies), the
      moon, and two sparse star tiles. Set a piece to none to drop it. */
@@ -128,14 +128,13 @@ body {
     #0a0f0c 62%
   ) !important;
 }
-/* Downloads and the game page get a night sky instead: near-black at the top
+/* The Downloads page gets a night sky instead: near-black at the top
    melting into deep emerald, sparse stars, a pale moon on the right, and the
    jungle horizon along the bottom with an emerald haze above it. The content
    area is the scrolling box itself, so the sky stays put while the page
    scrolls. Layers, top to bottom. */
 .container__content:has(.downloads__container),
-.container__content:has(.downloads__no-downloads),
-.container__content:has(.game-details__wrapper) {
+.container__content:has(.downloads__no-downloads) {
   background:
     var(--ej-night-horizon) center bottom / auto 24vh no-repeat,
     linear-gradient(
