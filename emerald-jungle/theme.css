@@ -30,6 +30,11 @@
   --ej-active-outline: rgba(31, 185, 128, 0.4);
   --ej-active-text: #fafafa;
   --ej-active-radius: 7px;
+  /* The selected sidebar row (current page / current game): gradient fill,
+     outline and inner glow. */
+  --ej-selected-fill: linear-gradient(90deg, #0f4a35 0%, #17895f 55%, #b8943a 100%);
+  --ej-selected-outline: rgba(64, 214, 156, 0.85);
+  --ej-selected-glow: rgba(127, 224, 163, 0.35);
   /* Emerald outline of sections, cards and strips. */
   --ej-outline: rgba(31, 185, 128, 0.35);
   /* Hover/selected fill of dropdown and settings menu items. */
@@ -123,11 +128,18 @@ body {
   transform: translateX(130%);
   transition: transform var(--ej-sheen-duration) ease-in-out;
 }
-/* The selected row: the same, plus the gold accent bar. */
+/* The selected row stands apart from a hovered one: a deep-emerald → emerald
+   → gold gradient, a bright outline with a soft inner glow, white bold
+   label. (The glow is inset: the list clips anything drawn outside a row.) */
 .sidebar__menu-item--active {
+  background: var(--ej-selected-fill) !important;
   box-shadow:
-    inset 3px 0 0 var(--ej-gold),
-    inset 0 0 0 1px var(--ej-active-outline) !important;
+    inset 0 0 0 1px var(--ej-selected-outline),
+    inset 0 0 12px var(--ej-selected-glow) !important;
+  color: #ffffff !important;
+}
+.sidebar__menu-item--active .sidebar__menu-item-button {
+  font-weight: 600 !important;
 }
 
 /* ---- Buttons --------------------------------------------------------- */
