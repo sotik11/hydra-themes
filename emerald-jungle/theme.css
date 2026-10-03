@@ -187,11 +187,15 @@ body {
   background: rgba(0, 0, 0, 0.5) !important;
 }
 /* Play / Download is the main action of the page, so it stands out from its
-   neighbours: emerald fill, gold outline, a soft emerald halo, bold caps.
-   The button has no class of its own — it is told by its icon. */
+   neighbours: the emerald → gold fill of the selected sidebar row, gold
+   outline, a soft emerald halo, bold caps (with a faint shadow, to stay
+   readable over the gold end). The sheen crosses it on hover, as on the
+   covers. The button has no class of its own — it is told by its icon. */
 .hero-panel-actions__action:has(.octicon-play),
 .hero-panel-actions__action:has(.octicon-download) {
-  background: linear-gradient(135deg, #1db980, #12996a) !important;
+  position: relative;
+  overflow: hidden;
+  background: var(--ej-selected-fill) !important;
   border-color: var(--ej-gold) !important;
   box-shadow:
     0 0 10px 0 rgba(0, 0, 0, 0.8),
@@ -200,10 +204,27 @@ body {
   font-weight: 700 !important;
   letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
 .hero-panel-actions__action:has(.octicon-play):hover,
 .hero-panel-actions__action:has(.octicon-download):hover {
-  background: linear-gradient(135deg, #25cf91, #17a876) !important;
+  background: var(--ej-selected-fill) !important;
+  filter: brightness(1.12);
+}
+.hero-panel-actions__action:has(.octicon-play)::after,
+.hero-panel-actions__action:has(.octicon-download)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+  transition: none;
+}
+.hero-panel-actions__action:has(.octicon-play):hover::after,
+.hero-panel-actions__action:has(.octicon-download):hover::after {
+  transform: translateX(130%);
+  transition: transform var(--ej-sheen-duration) ease-in-out;
 }
 /* Hydra's own hero buttons (edit / cloud save) get the same gold outline on
    hover that the action buttons inherit from .button--outline. */
