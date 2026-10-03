@@ -80,6 +80,8 @@
      highlight runs along it (one pass takes 40% of the period). */
   --ej-download-fill: linear-gradient(90deg, #e9fff4 0%, #7fe0a3 10%, #1db980 55%, #12996a 100%);
   --ej-bar-sheen-period: 5s;
+  /* The same for the achievement pop-up (one pass takes 45% of the period). */
+  --ej-notification-sheen-period: 3.5s;
   /* Thickness of the download bar on the game page (Hydra's own is 3px). */
   --ej-game-progress-height: 8px;
   /* Picture along the bottom of the top header bar (600x70 inline SVG tile,
@@ -1035,8 +1037,8 @@ video::-webkit-media-controls-timeline {
 }
 
 /* ---- Achievement notification (the unlock pop-up) ---------------------- */
-/* Colours only: sizes, positions and every animation (slide-in, rare shine,
-   trophy overlay) stay Hydra's own. */
+/* Colours, plus the theme's sheen (below): sizes, positions and Hydra's own
+   animations (slide-in, rare shine, trophy overlay) are left as they are. */
 .achievement-notification__outer-container {
   border: 1px solid var(--ej-outline) !important;
   border-radius: 8px !important;
@@ -1069,6 +1071,30 @@ video::-webkit-media-controls-timeline {
 }
 .achievement-notification__chip {
   background: #1db980 !important;
+}
+/* The sheen runs across the pop-up while it is on screen: the first pass
+   starts once the box has unfolded (Hydra's intro takes 1.35s), then it
+   repeats. It is clipped by the outer container. */
+.achievement-notification__container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+  animation: ej-notification-sheen var(--ej-notification-sheen-period)
+    ease-in-out 1350ms infinite backwards;
+}
+/* One pass takes the first 45% of the period, the rest is a pause. */
+@keyframes ej-notification-sheen {
+  0% {
+    transform: translateX(-130%);
+  }
+  45%,
+  100% {
+    transform: translateX(130%);
+  }
 }
 
 /* ---- Big banner (game + profile) — heights live in :root at the top ---- */
