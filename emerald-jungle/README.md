@@ -36,9 +36,9 @@ colours (emerald fills, outlines, gold) as variables, if you want to retint it.
 
 ## Artwork
 
-The pictures in the top strip, the "Released / Publisher" strip and the section
-headers (night rainforest, small WebP images) and the night sky behind the Downloads
-and game pages (inline SVG) are embedded in `theme.css` as `--ej-*` variables at its top.
+The pictures in the sidebar profile block, the "Released / Publisher" strip and the
+section headers (night rainforest, small WebP images) and the night sky behind the
+Downloads page (inline SVG) are embedded in `theme.css` as `--ej-*` variables at its top.
 The scenery is made for this theme. The animal and plant silhouettes come from
 [PhyloPic](https://www.phylopic.org) — only images released under CC0 1.0 or the Public
 Domain Mark, simplified to fit — with thanks to their contributors: Margot Michaud,
