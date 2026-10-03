@@ -1143,6 +1143,19 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-solid-fill-hover) !important;
   box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
 }
+/* The action buttons on the right of the bar (add a game, refresh...): the
+   same round badge, at Hydra's own size, with the same hover. */
+.header__action-button {
+  border-radius: 50% !important;
+  border-color: transparent !important;
+  background-color: var(--ej-solid-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+  color: var(--ej-gold) !important;
+}
+.header__action-button:hover {
+  background-color: var(--ej-solid-fill-hover) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+}
 .header__title--has-back-button {
   transform: translateX(40px) !important;
   max-width: calc(100% - 40px) !important;
