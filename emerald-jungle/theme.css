@@ -35,6 +35,16 @@
   --ej-selected-fill: linear-gradient(90deg, #0f4a35 0%, #17895f 55%, #b8943a 100%);
   --ej-selected-outline: rgba(64, 214, 156, 0.85);
   --ej-selected-glow: rgba(127, 224, 163, 0.35);
+  /* Background of the profile dropdown menu (top-left of the window). */
+  --ej-profile-menu-fill:
+    radial-gradient(90% 45% at 100% 0%, rgba(184, 148, 58, 0.16), transparent 70%),
+    linear-gradient(
+      180deg,
+      rgba(31, 128, 92, 0.85) 0%,
+      rgba(18, 72, 54, 0.85) 28%,
+      rgba(10, 22, 17, 0.88) 62%,
+      rgba(7, 11, 9, 0.9) 100%
+    );
   /* The Play button on the game page: the same idea with more gold in it. */
   --ej-play-fill: linear-gradient(90deg, #17895f 0%, #7f9d49 45%, #d4ad42 100%);
   /* Emerald outline of sections, cards and strips. */
@@ -622,9 +632,13 @@ video::-webkit-media-controls-timeline {
     inset 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
 }
 /* Profile dropdown: drop it a touch below the green seam (top:100% puts it
-   flush on the border). */
+   flush on the border). Its background is the look the stock glass gets when
+   it opens over a selected sidebar row — emerald at the top (with a hint of
+   gold on the right) melting into near-black — made permanent, whatever is
+   underneath. Hydra's own blur stays. */
 .sidebar-profile__dropdown {
   margin-top: 4px !important;
+  background: var(--ej-profile-menu-fill) !important;
 }
 /* Its items hover like the sidebar rows (active-toggle look); "Sign out"
    keeps its red. */
