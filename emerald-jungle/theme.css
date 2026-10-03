@@ -416,7 +416,8 @@ video::-webkit-media-controls-timeline {
   filter: sepia(1) saturate(9) hue-rotate(-18deg) brightness(0.86);
 }
 
-/* ---- Library grid cards: rounding + emerald hover glow --------------- */
+/* ---- Library grid cards: rounding + emerald hover glow (the hover zoom is
+   Hydra's own) ----------------------------------------------------------- */
 .library-game-card,
 .library-game-card-large {
   border-radius: 10px !important;
@@ -429,13 +430,12 @@ video::-webkit-media-controls-timeline {
   box-shadow:
     0 6px 20px var(--ej-menu-fill),
     inset 0 0 0 1px rgba(224, 182, 74, 0.45) !important;
-  transform: translateY(-2px) !important;
 }
 
 /* ---- Cover sheen ------------------------------------------------------ */
 /* Home, library, profile and "Similar games" covers: when the pointer enters, a soft diagonal
    highlight crosses the cover once (no loop) and the card lifts a little
-   ("Similar games" covers keep Hydra's own zoom instead of the lift). The
+   (library and "Similar games" covers zoom instead of lifting). The
    highlight waits off-canvas on the left and snaps back without a transition,
    so it never runs backwards on leave. */
 .game-card,
@@ -465,9 +465,13 @@ video::-webkit-media-controls-timeline {
   transition: transform var(--ej-sheen-duration) ease-in-out;
 }
 .game-card:hover,
-.library-game-card__wrapper:hover,
 .user-library-game__wrapper:hover {
   transform: translateY(-3px);
+}
+/* Library covers zoom instead, by the same amount as the "Similar games"
+   covers on the game page. */
+.library-game-card__wrapper:hover {
+  transform: scale(1.05);
 }
 
 /* ---- Bottom panel ---------------------------------------------------- */
