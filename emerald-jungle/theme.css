@@ -420,16 +420,36 @@ video::-webkit-media-controls-timeline {
 }
 
 /* Section headers (catalogue filters, game sidebar, profile) get an opaque
-   emerald fill — over the dark app background plain glass reads as black. */
+   emerald fill — over the dark app background plain glass reads as black —
+   with the jungle skyline of the top header bar on it. Layers, top to bottom:
+   a dark fade on the left, under the section title; the canopy tile
+   (--ej-header-picture) at the header's height; a small gold sun; the fill.
+   Hover only swaps the fill (--ej-section-fill), the picture stays. */
 .filter-section__button,
 .sidebar-section__header,
 .profile-section__header {
-  background: var(--ej-header-fill) !important;
+  --ej-section-fill: var(--ej-header-fill);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 30, 22, 0.92) 0%,
+      rgba(8, 30, 22, 0.55) 30%,
+      rgba(8, 30, 22, 0) 60%
+    ),
+    var(--ej-header-picture) right bottom / auto 100% repeat-x,
+    radial-gradient(
+      circle at 82% 46%,
+      var(--ej-gold) 0,
+      var(--ej-gold) 11px,
+      rgba(224, 182, 74, 0.28) 12.5px,
+      transparent 50px
+    ),
+    var(--ej-section-fill) !important;
 }
 .filter-section__button:hover,
 .sidebar-section__header:hover,
 .profile-section__header:hover {
-  background: var(--ej-header-fill-hover) !important;
+  --ej-section-fill: var(--ej-header-fill-hover);
 }
 
 /* Lift collapsible sections off the page: stronger outline and a gold hairline
