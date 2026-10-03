@@ -68,6 +68,10 @@
   );
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.1s;
+  /* Download bar on the Downloads page: its fill, and how often the
+     highlight runs along it. */
+  --ej-download-fill: linear-gradient(90deg, #e9fff4 0%, #7fe0a3 10%, #1db980 55%, #12996a 100%);
+  --ej-bar-sheen-period: 3.5s;
 }
 
 /* ---- App background -------------------------------------------------- */
@@ -838,6 +842,43 @@ video::-webkit-media-controls-timeline {
 .console-card:hover {
   background: rgba(31, 185, 128, 0.12) !important;
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.5) !important;
+}
+
+/* ---- Download progress ------------------------------------------------ */
+/* Downloads page (the big bar and the small ones in the queue): the white
+   fill becomes a mint → emerald gradient, like Hydra's bar for a fully
+   completed game, and a highlight runs along it every few seconds. */
+.download-group__progress-fill {
+  position: relative;
+  overflow: hidden;
+  background: var(--ej-download-fill) !important;
+}
+.download-group__progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -90px;
+  width: 90px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: ej-bar-sheen var(--ej-bar-sheen-period) ease-in-out infinite;
+}
+/* One pass takes the first 40% of the period, the rest is a pause. */
+@keyframes ej-bar-sheen {
+  0% {
+    left: -90px;
+  }
+  40%,
+  100% {
+    left: 100%;
+  }
 }
 
 /* Top header bar (every page): emerald, like the active toggle. */
