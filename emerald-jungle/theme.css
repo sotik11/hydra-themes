@@ -192,13 +192,13 @@ body {
 .hero-panel-actions__action:hover {
   background: rgba(0, 0, 0, 0.5) !important;
 }
-/* Play / Download is the main action of the page, so it stands out from its
-   neighbours: the emerald → gold fill of the selected sidebar row, gold
-   outline, a soft emerald halo, bold caps (with a faint shadow, to stay
-   readable over the gold end). The sheen crosses it on hover, as on the
-   covers. The button has no class of its own — it is told by its icon. */
-.hero-panel-actions__action:has(.octicon-play),
-.hero-panel-actions__action:has(.octicon-download) {
+/* Play is the main action of the page, so it stands out from its neighbours
+   (Download stays a plain button): the emerald → gold fill of the selected
+   sidebar row, gold outline, a soft emerald halo, bold caps (with a faint
+   shadow, to stay readable over the gold end). The sheen crosses it on hover,
+   as on the covers. The button has no class of its own — it is told by its
+   icon. */
+.hero-panel-actions__action:has(.octicon-play) {
   position: relative;
   overflow: hidden;
   background: var(--ej-selected-fill) !important;
@@ -212,13 +212,11 @@ body {
   text-transform: uppercase !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
-.hero-panel-actions__action:has(.octicon-play):hover,
-.hero-panel-actions__action:has(.octicon-download):hover {
+.hero-panel-actions__action:has(.octicon-play):hover {
   background: var(--ej-selected-fill) !important;
   filter: brightness(1.12);
 }
-.hero-panel-actions__action:has(.octicon-play)::after,
-.hero-panel-actions__action:has(.octicon-download)::after {
+.hero-panel-actions__action:has(.octicon-play)::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -227,8 +225,7 @@ body {
   transform: translateX(-130%);
   transition: none;
 }
-.hero-panel-actions__action:has(.octicon-play):hover::after,
-.hero-panel-actions__action:has(.octicon-download):hover::after {
+.hero-panel-actions__action:has(.octicon-play):hover::after {
   transform: translateX(130%);
   transition: transform var(--ej-sheen-duration) ease-in-out;
 }
