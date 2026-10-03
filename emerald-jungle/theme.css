@@ -241,17 +241,17 @@ body {
 .sidebar__menu-item--active .sidebar__menu-item-button {
   font-weight: 600 !important;
 }
-/* Game list markers at rest: the favourite heart is a soft red, the installed
-   tick a soft green — muted pastel tones, easy on the eye in a long list. On
+/* Game list markers at rest: the favourite heart is a softened red, the installed
+   tick a softened green — halfway between the vivid and the pastel tones. On
    a hovered or selected row both stay white, as Hydra draws them. */
 .sidebar__menu-item:not(:hover):not(.sidebar__menu-item--active)
   .sidebar__game-favorite-icon {
-  color: #eb7a7a !important;
+  color: #e64c61 !important;
   opacity: 1 !important;
 }
 .sidebar__menu-item:not(:hover):not(.sidebar__menu-item--active)
   .sidebar__game-installed-icon {
-  color: #6fcf97 !important;
+  color: #46c48c !important;
 }
 
 /* ---- Buttons --------------------------------------------------------- */
