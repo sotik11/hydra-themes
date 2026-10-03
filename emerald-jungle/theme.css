@@ -67,11 +67,11 @@
     transparent 64%
   );
   /* How long one pass of the sheen takes. */
-  --ej-sheen-duration: 1.1s;
+  --ej-sheen-duration: 1.6s;
   /* Download bar on the Downloads page: its fill, and how often the
-     highlight runs along it. */
+     highlight runs along it (one pass takes 40% of the period). */
   --ej-download-fill: linear-gradient(90deg, #e9fff4 0%, #7fe0a3 10%, #1db980 55%, #12996a 100%);
-  --ej-bar-sheen-period: 3.5s;
+  --ej-bar-sheen-period: 5s;
   /* Thickness of the download bar on the game page (Hydra's own is 3px). */
   --ej-game-progress-height: 8px;
   /* Picture along the bottom of the top header bar (600x70 inline SVG tile,
