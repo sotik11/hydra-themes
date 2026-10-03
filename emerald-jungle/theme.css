@@ -912,6 +912,11 @@ video::-webkit-media-controls-timeline {
 .game-assets-settings__asset-tab-underline {
   background: var(--ej-gold) !important;
 }
+/* The fork's mods modal (Popular / New / Updated): there the underline is the
+   active tab's own bottom border. */
+.mods-modal__tab--active {
+  border-bottom-color: var(--ej-gold) !important;
+}
 
 /* Profile filters (library / souvenirs tabs): framed like the catalogue and
    library toggles, with the current value as the emerald "active segment";
