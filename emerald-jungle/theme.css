@@ -186,6 +186,25 @@ body {
 .hero-panel-actions__action:hover {
   background: rgba(0, 0, 0, 0.5) !important;
 }
+/* Play / Download is the main action of the page, so it stands out from its
+   neighbours: emerald fill, gold outline, a soft emerald halo, bold caps.
+   The button has no class of its own — it is told by its icon. */
+.hero-panel-actions__action:has(.octicon-play),
+.hero-panel-actions__action:has(.octicon-download) {
+  background: linear-gradient(135deg, #1db980, #12996a) !important;
+  border-color: var(--ej-gold) !important;
+  box-shadow:
+    0 0 10px 0 rgba(0, 0, 0, 0.8),
+    0 0 16px rgba(31, 185, 128, 0.45) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+}
+.hero-panel-actions__action:has(.octicon-play):hover,
+.hero-panel-actions__action:has(.octicon-download):hover {
+  background: linear-gradient(135deg, #25cf91, #17a876) !important;
+}
 /* Hydra's own hero buttons (edit / cloud save) get the same gold outline on
    hover that the action buttons inherit from .button--outline. */
 .game-details__edit-custom-game-button:hover,
