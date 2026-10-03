@@ -34,6 +34,16 @@ The adjustable values sit at the very top of `theme.css`:
 Change the numbers, save the theme, done. The same block also holds the theme's
 colours (emerald fills, outlines, gold) as variables, if you want to retint it.
 
+## Artwork
+
+The pictures in the top strip, the "Released / Publisher" strip and the section
+headers are inline SVG, stored as `--ej-*-picture` variables at the top of `theme.css`.
+The scenery is drawn for this theme. The animal and plant silhouettes come from
+[PhyloPic](https://www.phylopic.org) — only images released under CC0 1.0 or the Public
+Domain Mark, simplified to fit — with thanks to their contributors: Margot Michaud,
+Myriam Ramirez, Yan Wong, Xavier A. Jenkins, Lucas Damásio, Steven Traver, Beth Reinke,
+Jack Mayer Wood, Ferran Sayol, Andy Wilson, Mason McNair and others.
+
 ## Store (hydrathemes.shop)
 
 Themes reach the store through a pull request to
