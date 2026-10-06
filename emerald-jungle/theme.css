@@ -119,11 +119,11 @@
   );
   /* The runner on the frame of the selected game: a light that travels round
      the frame — the colours of its tail and its head, and how often it sets
-     off (a lap takes 68.75% of the period, the rest is a pause: 16s = an 11s
+     off (a lap takes 61.54% of the period, the rest is a pause: 13s = an 8s
      lap and a 5s rest). */
   --ej-frame-runner-tail: #1db980;
   --ej-frame-runner-head: #e0b64a;
-  --ej-frame-runner-period: 16s;
+  --ej-frame-runner-period: 13s;
   /* The shimmer that runs through the name of a hovered game: the text's
      own colour with an emerald → gold wave in the middle. The picture is
      three labels wide, so the wave starts and ends outside the name. */
@@ -331,7 +331,7 @@ body {
    layer masked down to its own edge) with two soft spots painted on it — a
    gold head and, a second behind it, a longer emerald tail. The spots
    travel along the edges at an even pace: top, right, bottom, left. A lap
-   takes 68.75% of the period; then the runner fades out and rests until the
+   takes 61.54% of the period; then the runner fades out and rests until the
    next one. The time each side gets is set for the usual shape of
    a row (about 330 x 38); the positions are registered properties — that is
    what lets them be animated — and the gradients are written here, not in a
@@ -394,22 +394,22 @@ body {
   2% {
     opacity: 1;
   }
-  30.8% {
+  27.6% {
     --ej-runner-head-x: 100%;
     --ej-runner-head-y: 0%;
   }
-  34.4% {
+  30.8% {
     --ej-runner-head-x: 100%;
     --ej-runner-head-y: 100%;
   }
-  65.2% {
+  58.4% {
     --ej-runner-head-x: 0%;
     --ej-runner-head-y: 100%;
   }
-  67% {
+  60% {
     opacity: 1;
   }
-  68.75%,
+  61.54%,
   100% {
     --ej-runner-head-x: 0%;
     --ej-runner-head-y: 0%;
@@ -421,19 +421,19 @@ body {
     --ej-runner-tail-x: 0%;
     --ej-runner-tail-y: 0%;
   }
-  30.8% {
+  27.6% {
     --ej-runner-tail-x: 100%;
     --ej-runner-tail-y: 0%;
   }
-  34.4% {
+  30.8% {
     --ej-runner-tail-x: 100%;
     --ej-runner-tail-y: 100%;
   }
-  65.2% {
+  58.4% {
     --ej-runner-tail-x: 0%;
     --ej-runner-tail-y: 100%;
   }
-  68.75%,
+  61.54%,
   100% {
     --ej-runner-tail-x: 0%;
     --ej-runner-tail-y: 0%;
