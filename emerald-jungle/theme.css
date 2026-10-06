@@ -92,6 +92,17 @@
   /* How faint a locked achievement is, on the achievements page and in the
      block on the game page (1 = as bright as an unlocked one). */
   --ej-locked-achievement-opacity: 0.45;
+  /* Game page action buttons: the colour each one's icon takes on hover —
+     mods (the green of the "installed" tick), localization (the blue of the
+     links in the localization sources settings), favourite (the red of the
+     sidebar heart), pin and wishlist (gold), options (emerald), Steam
+     (Hydra's brand blue). */
+  --ej-action-mods: #46c48c;
+  --ej-action-localization: #1a9fff;
+  --ej-action-favorite: #e64c61;
+  --ej-action-pin: #e0b64a;
+  --ej-action-settings: #1db980;
+  --ej-action-steam: #3e62c0;
   /* Sheen: the soft diagonal highlight that crosses covers and sidebar rows
      on hover. */
   --ej-sheen: linear-gradient(
@@ -647,6 +658,42 @@ body {
 .hero-panel-actions__action:has(.octicon-play):hover::after {
   transform: translateX(130%);
   transition: transform var(--ej-sheen-duration) ease-in-out;
+}
+/* On hover each action button tints its own icon (--ej-action-*). The
+   buttons have no classes of their own, so they are told by their icons; the
+   Steam one is the only icon that is neither an Octicon nor a Lucide icon. */
+.hero-panel-actions__action svg {
+  transition: color 0.2s ease;
+}
+.hero-panel-actions__action:has(.lucide-puzzle):hover:not(:disabled) svg {
+  color: var(--ej-action-mods) !important;
+}
+.hero-panel-actions__action:has(.octicon-globe):hover:not(:disabled) svg {
+  color: var(--ej-action-localization) !important;
+}
+.hero-panel-actions__action:has(.octicon-heart, .octicon-heart-fill):hover:not(
+    :disabled
+  )
+  svg {
+  color: var(--ej-action-favorite) !important;
+}
+.hero-panel-actions__action:has(
+    .octicon-pin,
+    .octicon-pin-slash,
+    .octicon-star,
+    .octicon-star-fill
+  ):hover:not(:disabled)
+  svg {
+  color: var(--ej-action-pin) !important;
+}
+.hero-panel-actions__action:has(.octicon-gear):hover:not(:disabled) svg {
+  color: var(--ej-action-settings) !important;
+}
+.hero-panel-actions__action:has(> svg:not(.octicon):not(.lucide)):hover:not(
+    :disabled
+  )
+  svg {
+  color: var(--ej-action-steam) !important;
 }
 /* Hydra's own hero buttons (edit / cloud save) get the same gold outline on
    hover that the action buttons inherit from .button--outline. */
