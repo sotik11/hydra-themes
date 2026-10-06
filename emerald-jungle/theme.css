@@ -789,7 +789,7 @@ video::-webkit-media-controls-timeline {
 }
 .context-menu__item--active {
   box-shadow:
-    var(--ej-gold-bars),
+    inset 3px 0 0 var(--ej-gold),
     inset 0 0 0 1px var(--ej-active-outline) !important;
 }
 
