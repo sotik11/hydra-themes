@@ -88,6 +88,9 @@
   --ej-beam-duration: 0.9s;
   /* Silver hairlines: dividers between the sections of a settings page. */
   --ej-silver-line: rgba(200, 208, 216, 0.5);
+  /* How faint a locked achievement is on the achievements page (1 = as bright
+     as an unlocked one). */
+  --ej-locked-achievement-opacity: 0.45;
   /* Earned-points progress fill. Once everything is earned the fill and the
      outline turn gold (a touch dimmer than --ej-gold) and the text and icon
      switch to the dark tone. */
@@ -971,6 +974,14 @@ video::-webkit-media-controls-timeline {
   ) {
   background-color: rgba(31, 185, 128, 0.11) !important;
   box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+}
+/* ...and the locked ones are dimmed, so it is clear at a glance what is still
+   to be earned; a hovered row comes back to full strength to be read. */
+.achievements__item:has(.achievements__item-image--locked) {
+  opacity: var(--ej-locked-achievement-opacity) !important;
+}
+.achievements__item:has(.achievements__item-image--locked):hover {
+  opacity: 1 !important;
 }
 
 /* Sort dropdown (library "Sort by"): gold bars on the selected radio item
