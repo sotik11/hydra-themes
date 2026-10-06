@@ -387,9 +387,7 @@ body {
 /* In the game list the line sits under the name: it starts after the icon
    and stops short of the right edge. The row itself loses the emerald
    hover, and there is no sheen across it: the wave runs through the letters
-   of the name instead (--ej-name-shimmer). The line and the wave run
-   together: both take the slow pass's time and ease the same way (the line
-   still leaves quickly). */
+   of the name instead (--ej-name-shimmer). */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -398,8 +396,6 @@ body {
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover
   .sidebar__menu-item-button {
   background-size: calc(100% - 46px) var(--ej-beam-height) !important;
-  transition-duration: var(--ej-sheen-duration-slow), 0.2s !important;
-  transition-timing-function: ease-in-out, ease !important;
 }
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active)::after {
