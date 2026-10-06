@@ -364,7 +364,8 @@ body {
 /* In the game list the line sits under the name: it starts after the icon
    and stops short of the right edge. The row itself loses the emerald
    hover; its sheen is the emerald → gold one (--ej-game-sheen), and the line
-   comes out only after the sheen has passed (it leaves at once, though). */
+   comes out only after the sheen has passed (it leaves at once, though). The
+   selected game keeps the plain sheen. */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -380,7 +381,8 @@ body {
   background-color: transparent !important;
   box-shadow: none !important;
 }
-.sidebar__section--games .sidebar__menu-item::after {
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active)::after {
   background: var(--ej-game-sheen);
 }
 
