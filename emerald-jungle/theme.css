@@ -96,14 +96,14 @@
      download (the green of the wishlist's "now available" badge), mods (the
      orange of Nexus Mods), localization (the blue of the
      links in the localization sources settings), favourite (the red of the
-     sidebar heart), pin and wishlist (gold), options (emerald), Steam
+     sidebar heart), pin and wishlist (gold), options (purple), Steam
      (Hydra's brand blue). */
   --ej-action-download: #4ade80;
   --ej-action-mods: #da8e35;
   --ej-action-localization: #1a9fff;
   --ej-action-favorite: #e64c61;
   --ej-action-pin: #e0b64a;
-  --ej-action-settings: #1db980;
+  --ej-action-settings: #a855f7;
   --ej-action-steam: #3e62c0;
   /* ...and the fill the "remove" button takes on hover (the red of Hydra's
      own delete buttons). */
