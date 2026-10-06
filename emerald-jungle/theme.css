@@ -1083,12 +1083,13 @@ video::-webkit-media-controls-timeline {
     ),
     var(--ej-profile-picture-open) right bottom / auto 100% no-repeat;
 }
-.sidebar-profile:has(.sidebar-profile__button:hover)::before,
+/* The hover picture shows only while the menu is closed — with the menu open
+   the other one takes over, and the two must never be seen at once. */
+.sidebar-profile:has(
+    .sidebar-profile__button:hover:not(.sidebar-profile__button--active)
+  )::before,
 .sidebar-profile:has(.sidebar-profile__button--active)::after {
   opacity: 1;
-}
-.sidebar-profile:has(.sidebar-profile__button--active)::before {
-  opacity: 0;
 }
 .sidebar-profile__button {
   position: relative;
