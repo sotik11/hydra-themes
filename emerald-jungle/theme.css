@@ -277,20 +277,19 @@ body {
 
 /* ---- Hover beam ------------------------------------------------------ */
 /* Game rows and menu items (profile menu, the library and profile
-   dropdowns, the settings tabs) are not filled on hover: a thin line
+   dropdowns) are not filled on hover: a thin line
    runs out from the left under the item instead. The line is a background
    layer of zero width that grows to the full width; a selected item keeps
-   its own look and gets no line. The menu at the top of the sidebar is not
-   part of this — it keeps its emerald hover. */
+   its own look and gets no line. The menu at the top of the sidebar, the
+   context menu and the settings tabs are not part of this — they keep their
+   emerald hover. */
 .sidebar__section--games .sidebar__menu-item-button,
 .sidebar-profile__dropdown-item,
 .sidebar-filter-menu__item,
 .collections-filter__item,
 .library-select__item,
 .library-multi-select__item,
-.filter-dropdown__option,
-.settings__sidebar-button,
-.game-options-modal__sidebar-button {
+.filter-dropdown__option {
   background-image: var(--ej-beam-fill) !important;
   background-repeat: no-repeat !important;
   background-origin: content-box !important;
@@ -317,11 +316,7 @@ body {
 .library-select__item:not([data-state="checked"])[data-highlighted],
 .library-multi-select__item:not([data-state="checked"]):hover,
 .library-multi-select__item:not([data-state="checked"])[data-highlighted],
-.filter-dropdown__option:not(.filter-dropdown__option--active):hover,
-.settings__sidebar-button:not(.settings__sidebar-button--active):hover,
-.game-options-modal__sidebar-button:not(
-    .game-options-modal__sidebar-button--active
-  ):hover {
+.filter-dropdown__option:not(.filter-dropdown__option--active):hover {
   background-color: transparent !important;
   background-size: 100% var(--ej-beam-height) !important;
   color: var(--ej-active-text) !important;
