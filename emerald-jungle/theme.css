@@ -82,7 +82,7 @@
      left under the label — its paint, thickness and how long it takes. */
   --ej-beam-fill: var(--ej-selected-fill);
   --ej-beam-height: 2px;
-  --ej-beam-duration: 0.3s;
+  --ej-beam-duration: 0.5s;
   /* Silver hairlines: dividers between the sections of a settings page. */
   --ej-silver-line: rgba(200, 208, 216, 0.5);
   /* Earned-points progress fill. Once everything is earned the fill and the
