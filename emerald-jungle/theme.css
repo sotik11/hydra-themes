@@ -85,7 +85,7 @@
      left under the label — its paint, thickness and how long it takes. */
   --ej-beam-fill: var(--ej-selected-fill);
   --ej-beam-height: 2px;
-  --ej-beam-duration: 0.9s;
+  --ej-beam-duration: 1.4s;
   /* Silver hairlines: dividers between the sections of a settings page. */
   --ej-silver-line: rgba(200, 208, 216, 0.5);
   /* How faint a locked achievement is on the achievements page (1 = as bright
