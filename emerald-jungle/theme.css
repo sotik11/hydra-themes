@@ -117,6 +117,18 @@
     rgba(184, 148, 58, 0.6) 56%,
     transparent 66%
   );
+  /* The shimmer that runs through the name of a hovered game: the label's
+     own light colour with an emerald → gold wave in the middle. The picture
+     is three labels wide, so the wave starts and ends outside the name. */
+  --ej-name-shimmer: linear-gradient(
+    100deg,
+    #fafafa 0%,
+    #fafafa 40%,
+    #1db980 46%,
+    #e0b64a 54%,
+    #fafafa 60%,
+    #fafafa 100%
+  );
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
   /* ...and the slower pass over the sidebar rows. */
@@ -374,8 +386,10 @@ body {
 }
 /* In the game list the line sits under the name: it starts after the icon
    and stops short of the right edge. The row itself loses the emerald
-   hover. The line and the sheen run together here: both take the slow
-   pass's time and ease the same way (the line still leaves quickly). */
+   hover, and there is no sheen across it: the wave runs through the letters
+   of the name instead (--ej-name-shimmer). The line and the wave run
+   together: both take the slow pass's time and ease the same way (the line
+   still leaves quickly). */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -388,8 +402,31 @@ body {
   transition-timing-function: ease-in-out, ease !important;
 }
 .sidebar__section--games
-  .sidebar__menu-item:not(.sidebar__menu-item--active):hover::after {
-  transition-duration: var(--ej-sheen-duration-slow);
+  .sidebar__menu-item:not(.sidebar__menu-item--active)::after {
+  content: none;
+}
+/* The name: the label shrinks to its text (the right margin keeps the icons
+   at the right edge) and carries the shimmer picture clipped to the letters,
+   parked with the wave off to the left. At rest the letters are painted over
+   it as usual; on hover they turn clear and the picture slides across. */
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active)
+  .sidebar__menu-item-button-label {
+  flex: 0 1 auto !important;
+  margin-right: auto !important;
+  background-image: var(--ej-name-shimmer) !important;
+  background-repeat: no-repeat !important;
+  background-size: 300% 100% !important;
+  background-position: 100% 0 !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active):hover
+  .sidebar__menu-item-button-label {
+  -webkit-text-fill-color: transparent !important;
+  background-position: 0 0 !important;
+  transition: background-position var(--ej-sheen-duration-slow) ease-in-out !important;
 }
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover {
