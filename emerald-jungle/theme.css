@@ -924,6 +924,16 @@ video::-webkit-media-controls-timeline {
 .game-assets-settings__asset-tab-underline {
   background: var(--ej-gold) !important;
 }
+/* Library cards, achievement progress: the filled part is gold while the
+   game is in progress; a completed game keeps Hydra's own bar. */
+.library-game-card__achievement-bar:not(
+    .library-game-card__achievement-bar--platinum
+  ),
+.library-game-card-large__achievement-bar:not(
+    .library-game-card-large__achievement-bar--platinum
+  ) {
+  background-color: var(--ej-gold) !important;
+}
 /* The fork's mods modal (Popular / New / Updated): there the underline is the
    active tab's own bottom border. */
 .mods-modal__tab--active {
