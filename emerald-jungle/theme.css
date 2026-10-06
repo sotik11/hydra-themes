@@ -86,9 +86,6 @@
   --ej-beam-fill: var(--ej-selected-fill);
   --ej-beam-height: 2px;
   --ej-beam-duration: 0.9s;
-  /* In the game list the line waits for the sheen to cross the row first:
-     how long it waits (the sheen leaves the row at about 70% of its pass). */
-  --ej-game-beam-delay: 1.1s;
   /* Silver hairlines: dividers between the sections of a settings page. */
   --ej-silver-line: rgba(200, 208, 216, 0.5);
   /* How faint a locked achievement is on the achievements page (1 = as bright
@@ -122,8 +119,7 @@
   );
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
-  /* ...and the slower pass over a selected sidebar row and over any row of
-     the menu at the top of the sidebar. */
+  /* ...and the slower pass over the sidebar rows. */
   --ej-sheen-duration-slow: 2.4s;
   /* Download bar on the Downloads page: its fill, and how often the
      highlight runs along it (one pass takes 40% of the period). */
@@ -378,8 +374,8 @@ body {
 }
 /* In the game list the line sits under the name: it starts after the icon
    and stops short of the right edge. The row itself loses the emerald
-   hover, and the line comes out only after the sheen has passed (it leaves
-   at once, though). */
+   hover. The line comes out first; the sheen waits for it and then makes
+   the slow pass. */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -388,7 +384,11 @@ body {
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover
   .sidebar__menu-item-button {
   background-size: calc(100% - 46px) var(--ej-beam-height) !important;
-  transition-delay: var(--ej-game-beam-delay), 0s !important;
+}
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active):hover::after {
+  transition-duration: var(--ej-sheen-duration-slow);
+  transition-delay: var(--ej-beam-duration);
 }
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover {
