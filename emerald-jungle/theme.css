@@ -103,6 +103,9 @@
   --ej-action-pin: #e0b64a;
   --ej-action-settings: #1db980;
   --ej-action-steam: #3e62c0;
+  /* ...and the fill the "remove" button takes on hover (the red of Hydra's
+     own delete buttons). */
+  --ej-action-remove-fill: #801d1e;
   /* Sheen: the soft diagonal highlight that crosses covers and sidebar rows
      on hover. */
   --ej-sheen: linear-gradient(
@@ -694,6 +697,12 @@ body {
   )
   svg {
   color: var(--ej-action-steam) !important;
+}
+/* The "remove" button (the cross) fills with the red of the delete buttons
+   instead. */
+.hero-panel-actions__action:has(.octicon-x):hover:not(:disabled) {
+  background: var(--ej-action-remove-fill) !important;
+  border-color: transparent !important;
 }
 /* Hydra's own hero buttons (edit / cloud save) get the same gold outline on
    hover that the action buttons inherit from .button--outline. */
