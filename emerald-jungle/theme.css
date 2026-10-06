@@ -78,6 +78,11 @@
   --ej-gold-bars: inset 3px 0 0 var(--ej-gold), inset -3px 0 0 var(--ej-gold);
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
+  /* Hover on game rows and menu items: a thin line that runs out from the
+     left under the label — its paint, thickness and how long it takes. */
+  --ej-beam-fill: var(--ej-selected-fill);
+  --ej-beam-height: 2px;
+  --ej-beam-duration: 0.3s;
   /* Silver hairlines: dividers between the sections of a settings page. */
   --ej-silver-line: rgba(200, 208, 216, 0.5);
   /* Earned-points progress fill. Once everything is earned the fill and the
@@ -268,6 +273,82 @@ body {
 .sidebar__menu-item:not(:hover):not(.sidebar__menu-item--active)
   .sidebar__game-installed-icon {
   color: #46c48c !important;
+}
+
+/* ---- Hover beam ------------------------------------------------------ */
+/* Game rows and menu items (context menu, profile menu, the library and
+   profile dropdowns, the settings tabs) are not filled on hover: a thin line
+   runs out from the left under the item instead. The line is a background
+   layer of zero width that grows to the full width; a selected item keeps
+   its own look and gets no line. The menu at the top of the sidebar is not
+   part of this — it keeps its emerald hover. */
+.sidebar__section--games .sidebar__menu-item-button,
+.context-menu__item,
+.sidebar-profile__dropdown-item,
+.sidebar-filter-menu__item,
+.collections-filter__item,
+.library-select__item,
+.library-multi-select__item,
+.filter-dropdown__option,
+.settings__sidebar-button,
+.game-options-modal__sidebar-button {
+  background-image: var(--ej-beam-fill) !important;
+  background-repeat: no-repeat !important;
+  background-origin: content-box !important;
+  background-position: left 0 bottom -4px !important;
+  background-size: 0 var(--ej-beam-height) !important;
+  transition:
+    background-size var(--ej-beam-duration) cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.2s ease !important;
+}
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active):hover
+  .sidebar__menu-item-button,
+.context-menu__item:hover:not(.context-menu__item--disabled):not(
+    .context-menu__item--danger
+  ):not(.context-menu__item--active),
+.sidebar-profile__dropdown-item:hover:not(
+    .sidebar-profile__dropdown-item--danger
+  ),
+.sidebar-filter-menu__item:not([data-state="checked"]):hover,
+.sidebar-filter-menu__item:not([data-state="checked"])[data-highlighted],
+.collections-filter__item:not(.collections-filter__item--active):hover,
+.collections-filter__item:not(.collections-filter__item--active):focus,
+.collections-filter__item:not(
+    .collections-filter__item--active
+  )[data-highlighted],
+.library-select__item:not([data-state="checked"]):hover,
+.library-select__item:not([data-state="checked"])[data-highlighted],
+.library-multi-select__item:not([data-state="checked"]):hover,
+.library-multi-select__item:not([data-state="checked"])[data-highlighted],
+.filter-dropdown__option:not(.filter-dropdown__option--active):hover,
+.settings__sidebar-button:not(.settings__sidebar-button--active):hover,
+.game-options-modal__sidebar-button:not(
+    .game-options-modal__sidebar-button--active
+  ):hover {
+  background-color: transparent !important;
+  background-size: 100% var(--ej-beam-height) !important;
+  color: var(--ej-active-text) !important;
+}
+/* In the game list the line sits under the name: it starts after the icon
+   and stops short of the right edge. The row itself loses the emerald hover
+   and the sheen. */
+.sidebar__section--games .sidebar__menu-item-button {
+  background-origin: padding-box !important;
+  background-position: left 36px bottom 5px !important;
+}
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active):hover
+  .sidebar__menu-item-button {
+  background-size: calc(100% - 46px) var(--ej-beam-height) !important;
+}
+.sidebar__section--games
+  .sidebar__menu-item:not(.sidebar__menu-item--active):hover {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.sidebar__section--games .sidebar__menu-item::after {
+  content: none;
 }
 
 /* ---- Buttons --------------------------------------------------------- */
@@ -674,17 +755,11 @@ video::-webkit-media-controls-timeline {
 }
 
 
-/* Collections dropdown: emerald hover, and a gold left stripe on the active
-   item (this menu marks it with a class, so no code change needed). Undo the
-   gold outline the trigger button inherited from .button--outline. The
-   library source dropdown next to it ("All libraries") takes the same frame
-   and the same emerald highlight; the "Sort by" button takes the frame too. */
-.collections-filter__item:hover,
-.collections-filter__item:focus,
-.library-multi-select__item:hover,
-.library-multi-select__item[data-highlighted] {
-  background-color: var(--ej-menu-fill) !important;
-}
+/* Collections dropdown: gold bars on the active item (this menu marks it
+   with a class, so no code change needed); hover is the beam. Undo the gold
+   outline the trigger button inherited from .button--outline. The library
+   source dropdown next to it ("All libraries") and the "Sort by" button take
+   the same frame. */
 .collections-filter__item--active {
   background-color: var(--ej-menu-fill) !important;
   box-shadow: var(--ej-gold-bars) !important;
@@ -701,34 +776,24 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(31, 185, 128, 0.25) !important;
 }
 
-/* Sidebar filter menu (platform / sort, the ⚙ button): emerald hover, green +
-   gold stripe on the checked items. */
-.sidebar-filter-menu__item:hover,
-.sidebar-filter-menu__item[data-highlighted] {
-  background-color: var(--ej-menu-fill) !important;
-}
+/* Sidebar filter menu (platform / sort, the ⚙ button): green + gold bars on
+   the checked items; hover is the beam. */
 .sidebar-filter-menu__item[data-state="checked"] {
   background-color: var(--ej-menu-fill) !important;
   box-shadow: var(--ej-gold-bars) !important;
 }
 
-/* Context menu (game right-click, collections…): same mechanics as the
-   sidebar rows — hover copies the active segmented toggle, the active item
-   (current collection / open submenu) adds the gold bar. Destructive and
-   disabled items keep Hydra's own states. */
-.context-menu__item:hover:not(.context-menu__item--disabled):not(
-    .context-menu__item--danger
-  ),
+/* Context menu (game right-click, collections…): the active item (current
+   collection / open submenu) copies the active segmented toggle and adds the
+   gold bars; hover is the beam. Destructive and disabled items keep Hydra's
+   own states. */
 .context-menu__item--active {
   background-color: var(--ej-active-fill) !important;
-  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
-  border-radius: var(--ej-active-radius) !important;
-  color: var(--ej-active-text) !important;
-}
-.context-menu__item--active {
   box-shadow:
     var(--ej-gold-bars),
     inset 0 0 0 1px var(--ej-active-outline) !important;
+  border-radius: var(--ej-active-radius) !important;
+  color: var(--ej-active-text) !important;
 }
 
 /* Profile block (top of the sidebar): the fill of the top header bar with a
@@ -819,14 +884,7 @@ video::-webkit-media-controls-timeline {
   right: var(--ej-profile-menu-inset) !important;
   background: #0a0f0c var(--ej-profile-menu-fill) center / 100% 100% no-repeat !important;
 }
-/* Its items hover like the sidebar rows (active-toggle look); "Sign out"
-   keeps its red. */
-.sidebar-profile__dropdown-item:hover:not(.sidebar-profile__dropdown-item--danger) {
-  background-color: var(--ej-active-fill) !important;
-  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
-  border-radius: var(--ej-active-radius) !important;
-  color: var(--ej-active-text) !important;
-}
+/* Its items hover with the beam; "Sign out" keeps its red. */
 
 /* Sidebar search field: thin white ring (inset = no layout shift); the ring
    turns gold while hovered or focused (Hydra's own border is hidden then, so
@@ -889,13 +947,9 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 3px 0 0 var(--ej-gold) !important;
 }
 
-/* Sort dropdown (library "Sort by"): emerald hover + gold stripe on the
-   selected radio item (Radix marks it data-state="checked"). The selected
-   item of the library source dropdown gets the same stripe. */
-.library-select__item:hover,
-.library-select__item[data-highlighted] {
-  background-color: var(--ej-menu-fill) !important;
-}
+/* Sort dropdown (library "Sort by"): gold bars on the selected radio item
+   (Radix marks it data-state="checked"); hover is the beam. The selected
+   item of the library source dropdown gets the same bars. */
 .library-select__item[data-state="checked"],
 .library-multi-select__item[data-state="checked"] {
   background-color: var(--ej-menu-fill) !important;
@@ -980,19 +1034,13 @@ video::-webkit-media-controls-timeline {
   padding: 4px 10px !important;
   color: var(--ej-active-text) !important;
 }
-.filter-dropdown__option:hover {
-  background: var(--ej-menu-fill) !important;
-}
 .filter-dropdown__option--active {
   background: var(--ej-menu-fill) !important;
   box-shadow: var(--ej-gold-bars) !important;
 }
 
-/* Settings left nav (same idea): emerald hover, green + gold stripe on active. */
-.settings__sidebar-button:hover,
-.game-options-modal__sidebar-button:hover {
-  background: var(--ej-menu-fill) !important;
-}
+/* Settings left nav (same idea): green + gold bars on active; hover is the
+   beam. */
 .settings__sidebar-button--active,
 .game-options-modal__sidebar-button--active {
   background: var(--ej-menu-fill) !important;
