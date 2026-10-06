@@ -122,6 +122,8 @@
   );
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
+  /* ...and the slower pass over a selected sidebar row. */
+  --ej-sheen-duration-slow: 2.4s;
   /* Download bar on the Downloads page: its fill, and how often the
      highlight runs along it (one pass takes 40% of the period). */
   --ej-download-fill: linear-gradient(90deg, #e9fff4 0%, #7fe0a3 10%, #1db980 55%, #12996a 100%);
@@ -255,6 +257,10 @@ body {
 .sidebar__menu-item:hover::after {
   transform: translateX(130%);
   transition: transform var(--ej-sheen-duration) ease-in-out;
+}
+/* Over a selected row the sheen passes more slowly. */
+.sidebar__menu-item--active:hover::after {
+  transition-duration: var(--ej-sheen-duration-slow);
 }
 /* On a row that is not selected the sheen is the emerald → gold one. */
 .sidebar__menu-item:not(.sidebar__menu-item--active)::after {
