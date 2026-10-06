@@ -104,6 +104,15 @@
     rgba(224, 182, 74, 0.16) 56%,
     transparent 64%
   );
+  /* The sheen on the rows of the game list: the same pass, painted with the
+     emerald and gold of the selected menu row. */
+  --ej-game-sheen: linear-gradient(
+    115deg,
+    transparent 34%,
+    rgba(23, 137, 95, 0.5) 44%,
+    rgba(184, 148, 58, 0.6) 56%,
+    transparent 66%
+  );
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
   /* Download bar on the Downloads page: its fill, and how often the
@@ -337,8 +346,8 @@ body {
   color: var(--ej-active-text) !important;
 }
 /* In the game list the line sits under the name: it starts after the icon
-   and stops short of the right edge. The row itself loses the emerald hover
-   and the sheen. */
+   and stops short of the right edge. The row itself loses the emerald
+   hover; its sheen is the emerald → gold one (--ej-game-sheen). */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -354,7 +363,7 @@ body {
   box-shadow: none !important;
 }
 .sidebar__section--games .sidebar__menu-item::after {
-  content: none;
+  background: var(--ej-game-sheen);
 }
 
 /* ---- Buttons --------------------------------------------------------- */
