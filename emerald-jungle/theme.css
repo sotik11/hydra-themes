@@ -419,7 +419,8 @@ body {
   background-image: var(--ej-name-shimmer) !important;
   background-repeat: no-repeat !important;
   background-size: 300% 100% !important;
-  background-position: 100% 0 !important;
+  /* not !important: that would beat the animation that moves it */
+  background-position: 100% 0;
   -webkit-background-clip: text !important;
   background-clip: text !important;
 }
@@ -1390,7 +1391,8 @@ video::-webkit-media-controls-timeline {
   background-image: var(--ej-name-shimmer) !important;
   background-repeat: no-repeat !important;
   background-size: 300% 100% !important;
-  background-position: 100% 0 !important;
+  /* not !important: that would beat the animation that moves it */
+  background-position: 100% 0;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
