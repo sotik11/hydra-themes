@@ -589,10 +589,8 @@ body {
 .button {
   border-radius: var(--ej-button-radius) !important;
 }
-.button--primary {
-  background: linear-gradient(135deg, #1db980, #12996a) !important;
-  color: #ffffff !important;
-}
+/* The primary button takes the look of an active segmented toggle (the rule
+   is further down, with the toggles); hover brightens it a little. */
 .button--primary:hover {
   filter: brightness(1.08) !important;
 }
@@ -683,7 +681,9 @@ body {
 /* Active segmented toggles (catalogue "Modern/Classics", library "All/PC/…",
    the scan-games modal's "Automatic/Manual" and its picked match), active
    view-mode buttons (library, the fork's wishlist page) and the library's
-   pressed "installed only" button. */
+   pressed "installed only" button. The primary button (the main action of a
+   dialog or a form, the chosen tab of a pair) looks the same. */
+.button--primary,
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
 .library-view-options__option.active,
