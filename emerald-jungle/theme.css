@@ -283,6 +283,20 @@ body {
 .sidebar__menu-item:not(.sidebar__menu-item--active)::after {
   background: var(--ej-row-sheen);
 }
+/* ...and in the menu at the top it keeps passing for as long as the pointer
+   stays on the row (one slow pass after another). */
+.sidebar__section:not(.sidebar__section--games)
+  .sidebar__menu-item:not(.sidebar__menu-item--active):hover::after {
+  animation: ej-row-sheen var(--ej-sheen-duration-slow) ease-in-out infinite;
+}
+@keyframes ej-row-sheen {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(130%);
+  }
+}
 /* The selected row of the menu (the current page) stands apart from a hovered
    one: a deep-emerald → emerald → gold gradient, a bright outline with a soft
    inner glow, white bold label. (The glow is inset: the list clips anything
