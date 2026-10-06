@@ -26,7 +26,7 @@ The adjustable values sit at the very top of `theme.css`:
 :root {
   --ej-game-banner-height: 500px;       /* game page banner */
   --ej-profile-banner-height: 500px;    /* profile banner */
-  --ej-button-radius: 999px;            /* button corners; 999px = pill */
+  --ej-button-radius: 8px;              /* button corners; 999px = pill */
   --ej-profile-avatar-size: 42px;       /* sidebar avatar */
   --ej-profile-button-padding-y: 15px;  /* sidebar profile block height */
 }
