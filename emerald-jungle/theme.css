@@ -686,7 +686,7 @@ video::-webkit-media-controls-timeline {
 }
 .collections-filter__item--active {
   background-color: var(--ej-menu-fill) !important;
-  box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+  box-shadow: var(--ej-gold-bars) !important;
 }
 .collections-filter__trigger,
 .library-multi-select__trigger,
@@ -708,7 +708,7 @@ video::-webkit-media-controls-timeline {
 }
 .sidebar-filter-menu__item[data-state="checked"] {
   background-color: var(--ej-menu-fill) !important;
-  box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+  box-shadow: var(--ej-gold-bars) !important;
 }
 
 /* Context menu (game right-click, collections…): same mechanics as the
@@ -726,7 +726,7 @@ video::-webkit-media-controls-timeline {
 }
 .context-menu__item--active {
   box-shadow:
-    inset 3px 0 0 var(--ej-gold),
+    var(--ej-gold-bars),
     inset 0 0 0 1px var(--ej-active-outline) !important;
 }
 
@@ -882,7 +882,7 @@ video::-webkit-media-controls-timeline {
 .library-select__item[data-state="checked"],
 .library-multi-select__item[data-state="checked"] {
   background-color: var(--ej-menu-fill) !important;
-  box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+  box-shadow: var(--ej-gold-bars) !important;
 }
 
 /* Notifications tabs: the unread counter takes the active-toggle look, the
@@ -958,7 +958,7 @@ video::-webkit-media-controls-timeline {
 }
 .filter-dropdown__option--active {
   background: var(--ej-menu-fill) !important;
-  box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+  box-shadow: var(--ej-gold-bars) !important;
 }
 
 /* Settings left nav (same idea): emerald hover, green + gold stripe on active. */
@@ -969,7 +969,7 @@ video::-webkit-media-controls-timeline {
 .settings__sidebar-button--active,
 .game-options-modal__sidebar-button--active {
   background: var(--ej-menu-fill) !important;
-  box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+  box-shadow: var(--ej-gold-bars) !important;
 }
 /* Divider between the settings nav groups: gold. */
 .settings__sidebar-divider {
