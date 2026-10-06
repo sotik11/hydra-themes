@@ -72,6 +72,9 @@
   --ej-solid-outline: rgba(31, 185, 128, 0.5);
   /* Gold accent: selected bars, active-tab underlines, progress. */
   --ej-gold: #e0b64a;
+  /* The pair of gold bars on the left and right edges of a selected item
+     (game row, menu item, settings tab). */
+  --ej-gold-bars: inset 3px 0 0 var(--ej-gold), inset -3px 0 0 var(--ej-gold);
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
   /* Silver hairlines: dividers between the sections of a settings page. */
@@ -228,9 +231,10 @@ body {
   transform: translateX(130%);
   transition: transform var(--ej-sheen-duration) ease-in-out;
 }
-/* The selected row stands apart from a hovered one: a deep-emerald → emerald
-   → gold gradient, a bright outline with a soft inner glow, white bold
-   label. (The glow is inset: the list clips anything drawn outside a row.) */
+/* The selected row of the menu (the current page) stands apart from a hovered
+   one: a deep-emerald → emerald → gold gradient, a bright outline with a soft
+   inner glow, white bold label. (The glow is inset: the list clips anything
+   drawn outside a row.) */
 .sidebar__menu-item--active {
   background: var(--ej-selected-fill) !important;
   box-shadow:
@@ -238,8 +242,19 @@ body {
     inset 0 0 12px var(--ej-selected-glow) !important;
   color: #ffffff !important;
 }
-.sidebar__menu-item--active .sidebar__menu-item-button {
+.sidebar__section:not(.sidebar__section--games)
+  .sidebar__menu-item--active
+  .sidebar__menu-item-button {
   font-weight: 600 !important;
+}
+/* The selected row of the game list (the open game) is quieter: the emerald
+   fill and outline, with a gold bar on each side. */
+.sidebar__section--games .sidebar__menu-item--active {
+  background: var(--ej-active-fill) !important;
+  box-shadow:
+    var(--ej-gold-bars),
+    inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
 }
 /* Game list markers at rest: the favourite heart is a softened red, the installed
    tick a softened green — halfway between the vivid and the pastel tones. On
