@@ -92,12 +92,6 @@
   /* How faint a locked achievement is, on the achievements page and in the
      block on the game page (1 = as bright as an unlocked one). */
   --ej-locked-achievement-opacity: 0.45;
-  /* Earned-points progress fill. Once everything is earned the fill and the
-     outline turn gold (a touch dimmer than --ej-gold) and the text and icon
-     switch to the dark tone. */
-  --ej-progress-fill: rgba(31, 185, 128, 0.4);
-  --ej-progress-fill-complete: #cba541;
-  --ej-on-gold: #1c1606;
   /* Sheen: the soft diagonal highlight that crosses covers and sidebar rows
      on hover. */
   --ej-sheen: linear-gradient(
@@ -1441,53 +1435,26 @@ video::-webkit-media-controls-timeline {
   ) {
   background-color: var(--ej-gold) !important;
 }
-/* "Earned points" strip: the active-toggle look — emerald fill and outline
-   (no gold bar: the unlocked rows below already carry it). Inset by the
-   list's own 16px padding, so it lines up with the achievement rows. */
+/* "Earned points" strip: the look of the selected game — emerald fill in a
+   thin gold frame. Inset by the list's own 16px padding, so it lines up with
+   the achievement rows. */
 .achievement-panel {
   background: var(--ej-active-fill) !important;
-  border: 1px solid var(--ej-active-outline) !important;
+  border: 1px solid var(--ej-gold-line) !important;
   border-radius: var(--ej-active-radius) !important;
   box-shadow: none !important;
   width: calc(100% - 32px) !important;
   margin: 0 16px !important;
 }
-/* ...and a progress bar: the earned share is filled with emerald glass. The
-   width comes from --earned-points-progress (e.g. "10.9%"), which the
-   sotik11/hydra fork sets on the panel; without it the fill is 0% — a no-op on
-   vanilla. The comparison panel (__grid) is left alone. */
+/* ...and a progress bar: the earned share is painted with the emerald → gold
+   run of the selected menu row (--ej-selected-fill). The width comes from
+   --earned-points-progress (e.g. "10.9%"), which the sotik11/hydra fork sets
+   on the panel; without it the fill is 0% — a no-op on vanilla. The
+   comparison panel (__grid) is left alone. */
 /* No overflow:hidden here — it lets the flex parent shrink the strip and clip
    its text; the fill is rounded to the frame instead. */
-/* CSS has no "if the variable equals 100%", so --ej-points-complete does it
-   with arithmetic: 0% for any progress below 100%, 100% at exactly 100%. It
-   then picks between the emerald and the gold colours through color-mix(), so
-   a fully completed game gets a gold strip. */
 .achievement-panel:not(.achievement-panel__grid) {
   position: relative !important;
-  --ej-points-complete: clamp(
-    0%,
-    calc((var(--earned-points-progress, 0%) - 99.99%) * 10000),
-    100%
-  );
-  border-color: color-mix(
-    in srgb,
-    var(--ej-progress-fill-complete) var(--ej-points-complete),
-    var(--ej-active-outline)
-  ) !important;
-}
-/* On solid gold the light text and the white points icon would vanish, so
-   both go dark at 100% (currentColor = the normal inherited text colour). */
-.achievement-panel:not(.achievement-panel__grid) .achievement-panel__content {
-  color: color-mix(
-    in srgb,
-    var(--ej-on-gold) var(--ej-points-complete),
-    currentColor
-  );
-}
-.achievement-panel:not(.achievement-panel__grid)
-  .achievement-panel__content-icon
-  [fill="white"] {
-  fill: color-mix(in srgb, var(--ej-on-gold) var(--ej-points-complete), white);
 }
 .achievement-panel:not(.achievement-panel__grid)::before {
   content: "";
@@ -1495,13 +1462,7 @@ video::-webkit-media-controls-timeline {
   inset: 0 auto 0 0;
   border-radius: 6px;
   width: var(--earned-points-progress, 0%);
-  background: color-mix(
-    in srgb,
-    var(--ej-progress-fill-complete) var(--ej-points-complete),
-    var(--ej-progress-fill)
-  );
-  backdrop-filter: blur(10px) saturate(1.2);
-  -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  background: var(--ej-selected-fill);
   pointer-events: none;
   transition: width 0.4s ease;
 }
