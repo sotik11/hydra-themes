@@ -259,7 +259,7 @@ body {
   background: var(--ej-active-fill) !important;
   box-shadow:
     var(--ej-gold-bars),
-    inset 0 0 0 1px var(--ej-gold) !important;
+    inset 0 0 0 1px var(--ej-gold-line) !important;
   color: var(--ej-active-text) !important;
 }
 /* Game list markers at rest: the favourite heart is a softened red, the installed
