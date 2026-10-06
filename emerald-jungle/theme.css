@@ -920,6 +920,23 @@ video::-webkit-media-controls-timeline {
   border-right-style: solid !important;
   border-right-width: 1px !important;
 }
+/* On hover the emerald → gold sheen of the sidebar menu rows crosses them, at
+   the same slow pace and for as long as the pointer stays. */
+.requirement__button {
+  position: relative;
+  overflow: hidden;
+}
+.requirement__button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--ej-row-sheen);
+  transform: translateX(-130%);
+}
+.requirement__button:hover::after {
+  animation: ej-row-sheen var(--ej-sheen-duration-slow) ease-in-out infinite;
+}
 
 /* ---- Game reviews ------------------------------------------------------ */
 /* "Review locked" notice and the review prompt banner: same emerald fill and
