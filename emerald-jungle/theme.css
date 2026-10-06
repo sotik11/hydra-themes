@@ -1407,7 +1407,17 @@ video::-webkit-media-controls-timeline {
 .notifications__tab-underline {
   background: var(--ej-gold) !important;
 }
-/* Dismiss (×) on a notification: the same emerald look on hover. */
+/* Dismiss (×) on a notification: a true circle, a little smaller than
+   Hydra's (which the line height stretched into an oval), with the same
+   emerald look on hover. */
+.notification-item__dismiss {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  padding: 0 !important;
+}
 .notification-item__dismiss:hover {
   background-color: var(--ej-active-fill) !important;
   box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
