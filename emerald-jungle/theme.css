@@ -278,19 +278,25 @@ body {
   box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
   color: var(--ej-active-text) !important;
 }
-/* ...and its name is painted with the emerald → gold run (--ej-title-fill),
-   in bold. The label shrinks to its text, so every name runs the whole way
-   from emerald to gold. */
+/* ...and its name is painted with the emerald → gold run (--ej-title-fill).
+   The label shrinks to its text, so every name runs the whole way from
+   emerald to gold; its right margin keeps the row's icons at the right edge. */
 .sidebar__section--games
   .sidebar__menu-item--active
   .sidebar__menu-item-button-label {
   flex: 0 1 auto !important;
-  font-weight: 600 !important;
+  margin-right: auto !important;
   background: var(--ej-title-fill) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   color: transparent !important;
+}
+/* The selected game's name is bold as well. */
+.sidebar__section--games
+  .sidebar__menu-item--active
+  .sidebar__menu-item-button-label {
+  font-weight: 600 !important;
 }
 /* Game list markers at rest: the favourite heart is a softened red, the installed
    tick a softened green — halfway between the vivid and the pastel tones. On
