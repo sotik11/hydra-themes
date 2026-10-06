@@ -35,6 +35,14 @@ The adjustable values sit at the very top of `theme.css`:
 Change the numbers, save the theme, done. The same block also holds the theme's
 colours (emerald fills, outlines, gold) as variables, if you want to retint it.
 
+## Animations
+
+The theme has a few running animations: a shimmer in the header title and in the names of
+hovered games, a light that travels round the frame of the selected game, and sheens on
+rows, covers and buttons. If animations are turned down in the system settings (Windows:
+**Settings → Accessibility → Visual effects → Animation effects**), the theme switches all
+of them off by itself and stays still.
+
 ## Artwork
 
 The sunset picture in the sidebar profile block (it appears on hover, and changes to a
