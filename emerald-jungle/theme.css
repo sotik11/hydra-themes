@@ -1089,11 +1089,15 @@ video::-webkit-media-controls-timeline {
 .sidebar-profile__button-title {
   font-size: var(--ej-profile-name-size) !important;
 }
-/* Hover/open: the same painted glass as the review prompt banner — emerald
-   base, diagonal sheen, light top edge, faint bottom shade. */
-.sidebar-profile__button:hover,
-.sidebar-profile__button--active,
-.sidebar-profile__button[data-state="open"] {
+/* While the menu is open the button adds nothing of its own, so the picture
+   stays clear. */
+.sidebar-profile__button--active {
+  background: none !important;
+  box-shadow: none !important;
+}
+/* Hover (menu closed): the same painted glass as the review prompt banner —
+   emerald base, diagonal sheen, light top edge, faint bottom shade. */
+.sidebar-profile__button:hover:not(.sidebar-profile__button--active) {
   background:
     linear-gradient(
       115deg,
