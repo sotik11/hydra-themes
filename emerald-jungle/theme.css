@@ -132,7 +132,7 @@
   /* ...and how often the wave runs while the pointer stays on the row. */
   --ej-name-shimmer-period: 1.5s;
   /* The same wave runs through the header title on its own: how often (one
-     pass takes 30% of the period, the rest is a pause). */
+     pass takes half of the period, the rest is a pause). */
   --ej-title-shimmer-period: 5s;
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
@@ -1416,7 +1416,7 @@ video::-webkit-media-controls-timeline {
   0% {
     background-position: 100% 0;
   }
-  30%,
+  50%,
   100% {
     background-position: 0 0;
   }
