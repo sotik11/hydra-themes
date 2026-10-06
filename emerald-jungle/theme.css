@@ -117,6 +117,18 @@
     rgba(184, 148, 58, 0.6) 56%,
     transparent 66%
   );
+  /* The runner on the frame of the selected game: an emerald → gold stretch
+     that travels round the frame, and how long one lap takes. (The angle it
+     starts from is animated; see @property --ej-frame-angle below.) */
+  --ej-frame-runner: conic-gradient(
+    from var(--ej-frame-angle),
+    transparent 0deg,
+    transparent 240deg,
+    #1db980 300deg,
+    #e0b64a 356deg,
+    transparent 360deg
+  );
+  --ej-frame-runner-period: 5s;
   /* The shimmer that runs through the name of a hovered game: the text's
      own colour with an emerald → gold wave in the middle. The picture is
      three labels wide, so the wave starts and ends outside the name. */
@@ -319,6 +331,35 @@ body {
   background: var(--ej-active-fill) !important;
   box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
   color: var(--ej-active-text) !important;
+}
+/* A runner goes round that frame: a ring one pixel thick drawn over it (a
+   layer masked down to its own edge) and painted with a conic gradient whose
+   starting angle turns a full circle. The angle is a registered property —
+   that is what lets it be animated. */
+@property --ej-frame-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.sidebar__section--games .sidebar__menu-item--active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: var(--ej-frame-runner);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: ej-frame-runner var(--ej-frame-runner-period) linear infinite;
+}
+@keyframes ej-frame-runner {
+  to {
+    --ej-frame-angle: 360deg;
+  }
 }
 /* ...and its name is painted with the emerald → gold run (--ej-title-fill).
    The label shrinks to its text, so every name runs the whole way from
