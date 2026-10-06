@@ -1203,8 +1203,14 @@ video::-webkit-media-controls-timeline {
 .profile-hero__avatar-button .profile-avatar__image {
   border-radius: 50% !important;
 }
+/* The name is set like the header title — Sora ExtraBold, capitals, slightly
+   spaced — at its own size and without the title's shimmer. */
 .sidebar-profile__button-title {
+  font-family: "Sora", "Noto Sans", sans-serif !important;
   font-size: var(--ej-profile-name-size) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
 }
 /* The button itself adds nothing on hover or while the menu is open (Hydra's
    own grey wash is switched off), so the picture stays clear. */
