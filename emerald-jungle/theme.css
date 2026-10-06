@@ -93,10 +93,12 @@
      block on the game page (1 = as bright as an unlocked one). */
   --ej-locked-achievement-opacity: 0.45;
   /* Game page action buttons: the colour each one's icon takes on hover —
-     mods (the orange of Nexus Mods), localization (the blue of the
+     download (the green of the wishlist's "now available" badge), mods (the
+     orange of Nexus Mods), localization (the blue of the
      links in the localization sources settings), favourite (the red of the
      sidebar heart), pin and wishlist (gold), options (emerald), Steam
      (Hydra's brand blue). */
+  --ej-action-download: #4ade80;
   --ej-action-mods: #da8e35;
   --ej-action-localization: #1a9fff;
   --ej-action-favorite: #e64c61;
@@ -667,6 +669,9 @@ body {
    Steam one is the only icon that is neither an Octicon nor a Lucide icon. */
 .hero-panel-actions__action svg {
   transition: color 0.2s ease;
+}
+.hero-panel-actions__action:has(.octicon-download):hover:not(:disabled) svg {
+  color: var(--ej-action-download) !important;
 }
 .hero-panel-actions__action:has(.lucide-puzzle):hover:not(:disabled) svg {
   color: var(--ej-action-mods) !important;
