@@ -674,11 +674,16 @@ body {
 .hero-panel-actions__action:has(.octicon-globe):hover:not(:disabled) svg {
   color: var(--ej-action-localization) !important;
 }
-.hero-panel-actions__action:has(.octicon-heart, .octicon-heart-fill):hover:not(
-    :disabled
-  )
-  svg {
+.hero-panel-actions__action:has(.octicon-heart):hover:not(:disabled) svg {
   color: var(--ej-action-favorite) !important;
+}
+/* A game that is already a favourite shows it the other way round: the
+   filled heart is red at rest and turns white on hover. */
+.hero-panel-actions__action:has(.octicon-heart-fill) svg {
+  color: var(--ej-action-favorite) !important;
+}
+.hero-panel-actions__action:has(.octicon-heart-fill):hover:not(:disabled) svg {
+  color: #ffffff !important;
 }
 .hero-panel-actions__action:has(
     .octicon-pin,
