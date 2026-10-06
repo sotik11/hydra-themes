@@ -108,6 +108,9 @@
   /* ...and the same for the pencil ("edit") button in the banner: the green
      of the "installed" tick. */
   --ej-action-edit: #46c48c;
+  /* ...and the cloud on the cloud save button while the saves are in sync
+     (the blue of the localization icon). */
+  --ej-action-cloud: #1a9fff;
   /* ...and the fill the "remove" button takes on hover (the red of Hydra's
      own delete buttons). */
   --ej-action-remove-fill: #801d1e;
@@ -729,6 +732,18 @@ body {
 }
 .game-details__edit-custom-game-button:hover svg {
   color: var(--ej-action-edit) !important;
+}
+/* The cloud save button works the other way round, like the favourite heart:
+   while the saves are in sync its cloud is blue at rest and turns white on
+   hover. In every other state (off, unavailable, checking…) it stays white. */
+.game-details__cloud-sync-button svg {
+  transition: color 0.2s ease;
+}
+.cloud-save-v2__trigger--synced svg {
+  color: var(--ej-action-cloud) !important;
+}
+.cloud-save-v2__trigger--synced:hover svg {
+  color: #ffffff !important;
 }
 
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
