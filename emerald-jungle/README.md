@@ -1,4 +1,4 @@
-# Emerald Jungle — v1.2
+# Emerald Jungle (animated) — v1.5
 
 A dark emerald theme with gold accents for Hydra Launcher.
 
@@ -15,7 +15,7 @@ selectors simply match nothing.
 ## Install
 
 1. Copy `theme.css`.
-2. In Hydra: **Settings → Appearance → Create**, name it `Emerald Jungle`, paste the CSS, save.
+2. In Hydra: **Settings → Appearance → Create**, name it `Emerald Jungle (animated)`, paste the CSS, save.
 3. Optional: in the theme editor, upload `achievement.wav` as the achievement sound.
 
 ## Customize
