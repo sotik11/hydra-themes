@@ -374,8 +374,8 @@ body {
 }
 /* In the game list the line sits under the name: it starts after the icon
    and stops short of the right edge. The row itself loses the emerald
-   hover. The line comes out first; the sheen starts half of the line's
-   time later and makes the slow pass. */
+   hover. The line comes out first; the sheen starts a quarter of the
+   line's time later and makes the slow pass. */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -388,7 +388,7 @@ body {
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover::after {
   transition-duration: var(--ej-sheen-duration-slow);
-  transition-delay: calc(var(--ej-beam-duration) / 2);
+  transition-delay: calc(var(--ej-beam-duration) / 4);
 }
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover {
