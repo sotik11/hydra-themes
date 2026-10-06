@@ -93,11 +93,11 @@
      block on the game page (1 = as bright as an unlocked one). */
   --ej-locked-achievement-opacity: 0.45;
   /* Game page action buttons: the colour each one's icon takes on hover —
-     mods (the green of the "installed" tick), localization (the blue of the
+     mods (the orange of Nexus Mods), localization (the blue of the
      links in the localization sources settings), favourite (the red of the
      sidebar heart), pin and wishlist (gold), options (emerald), Steam
      (Hydra's brand blue). */
-  --ej-action-mods: #46c48c;
+  --ej-action-mods: #da8e35;
   --ej-action-localization: #1a9fff;
   --ej-action-favorite: #e64c61;
   --ej-action-pin: #e0b64a;
