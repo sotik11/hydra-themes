@@ -29,9 +29,13 @@
   --ej-profile-banner-height: 500px;
   /* Button corner radius (a large value gives the pill shape). */
   --ej-button-radius: 999px;
+  /* Avatar and name in the sidebar profile block (Hydra's own are 35px and
+     14px). */
+  --ej-profile-avatar-size: 42px;
+  --ej-profile-name-size: 16px;
   /* Vertical padding of the sidebar profile button — sized so the profile
-     block lines up with the top header bar. */
-  --ej-profile-button-padding-y: 18.5px;
+     block lines up with the top header bar (avatar + 2 × padding = 72px). */
+  --ej-profile-button-padding-y: 15px;
   /* Fill of section headers, strips and the achievement pop-up. */
   --ej-header-fill: linear-gradient(180deg, #163527 0%, #12281e 100%);
   /* ...and its hover. */
@@ -764,6 +768,22 @@ video::-webkit-media-controls-timeline {
 .sidebar-profile__button {
   border-radius: 0 !important;
   padding: var(--ej-profile-button-padding-y) 8px !important;
+}
+/* Avatars are round, here and on the profile page; the one here and the name
+   beside it are a little larger than Hydra's. */
+.sidebar-profile .profile-avatar {
+  width: var(--ej-profile-avatar-size) !important;
+  height: var(--ej-profile-avatar-size) !important;
+}
+.sidebar-profile .profile-avatar,
+.sidebar-profile .profile-avatar__image,
+.profile-hero__avatar-button,
+.profile-hero__avatar-button .profile-avatar,
+.profile-hero__avatar-button .profile-avatar__image {
+  border-radius: 50% !important;
+}
+.sidebar-profile__button-title {
+  font-size: var(--ej-profile-name-size) !important;
 }
 /* Hover/open: the same painted glass as the review prompt banner — emerald
    base, diagonal sheen, light top edge, faint bottom shade. */
