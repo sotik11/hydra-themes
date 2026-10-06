@@ -105,6 +105,9 @@
   --ej-action-pin: #e0b64a;
   --ej-action-settings: #a855f7;
   --ej-action-steam: #3e62c0;
+  /* ...and the same for the pencil ("edit") button in the banner: the green
+     of the "installed" tick. */
+  --ej-action-edit: #46c48c;
   /* ...and the fill the "remove" button takes on hover (the red of Hydra's
      own delete buttons). */
   --ej-action-remove-fill: #801d1e;
@@ -719,6 +722,13 @@ body {
 .game-details__edit-custom-game-button:hover,
 .game-details__cloud-sync-button:hover:not(:disabled) {
   border-color: rgba(224, 182, 74, 0.8) !important;
+}
+/* The pencil tints on hover like the action buttons' icons. */
+.game-details__edit-custom-game-button svg {
+  transition: color 0.2s ease;
+}
+.game-details__edit-custom-game-button:hover svg {
+  color: var(--ej-action-edit) !important;
 }
 
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
