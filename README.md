@@ -6,7 +6,7 @@ Each theme lives on its own branch:
 
 | Theme | Branch | Version |
 |---|---|---|
-| Emerald Jungle | [`emerald-jungle`](https://github.com/sotik11/hydra-themes/tree/emerald-jungle) | 1.2 |
+| Emerald Jungle (animated) | [`emerald-jungle`](https://github.com/sotik11/hydra-themes/tree/emerald-jungle) | 1.5 |
 
 ## Installing a theme
 
