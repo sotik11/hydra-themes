@@ -894,10 +894,10 @@ video::-webkit-media-controls-timeline {
   border-color: transparent !important;
   box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
 }
-/* The review and reply editors on the game page: the frame turns gold the
-   same way while you are typing in them. */
+/* The review and reply editors on the game page: the frame turns silver
+   while you are typing in them. */
 .game-details__review-input-container:focus-within {
-  border-color: var(--ej-gold-line) !important;
+  border-color: var(--ej-silver-line) !important;
 }
 
 /* Source filter chips (repacks modal "filter by source"): emerald hover;
