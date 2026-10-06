@@ -254,12 +254,12 @@ body {
   font-weight: 600 !important;
 }
 /* The selected row of the game list (the open game) is quieter: the emerald
-   fill and outline, with a gold bar on each side. */
+   fill in a gold frame — a bar on each side, a hairline above and below. */
 .sidebar__section--games .sidebar__menu-item--active {
   background: var(--ej-active-fill) !important;
   box-shadow:
     var(--ej-gold-bars),
-    inset 0 0 0 1px var(--ej-active-outline) !important;
+    inset 0 0 0 1px var(--ej-gold) !important;
   color: var(--ej-active-text) !important;
 }
 /* Game list markers at rest: the favourite heart is a softened red, the installed
