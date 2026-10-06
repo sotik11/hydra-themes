@@ -110,9 +110,10 @@
     rgba(224, 182, 74, 0.16) 56%,
     transparent 64%
   );
-  /* The sheen on the rows of the game list: the same pass, painted with the
-     emerald and gold of the selected menu row. */
-  --ej-game-sheen: linear-gradient(
+  /* The sheen on the sidebar rows that are not selected (menu and game
+     list): the same pass, painted with the emerald and gold of the selected
+     menu row. Selected rows keep the plain sheen above. */
+  --ej-row-sheen: linear-gradient(
     115deg,
     transparent 34%,
     rgba(23, 137, 95, 0.5) 44%,
@@ -255,6 +256,10 @@ body {
   transform: translateX(130%);
   transition: transform var(--ej-sheen-duration) ease-in-out;
 }
+/* On a row that is not selected the sheen is the emerald → gold one. */
+.sidebar__menu-item:not(.sidebar__menu-item--active)::after {
+  background: var(--ej-row-sheen);
+}
 /* The selected row of the menu (the current page) stands apart from a hovered
    one: a deep-emerald → emerald → gold gradient, a bright outline with a soft
    inner glow, white bold label. (The glow is inset: the list clips anything
@@ -363,9 +368,8 @@ body {
 }
 /* In the game list the line sits under the name: it starts after the icon
    and stops short of the right edge. The row itself loses the emerald
-   hover; its sheen is the emerald → gold one (--ej-game-sheen), and the line
-   comes out only after the sheen has passed (it leaves at once, though). The
-   selected game keeps the plain sheen. */
+   hover, and the line comes out only after the sheen has passed (it leaves
+   at once, though). */
 .sidebar__section--games .sidebar__menu-item-button {
   background-origin: padding-box !important;
   background-position: left 36px bottom 5px !important;
@@ -380,10 +384,6 @@ body {
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover {
   background-color: transparent !important;
   box-shadow: none !important;
-}
-.sidebar__section--games
-  .sidebar__menu-item:not(.sidebar__menu-item--active)::after {
-  background: var(--ej-game-sheen);
 }
 
 /* ---- Buttons --------------------------------------------------------- */
