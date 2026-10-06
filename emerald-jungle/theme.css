@@ -276,14 +276,13 @@ body {
 }
 
 /* ---- Hover beam ------------------------------------------------------ */
-/* Game rows and menu items (context menu, profile menu, the library and
-   profile dropdowns, the settings tabs) are not filled on hover: a thin line
+/* Game rows and menu items (profile menu, the library and profile
+   dropdowns, the settings tabs) are not filled on hover: a thin line
    runs out from the left under the item instead. The line is a background
    layer of zero width that grows to the full width; a selected item keeps
    its own look and gets no line. The menu at the top of the sidebar is not
    part of this — it keeps its emerald hover. */
 .sidebar__section--games .sidebar__menu-item-button,
-.context-menu__item,
 .sidebar-profile__dropdown-item,
 .sidebar-filter-menu__item,
 .collections-filter__item,
@@ -304,9 +303,6 @@ body {
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover
   .sidebar__menu-item-button,
-.context-menu__item:hover:not(.context-menu__item--disabled):not(
-    .context-menu__item--danger
-  ):not(.context-menu__item--active),
 .sidebar-profile__dropdown-item:hover:not(
     .sidebar-profile__dropdown-item--danger
   ),
