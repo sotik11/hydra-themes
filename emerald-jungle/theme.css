@@ -283,7 +283,10 @@ body {
    emerald to gold; its right margin keeps the row's icons at the right edge. */
 .sidebar__section--games
   .sidebar__menu-item--active
-  .sidebar__menu-item-button-label {
+  .sidebar__menu-item-button-label,
+.settings__sidebar-button--active .settings__sidebar-button-label,
+.game-options-modal__sidebar-button--active
+  > span:not(.game-options-modal__sidebar-button-icon) {
   flex: 0 1 auto !important;
   margin-right: auto !important;
   background: var(--ej-title-fill) !important;
@@ -1087,7 +1090,9 @@ video::-webkit-media-controls-timeline {
   box-shadow: var(--ej-gold-bars) !important;
 }
 
-/* Settings left nav (same idea): emerald hover, green + gold stripe on active. */
+/* Settings left nav (same idea): emerald hover; the active tab keeps that
+   fill and takes the look of the selected game — a thin gold frame and the
+   emerald → gold name (the name rule is beside the game list's). */
 .settings__sidebar-button:hover,
 .game-options-modal__sidebar-button:hover {
   background: var(--ej-menu-fill) !important;
@@ -1095,7 +1100,7 @@ video::-webkit-media-controls-timeline {
 .settings__sidebar-button--active,
 .game-options-modal__sidebar-button--active {
   background: var(--ej-menu-fill) !important;
-  box-shadow: var(--ej-gold-bars) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
 }
 /* Divider between the settings nav groups: gold. */
 .settings__sidebar-divider {
