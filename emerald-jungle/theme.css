@@ -89,8 +89,8 @@
   --ej-beam-duration: 1.4s;
   /* Silver hairlines: dividers between the sections of a settings page. */
   --ej-silver-line: rgba(200, 208, 216, 0.5);
-  /* How faint a locked achievement is on the achievements page (1 = as bright
-     as an unlocked one). */
+  /* How faint a locked achievement is, on the achievements page and in the
+     block on the game page (1 = as bright as an unlocked one). */
   --ej-locked-achievement-opacity: 0.45;
   /* Earned-points progress fill. Once everything is earned the fill and the
      outline turn gold (a touch dimmer than --ej-gold) and the text and icon
@@ -1209,8 +1209,10 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-row-hover) !important;
 }
 
-/* Achievement rows in the game-details sidebar: emerald hover. */
-.list__item:hover {
+/* Achievement rows in the game-details sidebar: emerald hover on the unlocked
+   ones; the locked ones keep Hydra's grey hover and are dimmed the same way
+   as on the achievements page (the rule is just below). */
+.list__item:has(.list__item-image:not(.list__item-image--locked)):hover {
   background-color: var(--ej-row-hover) !important;
 }
 
@@ -1223,11 +1225,14 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 3px 0 0 var(--ej-gold) !important;
 }
 /* ...and the locked ones are dimmed, so it is clear at a glance what is still
-   to be earned; a hovered row comes back to full strength to be read. */
-.achievements__item:has(.achievements__item-image--locked) {
+   to be earned; a hovered row comes back to full strength to be read. The
+   same goes for the achievements block on the game page. */
+.achievements__item:has(.achievements__item-image--locked),
+.list__item:has(.list__item-image--locked) {
   opacity: var(--ej-locked-achievement-opacity) !important;
 }
-.achievements__item:has(.achievements__item-image--locked):hover {
+.achievements__item:has(.achievements__item-image--locked):hover,
+.list__item:has(.list__item-image--locked):hover {
   opacity: 1 !important;
 }
 
