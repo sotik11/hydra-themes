@@ -117,17 +117,11 @@
     rgba(184, 148, 58, 0.6) 56%,
     transparent 66%
   );
-  /* The runner on the frame of the selected game: an emerald → gold stretch
-     that travels round the frame, and how long one lap takes. (The angle it
-     starts from is animated; see @property --ej-frame-angle below.) */
-  --ej-frame-runner: conic-gradient(
-    from var(--ej-frame-angle),
-    transparent 0deg,
-    transparent 240deg,
-    #1db980 300deg,
-    #e0b64a 356deg,
-    transparent 360deg
-  );
+  /* The runner on the frame of the selected game: a stretch that travels
+     round the frame — the colours of its tail and its head, and how long one
+     lap takes. */
+  --ej-frame-runner-tail: #1db980;
+  --ej-frame-runner-head: #e0b64a;
   --ej-frame-runner-period: 5s;
   /* The shimmer that runs through the name of a hovered game: the text's
      own colour with an emerald → gold wave in the middle. The picture is
@@ -335,7 +329,9 @@ body {
 /* A runner goes round that frame: a ring one pixel thick drawn over it (a
    layer masked down to its own edge) and painted with a conic gradient whose
    starting angle turns a full circle. The angle is a registered property —
-   that is what lets it be animated. */
+   that is what lets it be animated. (The gradient is written here, not in a
+   :root variable: a variable would take the angle once, where it is declared,
+   and the runner would stand still.) */
 @property --ej-frame-angle {
   syntax: "<angle>";
   inherits: false;
@@ -348,7 +344,14 @@ body {
   padding: 1px;
   border-radius: inherit;
   pointer-events: none;
-  background: var(--ej-frame-runner);
+  background: conic-gradient(
+    from var(--ej-frame-angle),
+    transparent 0deg,
+    transparent 240deg,
+    var(--ej-frame-runner-tail) 300deg,
+    var(--ej-frame-runner-head) 356deg,
+    transparent 360deg
+  );
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
