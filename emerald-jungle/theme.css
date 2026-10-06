@@ -27,8 +27,9 @@
   --ej-game-banner-height: 500px;
   /* Banner height on profile pages. */
   --ej-profile-banner-height: 500px;
-  /* Button corner radius (a large value gives the pill shape). */
-  --ej-button-radius: 999px;
+  /* Button corner radius (Hydra's own 8px; a large value such as 999px gives
+     the pill shape). */
+  --ej-button-radius: 8px;
   /* Avatar and name in the sidebar profile block (Hydra's own are 35px and
      14px). */
   --ej-profile-avatar-size: 42px;
@@ -584,7 +585,7 @@ body {
 }
 
 /* ---- Buttons --------------------------------------------------------- */
-/* Pill shape for a softer, more modern look */
+/* Corners (--ej-button-radius). */
 .button {
   border-radius: var(--ej-button-radius) !important;
 }
@@ -906,7 +907,7 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 1px 0 var(--ej-gold-line) !important;
 }
 
-/* System requirements tabs: pill buttons sat on the gold hairline — drop them. */
+/* System requirements tabs: the buttons sat on the gold hairline — drop them. */
 .requirement__button-container {
   padding-top: 8px !important;
 }
