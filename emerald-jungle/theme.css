@@ -1041,8 +1041,11 @@ video::-webkit-media-controls-timeline {
   box-shadow: var(--ej-gold-bars) !important;
 }
 
-/* Settings left nav (same idea): green + gold bars on active; hover is the
-   beam. */
+/* Settings left nav (same idea): emerald hover, green + gold stripe on active. */
+.settings__sidebar-button:hover,
+.game-options-modal__sidebar-button:hover {
+  background: var(--ej-menu-fill) !important;
+}
 .settings__sidebar-button--active,
 .game-options-modal__sidebar-button--active {
   background: var(--ej-menu-fill) !important;
