@@ -117,18 +117,20 @@
     rgba(184, 148, 58, 0.6) 56%,
     transparent 66%
   );
-  /* The shimmer that runs through the name of a hovered game: the label's
-     own light colour with an emerald → gold wave in the middle. The picture
-     is three labels wide, so the wave starts and ends outside the name. */
+  /* The shimmer that runs through the name of a hovered game: the text's
+     own colour with an emerald → gold wave in the middle. The picture is
+     three labels wide, so the wave starts and ends outside the name. */
   --ej-name-shimmer: linear-gradient(
     100deg,
-    #fafafa 0%,
-    #fafafa 40%,
+    currentColor 0%,
+    currentColor 40%,
     #1db980 46%,
     #e0b64a 54%,
-    #fafafa 60%,
-    #fafafa 100%
+    currentColor 60%,
+    currentColor 100%
   );
+  /* ...and how often the wave runs while the pointer stays on the row. */
+  --ej-name-shimmer-period: 1.5s;
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
   /* ...and the slower pass over the sidebar rows. */
@@ -404,7 +406,8 @@ body {
 /* The name: the label shrinks to its text (the right margin keeps the icons
    at the right edge) and carries the shimmer picture clipped to the letters,
    parked with the wave off to the left. At rest the letters are painted over
-   it as usual; on hover they turn clear and the picture slides across. */
+   it as usual; on hover they turn clear and the picture slides across, again
+   and again while the pointer stays (--ej-name-shimmer-period). */
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active)
   .sidebar__menu-item-button-label {
@@ -421,8 +424,15 @@ body {
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover
   .sidebar__menu-item-button-label {
   -webkit-text-fill-color: transparent !important;
-  background-position: 0 0 !important;
-  transition: background-position var(--ej-sheen-duration-slow) ease-in-out !important;
+  animation: ej-name-shimmer var(--ej-name-shimmer-period) ease-in-out infinite;
+}
+@keyframes ej-name-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 .sidebar__section--games
   .sidebar__menu-item:not(.sidebar__menu-item--active):hover {
