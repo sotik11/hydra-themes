@@ -131,6 +131,9 @@
   );
   /* ...and how often the wave runs while the pointer stays on the row. */
   --ej-name-shimmer-period: 1.5s;
+  /* The same wave runs through the header title on its own: how often (one
+     pass takes 30% of the period, the rest is a pause). */
+  --ej-title-shimmer-period: 5s;
   /* How long one pass of the sheen takes. */
   --ej-sheen-duration: 1.6s;
   /* ...and the slower pass over the sidebar rows. */
@@ -1372,13 +1375,35 @@ video::-webkit-media-controls-timeline {
   border-bottom: 1px solid var(--ej-gold-line) !important;
 }
 /* Its title (page or game name): Sora ExtraBold, larger, capitals, slightly
-   spaced. */
+   spaced. The emerald → gold wave of the game names (--ej-name-shimmer) runs
+   through its letters every few seconds (--ej-title-shimmer-period); the
+   title shrinks to its text so the wave crosses the letters, not the whole
+   bar (Hydra's own width limit still cuts long titles with an ellipsis). */
 .header__title {
   font-family: "Sora", "Noto Sans", sans-serif !important;
   font-size: 1.5em !important;
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
+  width: fit-content !important;
+  max-width: calc(100% - 28px) !important;
+  background-image: var(--ej-name-shimmer) !important;
+  background-repeat: no-repeat !important;
+  background-size: 300% 100% !important;
+  background-position: 100% 0 !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: ej-title-shimmer var(--ej-title-shimmer-period) ease-in-out infinite;
+}
+@keyframes ej-title-shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  30%,
+  100% {
+    background-position: 0 0;
+  }
 }
 
 /* The back arrow beside the title: a round badge with the look of the round
