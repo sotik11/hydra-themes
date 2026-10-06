@@ -1253,6 +1253,13 @@ video::-webkit-media-controls-timeline {
   ):hover::after {
   animation: ej-row-sheen var(--ej-sheen-duration-slow) ease-in-out infinite;
 }
+/* The rows of the achievements page are several times wider than a sidebar
+   row, so the same pass looks rushed there: give it twice the time. */
+.achievements__item:has(
+    .achievements__item-image:not(.achievements__item-image--locked)
+  ):hover::after {
+  animation-duration: calc(var(--ej-sheen-duration-slow) * 2);
+}
 /* ...and the locked ones are dimmed, so it is clear at a glance what is still
    to be earned; a hovered row comes back to full strength to be read. The
    same goes for the achievements block on the game page. */
