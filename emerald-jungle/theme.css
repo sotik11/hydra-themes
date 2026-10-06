@@ -1861,3 +1861,38 @@ video::-webkit-media-controls-timeline {
 .profile-hero__background-image {
   object-position: top !important;
 }
+
+/* ---- Reduced motion --------------------------------------------------- */
+/* For people who have turned animations down in their system settings
+   (Windows: Settings → Accessibility → Visual effects → Animation effects)
+   nothing in the theme moves by itself or runs in a loop. Gone are the
+   shimmer in the header title and in the game names, the runner on the
+   selected game's frame, and every sheen (sidebar rows, covers, the Play
+   button, achievements, the download bar, the achievement pop-up). What
+   stays is everything that is still, and the two things that happen once in
+   answer to the pointer: the line under a hovered row and the soft change of
+   the profile picture. */
+@media (prefers-reduced-motion: reduce) {
+  .header__title,
+  .sidebar__section--games
+    .sidebar__menu-item:not(.sidebar__menu-item--active):hover
+    .sidebar__menu-item-button-label {
+    animation: none !important;
+  }
+  .sidebar__section--games .sidebar__menu-item--active::before,
+  .sidebar__menu-item::after,
+  .hero-panel-actions__action:has(.octicon-play)::after,
+  .game-card::after,
+  .library-game-card__wrapper::after,
+  .library-game-card-large::after,
+  .user-library-game__wrapper::after,
+  .similar-games__card::after,
+  .achievements__item:has(
+      .achievements__item-image:not(.achievements__item-image--locked)
+    )::after,
+  .list__item:has(.list__item-image:not(.list__item-image--locked))::after,
+  .download-group__progress-fill::after,
+  .achievement-notification__container::after {
+    display: none !important;
+  }
+}
