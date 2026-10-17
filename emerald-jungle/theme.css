@@ -97,7 +97,7 @@
      orange of Nexus Mods), localization (the blue of the
      links in the localization sources settings), favourite (the red of the
      sidebar heart), pin and wishlist (gold), options (purple), Steam
-     (Hydra's brand blue). */
+     (Hydra's brand blue), Epic (the silver of the editor frames, solid). */
   --ej-action-download: #4ade80;
   --ej-action-mods: #da8e35;
   --ej-action-localization: #1a9fff;
@@ -105,6 +105,7 @@
   --ej-action-pin: #e0b64a;
   --ej-action-settings: #a855f7;
   --ej-action-steam: #3e62c0;
+  --ej-action-epic: #c8d0d8;
   /* ...and the same for the pencil ("edit") button in the banner: the green
      of the "installed" tick. */
   --ej-action-edit: #46c48c;
@@ -672,7 +673,8 @@ body {
 }
 /* On hover each action button tints its own icon (--ej-action-*). The
    buttons have no classes of their own, so they are told by their icons; the
-   Steam one is the only icon that is neither an Octicon nor a Lucide icon. */
+   Steam and Epic ones are the only icons that are neither Octicons nor Lucide
+   icons; Epic is the one with its own class. */
 .hero-panel-actions__action svg {
   transition: color 0.2s ease;
 }
@@ -708,11 +710,14 @@ body {
 .hero-panel-actions__action:has(.octicon-gear):hover:not(:disabled) svg {
   color: var(--ej-action-settings) !important;
 }
-.hero-panel-actions__action:has(> svg:not(.octicon):not(.lucide)):hover:not(
-    :disabled
-  )
+.hero-panel-actions__action:not(.hero-panel-actions__epic-store):has(
+    > svg:not(.octicon):not(.lucide)
+  ):hover:not(:disabled)
   svg {
   color: var(--ej-action-steam) !important;
+}
+.hero-panel-actions__epic-store:hover:not(:disabled) svg {
+  color: var(--ej-action-epic) !important;
 }
 /* The "remove" button (the cross) fills with the red of the delete buttons
    instead. */
