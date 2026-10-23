@@ -2107,6 +2107,13 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-header-fill-hover) !important;
 }
 
+/* The frame round the notification preview: the soft emerald outline of the
+   review cards instead of a white line. */
+.theme-editor__notification-preview-wrapper {
+  border-color: rgba(31, 185, 128, 0.25) !important;
+  border-radius: 8px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
