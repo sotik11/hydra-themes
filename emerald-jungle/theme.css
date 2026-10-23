@@ -2091,6 +2091,12 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-gold) !important;
 }
 
+/* The lower part (notification preview and its settings): the app
+   background instead of Hydra's grey. */
+.theme-editor__footer {
+  background-color: #0a0f0c !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
