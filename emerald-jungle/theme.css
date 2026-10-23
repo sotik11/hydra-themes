@@ -1935,6 +1935,33 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* My messages: dark emerald bubbles with light text (Hydra paints them light
+   grey with dark text), so their quotes and links turn light as well. A
+   message removed by moderation keeps its dashed placeholder. */
+.chat-window__message-group--mine
+  .chat-window__message:not(.chat-window__message--removed) {
+  background-color: var(--ej-solid-fill) !important;
+  border-color: var(--ej-solid-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.chat-window__message-group--mine .chat-window__message-quote {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+.chat-window__message-group--mine .chat-window__message-quote:hover,
+.chat-window__message-group--mine .chat-window__message-quote:focus-visible {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+.chat-window__message-group--mine .chat-window__message-quote-name {
+  color: rgba(250, 250, 250, 0.85) !important;
+}
+.chat-window__message-group--mine .chat-window__message-quote-text,
+.chat-window__message-group--mine .chat-window__message-quote--unavailable {
+  color: rgba(250, 250, 250, 0.66) !important;
+}
+.chat-window__message-group--mine .chat-window__message-link {
+  color: #7fe0a3 !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
