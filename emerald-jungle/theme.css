@@ -1885,6 +1885,22 @@ video::-webkit-media-controls-timeline {
   border-color: #0a0f0c !important;
 }
 
+/* Their top strips (the friends window's title bar, the chat's tab strip)
+   take the emerald of the main window's header with its gold line — without
+   its blur: the strip has nothing behind it, and the chat's menus open from
+   it. A friends window with a profile picture keeps the picture across the
+   whole top. */
+.friends-window__header:not(.friends-window__header--has-bg)
+  .friends-window__title-bar,
+.chat-window__strip {
+  background: linear-gradient(
+    180deg,
+    rgba(29, 185, 128, 0.3) 0%,
+    rgba(12, 61, 44, 0.55) 100%
+  ) !important;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
