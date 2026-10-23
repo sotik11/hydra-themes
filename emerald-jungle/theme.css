@@ -2086,6 +2086,11 @@ video::-webkit-media-controls-timeline {
   border-bottom: 1px solid var(--ej-gold-line) !important;
 }
 
+/* The dot next to the name that marks unsaved changes: gold. */
+.theme-editor__header__status {
+  background-color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
