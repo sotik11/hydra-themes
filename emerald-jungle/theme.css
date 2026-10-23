@@ -2114,6 +2114,17 @@ video::-webkit-media-controls-timeline {
   border-radius: 8px !important;
 }
 
+/* Its "remove sound" button: red like Hydra's delete buttons (its fill, text
+   and hover from .button--danger), not a gold outline. */
+.theme-editor__sound-actions-row .button:has(.octicon-trash) {
+  background-color: var(--ej-action-remove-fill) !important;
+  border-color: transparent !important;
+  color: #f0f1f7 !important;
+}
+.theme-editor__sound-actions-row .button:has(.octicon-trash):hover {
+  background-color: #b3203f !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
