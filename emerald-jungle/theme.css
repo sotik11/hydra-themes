@@ -2034,6 +2034,12 @@ video::-webkit-media-controls-timeline {
     0 12px 32px rgba(0, 0, 0, 0.55) !important;
 }
 
+/* Messages from a friend: the soft emerald outline of the review cards. */
+.chat-window__message-group:not(.chat-window__message-group--mine)
+  .chat-window__message:not(.chat-window__message--removed) {
+  border-color: rgba(31, 185, 128, 0.25) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
