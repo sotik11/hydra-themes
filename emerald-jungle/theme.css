@@ -1305,11 +1305,12 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.7) !important;
 }
 
-/* Right-column item rows (profile stats / badges / recent activity): emerald
-   hover (was grey). */
+/* Right-column item rows (profile stats / badges / recent activity / friends):
+   emerald hover (was grey). */
 .user-stats__list-item:hover,
 .badges-box__item:hover,
-.recent-games__list-item:hover {
+.recent-games__list-item:hover,
+.friends-box__list-item:hover {
   background-color: var(--ej-row-hover) !important;
 }
 
