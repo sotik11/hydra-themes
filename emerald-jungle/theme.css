@@ -1970,6 +1970,17 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-silver-line) !important;
 }
 
+/* The send button looks like the primary button; disabled, it stays Hydra's
+   faint grey. */
+.chat-window__send:not(:disabled) {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.chat-window__send:not(:disabled):hover {
+  filter: brightness(1.08);
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
