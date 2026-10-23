@@ -1962,6 +1962,14 @@ video::-webkit-media-controls-timeline {
   color: #7fe0a3 !important;
 }
 
+/* The message box: the frame turns silver while you type (an invalid message
+   keeps Hydra's red). */
+.chat-window__composer-box:focus-within:not(.chat-window__composer-box--shake):not(
+    .chat-window__composer-box--invalid
+  ) {
+  border-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
