@@ -1867,6 +1867,24 @@ video::-webkit-media-controls-timeline {
   object-position: top !important;
 }
 
+/* ---- Friends and chat windows ----------------------------------------- */
+/* Hydra opens them as windows of their own: the classes of the main window
+   (.sidebar, .header, .title-bar…) do not exist there, so they are styled by
+   their own classes. Their roots paint the background themselves; they get
+   the app background of the theme. */
+.friends-window,
+.chat-window {
+  background-color: #0a0f0c !important;
+}
+/* The sticky section headers of the friend list and the ring round a
+   friend's status orb are painted with the same background. */
+.friends-window__section-header {
+  background-color: #0a0f0c !important;
+}
+.friends-window__status-orb {
+  border-color: #0a0f0c !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
