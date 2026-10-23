@@ -1914,6 +1914,12 @@ video::-webkit-media-controls-timeline {
   background-color: #17895f !important;
 }
 
+/* The friend search: the frame turns silver while you type, as in the
+   review editors. */
+.friends-window__search:focus-within {
+  border-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
