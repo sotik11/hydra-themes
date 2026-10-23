@@ -1901,6 +1901,13 @@ video::-webkit-media-controls-timeline {
   border-bottom: 1px solid var(--ej-gold-line) !important;
 }
 
+/* Friend rows: on hover the emerald of the sidebar rows (fill and a thin
+   ring). Rows with a profile picture keep Hydra's own light fade. */
+.friends-window__friend:not(.friends-window__friend--has-bg):hover {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
