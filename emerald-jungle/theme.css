@@ -2097,6 +2097,16 @@ video::-webkit-media-controls-timeline {
   background-color: #0a0f0c !important;
 }
 
+/* Its "notification preview" fold: the emerald header of the sections (only
+   in this window; the same fold elsewhere in Hydra stays as it is). */
+.theme-editor .collapsed-menu__button {
+  background: var(--ej-header-fill) !important;
+  color: var(--ej-active-text) !important;
+}
+.theme-editor .collapsed-menu__button:hover {
+  background: var(--ej-header-fill-hover) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
