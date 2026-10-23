@@ -2004,6 +2004,18 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* The emoji picker: the chosen category in emerald, the search frame silver
+   while you type. */
+.chat-window__emoji-tab--active,
+.chat-window__emoji-tab--active:hover {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.chat-window__emoji-search:focus-within {
+  border-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
