@@ -2016,6 +2016,12 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-silver-line) !important;
 }
 
+/* The "Replying to…" strip over the message box: a light emerald tint (the
+   hover of the profile rows) instead of grey. */
+.chat-window__composer-reply {
+  background-color: var(--ej-row-hover) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
