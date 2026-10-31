@@ -471,6 +471,7 @@ body {
   .sidebar__menu-item-button-label,
 .settings__sidebar-button--active .settings__sidebar-button-label,
 .context-menu__item--active:not(:hover) .context-menu__item-label,
+.achievement-select__item[data-state="checked"]:not(:hover):not([data-highlighted]) .achievement-select__item-label,
 .game-options-modal__sidebar-button--active
   > span:not(.game-options-modal__sidebar-button-icon) {
   flex: 0 1 auto !important;
