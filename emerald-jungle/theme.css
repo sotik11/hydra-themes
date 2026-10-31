@@ -2761,6 +2761,30 @@ video::-webkit-media-controls-timeline {
   }
 }
 
+/* The game page's comments: the black cards of the main window's reviews, the
+   gold line above the votes; a like is green, a dislike red. */
+#big-picture .game-page__comment-card {
+  gap: 0 !important;
+  overflow: hidden;
+  background-color: #0d0d0d !important;
+  border: 1px solid rgba(31, 185, 128, 0.25) !important;
+  border-radius: 12px !important;
+}
+#big-picture .game-page__comment-card-top,
+#big-picture .game-page__comment-card-bottom {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+#big-picture .game-page__comment-card-bottom {
+  border-top: 1px solid var(--ej-gold-line) !important;
+}
+#big-picture .game-page__comment-feedback-item--active[aria-label="Like comment"] {
+  color: var(--ej-action-edit) !important;
+}
+#big-picture .game-page__comment-feedback-item--active[aria-label="Dislike comment"] {
+  color: var(--ej-action-favorite) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
