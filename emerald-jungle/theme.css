@@ -2408,6 +2408,20 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Buttons. Primary comes from the main window's rule, but has no border here,
+   so its outline is a shadow; danger is the solid red of the remove buttons. */
+#big-picture .button--primary {
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+#big-picture .button--danger {
+  background-color: var(--ej-action-remove-fill) !important;
+  border-color: transparent !important;
+  color: #f0f1f7 !important;
+}
+#big-picture .button--danger:hover {
+  background-color: #b3203f !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
