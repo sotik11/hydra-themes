@@ -2422,6 +2422,20 @@ video::-webkit-media-controls-timeline {
   background-color: #b3203f !important;
 }
 
+/* Tabs: the gold underline. Toggles: the active segment. */
+#big-picture .tabs__indicator,
+#big-picture .tabs__settings-indicator {
+  background-color: var(--ej-gold) !important;
+  box-shadow: none !important;
+}
+#big-picture .tabs__segmented-indicator,
+#big-picture .segmented-control__option--selected {
+  background-color: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+  box-shadow: none !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
