@@ -3047,6 +3047,17 @@ video::-webkit-media-controls-timeline {
   border-radius: 0 !important;
 }
 
+/* The comment editor: no fill, Hydra's neutral hairline, silver under focus,
+   as in the main window's other comment boxes. */
+#big-picture .screenshot-comments__editor {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+#big-picture .screenshot-comments__editor[data-focused="true"],
+#big-picture .screenshot-comments__editor:focus-within {
+  border-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
