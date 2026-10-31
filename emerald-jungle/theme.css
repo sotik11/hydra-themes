@@ -2823,6 +2823,87 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Profile: the tiles read as the main window's sections, with the caption as
+   an emerald header on top. Paired tiles stand apart. */
+#big-picture .profile-page__stat-pair {
+  gap: 16px !important;
+}
+#big-picture .profile-page__stat-card {
+  grid-template-rows: auto minmax(136px, 1fr) !important;
+  gap: 0 !important;
+  background: #0d0d0d !important;
+  border: 1px solid var(--ej-outline) !important;
+  border-radius: 12px !important;
+}
+#big-picture .profile-page__stat-label {
+  order: -1;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+  font-weight: 600 !important;
+}
+#big-picture .profile-page__stat-main,
+#big-picture .profile-page__favorite-game-media,
+#big-picture .profile-page__favorite-game-copy {
+  background: transparent !important;
+}
+/* The favourite game: the header spans the cover too. */
+#big-picture .profile-page__stat-card--favorite {
+  grid-template-rows: auto minmax(0, 1fr) !important;
+}
+#big-picture .profile-page__favorite-game-panel {
+  display: contents !important;
+}
+#big-picture .profile-page__stat-card--favorite .profile-page__stat-label {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+#big-picture .profile-page__favorite-game-media {
+  grid-column: 1;
+  grid-row: 2;
+  height: 148px !important;
+}
+#big-picture .profile-page__favorite-game-copy {
+  grid-column: 2;
+  grid-row: 2;
+}
+/* Recent activity: a brighter selection. */
+#big-picture .profile-page__activity-item:hover,
+#big-picture .profile-page__activity-item:focus-within,
+#big-picture .profile-page__activity-item[data-focused="true"],
+#big-picture .profile-page__activity-item[data-focus-visible="true"] {
+  background-color: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+}
+/* Achievements and friends: sections as well. */
+#big-picture .profile-page__achievement-group,
+#big-picture .profile-page__friends-list {
+  gap: 0 !important;
+  overflow: hidden;
+  background: #0d0d0d !important;
+  border: 1px solid var(--ej-outline) !important;
+  border-radius: 12px !important;
+}
+#big-picture .profile-page__achievement-game-header {
+  background: var(--ej-header-fill) !important;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+}
+#big-picture .profile-page__achievement-row,
+#big-picture .profile-page__friend-row {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+#big-picture .profile-page__friend-row:hover {
+  background: var(--ej-row-hover) !important;
+}
+#big-picture .profile-page__friends-view-all {
+  background: var(--ej-header-fill) !important;
+  border-top: 1px solid var(--ej-gold-line) !important;
+  border-radius: 0 !important;
+  color: var(--ej-active-text) !important;
+}
+#big-picture .profile-page__friends-view-all:hover {
+  background: var(--ej-header-fill-hover) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
