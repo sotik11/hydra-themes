@@ -2159,6 +2159,36 @@ video::-webkit-media-controls-timeline {
   fill: var(--ej-action-edit) !important;
 }
 
+/* The description (and the "add description" field): a section header over
+   the panel, edge to edge, with the gold line below. The panel's 16px padding
+   is undone by the negative margins. */
+.screenshot-lightbox__info > .inline-edit-field,
+.screenshot-lightbox__info > .screenshot-lightbox__description {
+  margin: -16px -16px 6px !important;
+  background: var(--ej-header-fill) !important;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+}
+.screenshot-lightbox__info > .inline-edit-field {
+  min-height: 46px !important;
+}
+.screenshot-lightbox__info > .screenshot-lightbox__description {
+  padding: 12px 16px !important;
+}
+.screenshot-lightbox__info > .inline-edit-field:not(.inline-edit-field--editing):hover {
+  background: var(--ej-header-fill-hover) !important;
+}
+.screenshot-lightbox__info > .inline-edit-field:not(.inline-edit-field--editing) .inline-edit-field__outline {
+  opacity: 0 !important;
+}
+.screenshot-lightbox__info > .inline-edit-field .inline-edit-field__trigger,
+.screenshot-lightbox__info > .inline-edit-field .inline-edit-field__input {
+  height: auto !important;
+  padding: 12px 16px !important;
+}
+.screenshot-lightbox__info > .inline-edit-field .inline-edit-field__trigger:focus-visible {
+  outline-offset: -2px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
