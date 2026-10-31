@@ -3025,6 +3025,28 @@ video::-webkit-media-controls-timeline {
   background: linear-gradient(180deg, transparent 0%, 44%, #060e0a 97%) !important;
 }
 
+/* "My screenshots" on the game page: a section like its neighbours. */
+#big-picture .game-my-screenshots {
+  overflow: hidden;
+  background: #0d0d0d !important;
+  border: 1px solid var(--ej-outline) !important;
+  border-radius: 12px !important;
+}
+#big-picture .game-my-screenshots__title {
+  background: var(--ej-header-fill) !important;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+  border-radius: 0 !important;
+}
+#big-picture .game-my-screenshots__title .typography {
+  color: var(--ej-active-text) !important;
+  font-weight: 600 !important;
+}
+#big-picture .game-my-screenshots__body {
+  margin-top: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
