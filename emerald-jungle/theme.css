@@ -2489,6 +2489,26 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Modals with a side menu (game settings, filters): the frosted glass of the
+   main window's modals; the active section is an emerald row. */
+#big-picture .sidebar-modal {
+  background: rgba(31, 185, 128, 0.07) !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+  border: 1px solid rgba(31, 185, 128, 0.18) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+#big-picture .sidebar-modal__content {
+  background: transparent !important;
+}
+#big-picture .sidebar-modal__tab-active-indicator {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+#big-picture .sidebar-modal__tab-active-indicator[data-highlighted="true"] {
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
