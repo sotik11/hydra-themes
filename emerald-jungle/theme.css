@@ -2326,13 +2326,19 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
-/* The title bar's Big Picture button: the active-toggle look. The outline is
-   a shadow, so the button keeps its size. */
+/* The title bar's Big Picture button: no fill or outline, just the wordmark's
+   emerald -> gold, at full strength. A gradient can't reach the icon, so that
+   takes the gold of the gradient's left end. */
 .title-bar__big-picture,
 .title-bar__big-picture:hover {
-  background: var(--ej-active-fill) !important;
-  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
-  color: var(--ej-active-text) !important;
+  background: linear-gradient(270deg, #1db980 40%, var(--ej-gold) 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  opacity: 1 !important;
+}
+.title-bar__big-picture svg {
+  color: var(--ej-gold) !important;
 }
 .title-bar__big-picture:hover {
   filter: brightness(1.08);
