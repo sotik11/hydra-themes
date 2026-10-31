@@ -2904,6 +2904,23 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-header-fill-hover) !important;
 }
 
+/* Profile stats in gold: figures, icons, the week's bars, the favourite game.
+   The Hydra icon is an image, so a filter tints it to the same gold. */
+#big-picture .profile-page__stat-value,
+#big-picture .profile-page__stat-value svg,
+#big-picture .profile-page__favorite-game-copy h2,
+#big-picture .profile-page__favorite-game-copy p {
+  color: var(--ej-gold) !important;
+  opacity: 1 !important;
+}
+#big-picture .profile-page__weekly-bar::after {
+  background: var(--ej-gold) !important;
+}
+#big-picture .profile-page__stat-hydra-icon {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(33%) saturate(744%) hue-rotate(4deg) brightness(93%) !important;
+  opacity: 1 !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
