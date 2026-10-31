@@ -2283,6 +2283,16 @@ video::-webkit-media-controls-timeline {
   fill: var(--ej-action-favorite) !important;
 }
 
+/* Hours played on a review: the active-toggle look. */
+.game-details__review-playtime {
+  background: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.game-details__review-playtime svg {
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
