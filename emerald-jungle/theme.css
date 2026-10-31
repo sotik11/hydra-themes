@@ -2967,6 +2967,43 @@ video::-webkit-media-controls-timeline {
   background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
+/* The achievements block on the game page, as in the main window: an unlocked
+   row turns emerald under the pointer with the sheen passing over it, a locked
+   one is faint and turns Hydra's grey. */
+#big-picture .game-page__achievement {
+  position: relative;
+  overflow: hidden;
+  margin-inline: 8px;
+  padding-inline: 8px !important;
+  border-radius: 8px !important;
+}
+#big-picture .game-page__achievement:has(.game-page__achievement-icon--locked) {
+  opacity: var(--ej-locked-achievement-opacity);
+}
+#big-picture .game-page__achievement:has(.game-page__achievement-icon--locked):hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  opacity: 1;
+}
+#big-picture .game-page__achievement:not(:has(.game-page__achievement-icon--locked)):hover {
+  background-color: var(--ej-row-hover) !important;
+}
+#big-picture .game-page__achievement:not(:has(.game-page__achievement-icon--locked))::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--ej-row-sheen);
+  transform: translateX(-130%);
+}
+#big-picture .game-page__achievement:not(:has(.game-page__achievement-icon--locked)):hover::after {
+  animation: ej-row-sheen var(--ej-sheen-duration-slow) ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #big-picture .game-page__achievement:hover::after {
+    animation: none;
+  }
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
