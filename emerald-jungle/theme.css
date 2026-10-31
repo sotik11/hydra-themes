@@ -2962,6 +2962,11 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(224, 182, 74, 0.5) !important;
 }
 
+/* A hovered locked achievement: Hydra's own grey, as in the main window. */
+#big-picture .game-achievements-row:not(.game-achievements-row--unlocked):hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
