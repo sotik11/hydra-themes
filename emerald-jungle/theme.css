@@ -3147,6 +3147,19 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-download-fill) !important;
 }
 
+/* Settings, Emulation: the emulator's header takes the section fill, the black
+   blocks below it a thin silver frame. */
+#big-picture .emulator-detail__hero {
+  background: var(--ej-header-fill) !important;
+  border: 1px solid var(--ej-outline) !important;
+}
+#big-picture .emulator-detail__row,
+#big-picture .emulator-detail__stat,
+#big-picture .emulator-detail__memcard-card,
+#big-picture .emulator-detail__cloud-card {
+  border: 1px solid var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
