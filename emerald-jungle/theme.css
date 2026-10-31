@@ -2598,6 +2598,12 @@ video::-webkit-media-controls-timeline {
   border-radius: 12px !important;
 }
 
+/* The playtime strip above the media: the main window's description strip. */
+#big-picture .game-page__playtime-bar {
+  background: var(--ej-header-fill) !important;
+  border: 1px solid var(--ej-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
