@@ -2476,6 +2476,19 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Stat tiles (library hero, profile): a dark value over an emerald caption. */
+#big-picture .hero__stat__value,
+#big-picture .profile-page__stat-main,
+#big-picture .profile-page__favorite-game-media,
+#big-picture .profile-page__favorite-game-copy {
+  background: var(--surface) !important;
+}
+#big-picture .hero__stat__label,
+#big-picture .profile-page__stat-label {
+  background: var(--ej-header-fill) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
