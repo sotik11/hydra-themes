@@ -3004,6 +3004,27 @@ video::-webkit-media-controls-timeline {
   }
 }
 
+/* The game page: the main window's dimmed night sky, without the horizon. The
+   page is the scrolling box, so the sky stays put. Hydra fades the banner into
+   a fixed near-black; here it fades into the sky's colour. */
+#big-picture .game-page {
+  background:
+    linear-gradient(
+      rgba(5, 11, 8, var(--ej-night-dim)),
+      rgba(5, 11, 8, var(--ej-night-dim))
+    ),
+    var(--ej-night-moon) 88% 9vh / 160px 160px no-repeat,
+    var(--ej-night-stars) 0 0 / 860px 860px repeat,
+    var(--ej-night-stars-small) 0 0 / 520px 520px repeat,
+    linear-gradient(180deg, #030806 0%, #05100b 45%, #081a12 100%) !important;
+}
+#big-picture .game-page__hero-shell {
+  background: #060e0a !important;
+}
+#big-picture .game-page__hero-overlay {
+  background: linear-gradient(180deg, transparent 0%, 44%, #060e0a 97%) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
