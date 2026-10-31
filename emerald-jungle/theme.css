@@ -2436,6 +2436,23 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Dropdowns and context menus: the rows of the main window's context menu. */
+#big-picture .dropdown-select__option:hover,
+#big-picture .dropdown-select__option[data-focus-visible="true"],
+#big-picture .context-menu__item[data-focus-visible="true"] {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+#big-picture .dropdown-select__option[data-selected="true"] {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+  color: var(--ej-active-text) !important;
+}
+#big-picture .context-menu {
+  background: #0b120e !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
