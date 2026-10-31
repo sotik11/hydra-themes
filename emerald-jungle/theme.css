@@ -2216,6 +2216,17 @@ video::-webkit-media-controls-timeline {
   fill: var(--ej-action-favorite) !important;
 }
 
+/* Editing a comment: the toolbar is a section header; a pressed B/I/U takes
+   the active-toggle look instead of Hydra's blue. */
+.screenshot-comments__item .rich-text-editor__header {
+  background: var(--ej-header-fill) !important;
+  border-bottom-color: var(--ej-gold-line) !important;
+}
+.screenshot-comments__editor .rich-text-editor__button.is-active {
+  background-color: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
