@@ -1932,6 +1932,15 @@ video::-webkit-media-controls-timeline {
 .friends-window__add-friend:hover .friends-window__add-friend-face--add {
   filter: brightness(1.08);
 }
+/* Its "close" face: the red of the remove buttons. */
+.friends-window__add-friend-face--close {
+  background-color: var(--ej-action-remove-fill) !important;
+  border-color: transparent !important;
+  color: #f0f1f7 !important;
+}
+.friends-window__add-friend:hover .friends-window__add-friend-face--close {
+  background-color: #b3203f !important;
+}
 .friends-window__count--online {
   background-color: #17895f !important;
 }
