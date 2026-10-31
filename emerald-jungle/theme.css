@@ -2208,6 +2208,14 @@ video::-webkit-media-controls-timeline {
   border-top: 1px solid var(--ej-gold-line) !important;
 }
 
+/* A downvoted comment: the same, in the red of the favourite heart. */
+.screenshot-comments__vote--active:has(.lucide-thumbs-down) {
+  color: var(--ej-action-favorite) !important;
+}
+.screenshot-comments__vote--active:has(.lucide-thumbs-down) svg {
+  fill: var(--ej-action-favorite) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
