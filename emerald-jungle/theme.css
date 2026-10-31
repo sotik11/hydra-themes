@@ -1917,6 +1917,21 @@ video::-webkit-media-controls-timeline {
 
 /* The "online" count next to the section title: the emerald of the theme
    instead of Hydra's green. */
+/* The add-friend button: the active-toggle look on its "add" face. The button
+   itself stays clear, or the primary button's fill would double up. */
+.friends-window__add-friend.button,
+.friends-window__add-friend.button:hover {
+  background: transparent !important;
+}
+.friends-window__add-friend-face--add,
+.friends-window__add-friend:hover .friends-window__add-friend-face--add {
+  background-color: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.friends-window__add-friend:hover .friends-window__add-friend-face--add {
+  filter: brightness(1.08);
+}
 .friends-window__count--online {
   background-color: #17895f !important;
 }
