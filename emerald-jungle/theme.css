@@ -2263,10 +2263,13 @@ video::-webkit-media-controls-timeline {
 
 /* The review and reply editors on the game page: the toolbar of the screenshot
    comment editor. */
-.game-details__review-form .rich-text-editor__header,
-.game-details__reply-composer .rich-text-editor__header {
+.game-details__review-form .rich-text-editor__header {
   background: var(--ej-header-fill) !important;
   border-bottom-color: var(--ej-gold-line) !important;
+}
+/* The reply editor: the reply strip of the chat window's composer. */
+.game-details__reply-composer .rich-text-editor__header {
+  background: var(--ej-row-hover) !important;
 }
 .game-details__review-form .rich-text-editor__button.is-active,
 .game-details__reply-composer .rich-text-editor__button.is-active {
