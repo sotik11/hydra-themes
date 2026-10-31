@@ -2140,6 +2140,17 @@ video::-webkit-media-controls-timeline {
   background-color: #0a0f0c !important;
 }
 
+/* A liked screenshot: the look of the viewer's round buttons. */
+.screenshot-lightbox__action--active {
+  background-color: var(--ej-solid-fill) !important;
+  border-color: transparent !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.screenshot-lightbox__action--active:hover:not(:disabled) {
+  background-color: var(--ej-solid-fill-hover) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
