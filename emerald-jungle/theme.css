@@ -2346,6 +2346,18 @@ video::-webkit-media-controls-timeline {
   filter: brightness(1.08);
 }
 
+/* ---- Big Picture ------------------------------------------------------- */
+/* Big Picture is a separate app in the same theme file: its styles live under
+   #big-picture and are driven by its own variables. A few class names are
+   shared with the main window (.button, .modal, .header), so the rules above
+   reach it too. */
+
+/* Its font has no Cyrillic and no fallback, so Cyrillic text drops to the
+   browser's serif wherever a rule leaves out "sans-serif". */
+#big-picture {
+  --font-space-grotesk: "Space Grotesk", "Noto Sans", sans-serif !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
