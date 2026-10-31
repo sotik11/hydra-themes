@@ -2133,6 +2133,13 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: var(--ej-gold) !important;
 }
 
+/* The panel beside an opened screenshot: the app background instead of
+   Hydra's grey, the comment box at its foot included. */
+.gallery-lightbox__sidebar,
+.screenshot-comments__composer {
+  background-color: #0a0f0c !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
