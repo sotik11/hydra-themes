@@ -2227,6 +2227,14 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-active-outline) !important;
 }
 
+/* The sort toggle (comments, the screenshots modal): the active segment of
+   the other toggles. Its options have no border, so the outline is a shadow. */
+.screenshot-segmented-toggle__option--active {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
