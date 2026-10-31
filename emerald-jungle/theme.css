@@ -2368,6 +2368,28 @@ video::-webkit-media-controls-timeline {
   --secondary-hover: var(--ej-row-hover) !important;
 }
 
+/* Gamepad and keyboard focus: nearly every focus style there is drawn with
+   --primary, so the focused element simply redefines it as gold. */
+#big-picture [data-focus-visible="true"],
+#big-picture [data-focused="true"],
+#big-picture :focus-visible {
+  --primary: var(--ej-gold) !important;
+}
+/* The ones drawn without it. */
+#big-picture [data-focus-visible="true"] .route-anchor {
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+}
+#big-picture .checkbox:has(.checkbox__input[data-focus-visible="true"]) {
+  outline-color: var(--ej-gold) !important;
+}
+#big-picture .game-page__sidebar-section[data-focused="true"] {
+  outline-color: var(--ej-gold) !important;
+}
+#big-picture .input:focus-visible,
+#big-picture [data-focus-visible="true"] .input {
+  border-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
