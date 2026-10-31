@@ -2785,6 +2785,44 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-action-favorite) !important;
 }
 
+/* Notifications: the sidebar's surface and a section header with the gold line
+   (it replaces Hydra's grey divider). Rows take the main window's hover, the
+   counters the active look, the unread dot Hydra's teal accent. */
+#big-picture .sidebar-notifications-dropdown {
+  background-color: #0b120e !important;
+  border: 1px solid var(--ej-outline) !important;
+}
+#big-picture .sidebar-notifications-dropdown__header {
+  background: var(--ej-header-fill) !important;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+}
+#big-picture .sidebar-notifications-dropdown__title {
+  color: var(--ej-active-text) !important;
+  opacity: 1 !important;
+}
+#big-picture .sidebar-notifications-dropdown__divider {
+  display: none !important;
+}
+#big-picture .sidebar-notifications-dropdown__item:hover,
+#big-picture .sidebar-notifications-dropdown__item:focus-visible,
+#big-picture .sidebar-notifications-dropdown__item[data-focus-visible="true"] {
+  background: rgba(31, 185, 128, 0.12) !important;
+  box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.5) !important;
+}
+#big-picture .sidebar-notifications-dropdown__fallback-icon {
+  background-color: var(--ej-solid-fill) !important;
+}
+#big-picture .sidebar-notifications-dropdown__unread-dot {
+  background: #16b195 !important;
+}
+#big-picture .sidebar-notifications-dropdown__badge,
+#big-picture .user-profile__notification-badge,
+#big-picture .user-profile-content__notification-badge {
+  background: var(--ej-solid-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
