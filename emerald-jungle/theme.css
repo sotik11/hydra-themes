@@ -2151,6 +2151,14 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-solid-fill-hover) !important;
 }
 
+/* An upvoted comment: green thumb and count (the downvote stays as it is). */
+.screenshot-comments__vote--active:has(.lucide-thumbs-up) {
+  color: var(--ej-action-edit) !important;
+}
+.screenshot-comments__vote--active:has(.lucide-thumbs-up) svg {
+  fill: var(--ej-action-edit) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
