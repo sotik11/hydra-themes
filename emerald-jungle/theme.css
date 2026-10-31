@@ -2390,6 +2390,24 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-silver-line) !important;
 }
 
+/* The sidebar: the main window's background and rows. */
+#big-picture .sidebar-container {
+  background-color: #0b120e !important;
+  border-right: 1px solid rgba(31, 185, 128, 0.12) !important;
+}
+#big-picture .route-anchor:not(.route-anchor--active):hover,
+#big-picture [data-focus-visible="true"] .route-anchor:not(.route-anchor--active) {
+  background-color: var(--ej-active-fill) !important;
+}
+#big-picture .route-anchor:not(.route-anchor--active):hover {
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+#big-picture .route-anchor--active {
+  background: var(--ej-selected-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-selected-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
