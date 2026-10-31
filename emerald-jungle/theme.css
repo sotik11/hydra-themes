@@ -2668,8 +2668,15 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-header-fill) !important;
   border-bottom: 1px solid var(--ej-gold-line) !important;
 }
-#big-picture .screenshot-lightbox__description-field:not([data-focused="true"]) .inline-text-field__outline {
+#big-picture .screenshot-lightbox__description-field:not(.inline-text-field--editing) .inline-text-field__outline {
   display: none !important;
+}
+#big-picture .screenshot-lightbox__description-field .inline-text-field__trigger {
+  color: var(--ej-active-text) !important;
+}
+#big-picture[data-bp-input-mode="gamepad"] .screenshot-lightbox__description-field[data-focused="true"],
+#big-picture [data-bp-input-mode="gamepad"] .screenshot-lightbox__description-field[data-focused="true"] {
+  box-shadow: inset 0 0 0 1px var(--ej-gold) !important;
 }
 /* The comments: the black cards of the game reviews, the gold line above the
    votes. */
