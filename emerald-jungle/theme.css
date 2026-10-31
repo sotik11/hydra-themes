@@ -3081,6 +3081,15 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-silver-line) !important;
 }
 
+/* Catalogue cards: the main window's catalogue hover. */
+#big-picture .catalogue-card:not(.catalogue-skeleton):hover,
+#big-picture .catalogue-card:not(.catalogue-skeleton):focus-within,
+#big-picture .catalogue-card:not(.catalogue-skeleton)[data-focused="true"],
+#big-picture .catalogue-card:not(.catalogue-skeleton)[data-focus-visible="true"] {
+  background-color: rgba(31, 185, 128, 0.12) !important;
+  border-color: rgba(224, 182, 74, 0.5) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
