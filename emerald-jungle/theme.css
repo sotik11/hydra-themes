@@ -2520,6 +2520,24 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* The source chips of the download modal and the requirements toggle: the
+   active segment. */
+#big-picture .source-anchor--selected,
+#big-picture .game-page__requirements-to-play-tab[data-active="true"] {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+#big-picture .source-anchor--selected .source-anchor__title {
+  color: var(--ej-active-text) !important;
+}
+[data-focus-wrapper="true"][data-focus-visible="true"] > * > .source-anchor--selected {
+  box-shadow: inset 0 0 0 1px var(--ej-gold) !important;
+}
+#big-picture .game-page__requirements-to-play-tab {
+  border-radius: 8px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
