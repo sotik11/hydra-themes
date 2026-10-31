@@ -2604,6 +2604,18 @@ video::-webkit-media-controls-timeline {
   border: 1px solid var(--ej-outline) !important;
 }
 
+/* Removing a button from the gamepad combo: the solid red of the remove
+   buttons. It is told by its X icon, having no class of its own. */
+#big-picture .screenshot-settings .button:has(path[d^="M205.66,194.34"]) {
+  background-color: var(--ej-action-remove-fill) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: #f0f1f7 !important;
+}
+#big-picture .screenshot-settings .button:has(path[d^="M205.66,194.34"]):hover {
+  background-color: #b3203f !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
