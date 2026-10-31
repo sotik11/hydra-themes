@@ -2538,6 +2538,66 @@ video::-webkit-media-controls-timeline {
   border-radius: 8px !important;
 }
 
+/* The game page's side panels read as the main window's sections: one outlined
+   card, not a stack of tiles. */
+#big-picture .game-page__stats,
+#big-picture .game-page__metadata,
+#big-picture .game-page__protondb,
+#big-picture .game-page__controller-support,
+#big-picture .game-page__how-long-to-beat,
+#big-picture .game-page__achievements,
+#big-picture .game-page__requirements-to-play,
+#big-picture .game-page__languages {
+  gap: 0 !important;
+  overflow: hidden;
+  background: #0d0d0d !important;
+  border: 1px solid var(--ej-outline) !important;
+  border-radius: 12px !important;
+}
+#big-picture .game-page__stats-title,
+#big-picture .game-page__protondb-title,
+#big-picture .game-page__controller-support-title,
+#big-picture .game-page__how-long-to-beat-header,
+#big-picture .game-page__achievements-title,
+#big-picture .game-page__requirements-to-play-header,
+#big-picture .game-page__languages-title {
+  border-radius: 0 !important;
+}
+#big-picture .game-page__stats-title .typography,
+#big-picture .game-page__protondb-title .typography,
+#big-picture .game-page__controller-support-title .typography,
+#big-picture .game-page__how-long-to-beat-header .typography,
+#big-picture .game-page__achievements-title .typography,
+#big-picture .game-page__requirements-to-play-header .typography,
+#big-picture .game-page__languages-title .typography {
+  color: var(--ej-active-text) !important;
+  font-weight: 600 !important;
+}
+#big-picture .game-page__stats-row,
+#big-picture .game-page__metadata-row,
+#big-picture .game-page__protondb-row,
+#big-picture .game-page__controller-support-row,
+#big-picture .game-page__requirements-to-play-row,
+#big-picture .game-page__languages-row,
+#big-picture .game-page__achievement,
+#big-picture .game-page__achievement-view-all,
+#big-picture .game-page__how-long-to-beat-duration,
+#big-picture .game-page__how-long-to-beat-title {
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+/* HowLongToBeat: its figures stay separate cards inside the section. */
+#big-picture .game-page__how-long-to-beat-list {
+  gap: 8px !important;
+  padding: 12px !important;
+}
+#big-picture .game-page__how-long-to-beat-item {
+  gap: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(31, 185, 128, 0.25) !important;
+  border-radius: 12px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
