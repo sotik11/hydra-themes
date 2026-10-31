@@ -3090,6 +3090,29 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(224, 182, 74, 0.5) !important;
 }
 
+/* Library hero stats: the profile's tiles, with the figures in gold. */
+#big-picture .hero__stats {
+  gap: 16px !important;
+}
+#big-picture .hero__stat {
+  gap: 0 !important;
+  overflow: hidden;
+  background: #0d0d0d !important;
+  border: 1px solid var(--ej-outline) !important;
+  border-radius: 12px !important;
+}
+#big-picture .hero__stat__label {
+  order: -1;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+  border-radius: 0 !important;
+  font-weight: 600 !important;
+}
+#big-picture .hero__stat__value {
+  background: transparent !important;
+  border-radius: 0 !important;
+  color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
