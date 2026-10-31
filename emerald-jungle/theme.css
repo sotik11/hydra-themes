@@ -2688,6 +2688,17 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-action-favorite) !important;
 }
 
+/* Cancelling a comment edit: the solid red of the remove buttons. */
+#big-picture .screenshot-comments__composer .button:has(path[d^="M205.66,194.34"]) {
+  background-color: var(--ej-action-remove-fill) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  color: #f0f1f7 !important;
+}
+#big-picture .screenshot-comments__composer .button:has(path[d^="M205.66,194.34"]):hover {
+  background-color: #b3203f !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
