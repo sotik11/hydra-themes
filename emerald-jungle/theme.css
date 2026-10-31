@@ -2201,6 +2201,13 @@ video::-webkit-media-controls-timeline {
   padding: 12px 16px !important;
 }
 
+/* ...and their gold divider above the vote buttons. */
+.screenshot-comments__actions {
+  margin-left: 0 !important;
+  padding-top: 6px !important;
+  border-top: 1px solid var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
