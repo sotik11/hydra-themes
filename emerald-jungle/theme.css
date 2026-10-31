@@ -2658,6 +2658,36 @@ video::-webkit-media-controls-timeline {
   background: none !important;
 }
 
+/* The panel beside an opened screenshot: the description is a section header,
+   edge to edge (the negative margins undo the panel's padding), with the gold
+   line below; its dashed frame shows only under focus. */
+#big-picture .screenshot-lightbox__description-field,
+#big-picture .screenshot-lightbox__summary > .screenshot-lightbox__description {
+  margin: calc(var(--spacing-unit) * -6) calc(var(--spacing-unit) * -5) 6px !important;
+  padding: calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 5) !important;
+  background: var(--ej-header-fill) !important;
+  border-bottom: 1px solid var(--ej-gold-line) !important;
+}
+#big-picture .screenshot-lightbox__description-field:not([data-focused="true"]) .inline-text-field__outline {
+  display: none !important;
+}
+/* The comments: the black cards of the game reviews, the gold line above the
+   votes. */
+#big-picture .screenshot-comments__item {
+  background-color: #0d0d0d !important;
+  border: 1px solid rgba(31, 185, 128, 0.25) !important;
+}
+#big-picture .screenshot-comments__item-actions {
+  border-top: 1px solid var(--ej-gold-line) !important;
+}
+/* Told by the filled thumb: the labels are translated. */
+#big-picture .screenshot-comments__vote--active:has(path[d^="M234,80.12"]) {
+  color: var(--ej-action-edit) !important;
+}
+#big-picture .screenshot-comments__vote--active:has(path[d^="M239.82,157"]) {
+  color: var(--ej-action-favorite) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
