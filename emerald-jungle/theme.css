@@ -2189,6 +2189,18 @@ video::-webkit-media-controls-timeline {
   outline-offset: -2px !important;
 }
 
+/* Comments: the cards of the game page reviews. */
+.screenshot-comments__list {
+  gap: 8px !important;
+  padding: 12px 16px !important;
+}
+.screenshot-comments__item {
+  background-color: #0d0d0d;
+  border: 1px solid rgba(31, 185, 128, 0.25) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
