@@ -2509,6 +2509,17 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
 }
 
+/* Checkboxes: the main window's checked look instead of a white box. */
+#big-picture .checkbox__input {
+  border-color: var(--ej-solid-outline) !important;
+}
+#big-picture .checkbox__input--checked {
+  background-color: var(--ej-solid-fill) !important;
+}
+#big-picture .checkbox__input__icon {
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
