@@ -2126,6 +2126,13 @@ video::-webkit-media-controls-timeline {
   background-color: #b3203f !important;
 }
 
+/* ---- Screenshots ------------------------------------------------------- */
+/* The screenshots modal (mine / community): the gold underline of the other
+   modal tabs. */
+.game-screenshots-modal__tab--active {
+  border-bottom-color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
