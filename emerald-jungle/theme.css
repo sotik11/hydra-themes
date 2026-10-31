@@ -2268,6 +2268,21 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-active-outline) !important;
 }
 
+/* Pressed votes on reviews and replies: green thumb up, red thumb down, as on
+   the screenshot comments. */
+.game-details__vote-button--upvote.game-details__vote-button--active {
+  color: var(--ej-action-edit) !important;
+}
+.game-details__vote-button--upvote.game-details__vote-button--active svg {
+  fill: var(--ej-action-edit) !important;
+}
+.game-details__vote-button--downvote.game-details__vote-button--active {
+  color: var(--ej-action-favorite) !important;
+}
+.game-details__vote-button--downvote.game-details__vote-button--active svg {
+  fill: var(--ej-action-favorite) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
