@@ -2616,6 +2616,13 @@ video::-webkit-media-controls-timeline {
   background-color: #b3203f !important;
 }
 
+/* Settings, Emulation: the "synced" label. */
+#big-picture .emulator-detail__synced {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
