@@ -2235,6 +2235,16 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* The upload form's visibility control: there the active segment is a sliding
+   indicator under the labels. */
+.screenshot-review-segmented__indicator {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+.screenshot-review-segmented__segment--selected {
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
