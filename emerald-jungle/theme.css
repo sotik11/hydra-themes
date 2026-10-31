@@ -2699,6 +2699,16 @@ video::-webkit-media-controls-timeline {
   background-color: #b3203f !important;
 }
 
+/* Toasts: a black card with the emerald outline; the timer line takes the
+   download bars' fill, as in the main window. */
+#big-picture .big-picture-toast {
+  background: #0d0d0d !important;
+  border: 1px solid rgba(31, 185, 128, 0.25) !important;
+}
+#big-picture .big-picture-toast__progress-fill {
+  background: var(--ej-download-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
