@@ -2245,6 +2245,16 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Its description field: a solid emerald frame instead of the faint dashes.
+   Editing and the over-limit warning keep Hydra's own stroke. */
+.screenshot-review-item__description:not(.inline-edit-field--editing):not(.inline-edit-field--limit) .inline-edit-field__outline-shape {
+  stroke: var(--ej-solid-outline) !important;
+  stroke-dasharray: none !important;
+}
+.screenshot-review-item__description:not(.inline-edit-field--editing):not(.inline-edit-field--limit):not(.inline-edit-field--disabled):hover .inline-edit-field__outline-shape {
+  stroke: var(--ej-selected-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
