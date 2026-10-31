@@ -2709,6 +2709,58 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-download-fill) !important;
 }
 
+/* Achievements page. The summary is a section strip with a gold bar. */
+#big-picture .game-achievements-page__hero-overlay {
+  background: linear-gradient(180deg, transparent 0%, 44%, var(--background) 97%) !important;
+}
+#big-picture .game-achievements-page__summary {
+  background: var(--ej-header-fill) !important;
+  border: 1px solid var(--ej-outline) !important;
+}
+#big-picture .game-achievements-page__summary-progress-fill {
+  background-color: var(--ej-gold) !important;
+}
+/* Rows: locked ones dark and faint until hovered; unlocked ones emerald with
+   the gold stripe, framed on hover, and the slow sheen passing over them. */
+#big-picture .game-achievements-row {
+  overflow: hidden;
+  background-color: #0d0d0d !important;
+  border-radius: 8px !important;
+}
+#big-picture .game-achievements-row:not(.game-achievements-row--unlocked) {
+  opacity: var(--ej-locked-achievement-opacity) !important;
+}
+#big-picture .game-achievements-row:not(.game-achievements-row--unlocked):hover,
+#big-picture .game-achievements-row:not(.game-achievements-row--unlocked)[data-focused="true"] {
+  opacity: 1 !important;
+}
+#big-picture .game-achievements-row--unlocked {
+  background-color: rgba(31, 185, 128, 0.11) !important;
+  box-shadow: inset 3px 0 0 var(--ej-gold) !important;
+}
+#big-picture .game-achievements-row--unlocked:hover {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow:
+    inset 3px 0 0 var(--ej-gold),
+    inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+#big-picture .game-achievements-row--unlocked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+}
+#big-picture .game-achievements-row--unlocked:hover::after {
+  animation: ej-row-sheen calc(var(--ej-sheen-duration-slow) * 3) ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #big-picture .game-achievements-row--unlocked:hover::after {
+    animation: none;
+  }
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
