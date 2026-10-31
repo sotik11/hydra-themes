@@ -3113,6 +3113,35 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-gold) !important;
 }
 
+/* Library covers: the main window's sheen crosses once as the pointer enters,
+   and the card zooms by the same amount. */
+#big-picture .vertical-game-card__cover::after,
+#big-picture .horizontal-library-game-card__cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+  transition: none;
+}
+#big-picture .vertical-game-card:hover .vertical-game-card__cover::after,
+#big-picture .horizontal-library-game-card:hover .horizontal-library-game-card__cover::after {
+  transform: translateX(130%);
+  transition: transform var(--ej-sheen-duration) ease-in-out;
+}
+#big-picture .vertical-game-card,
+#big-picture .horizontal-library-game-card {
+  transition: transform 0.15s ease !important;
+}
+#big-picture .vertical-game-card:hover,
+#big-picture .horizontal-library-game-card:hover {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.05);
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
