@@ -3142,6 +3142,11 @@ video::-webkit-media-controls-timeline {
   transform: scale(1.05);
 }
 
+/* Disk usage bars (settings, the download modal): the download bars' fill. */
+#big-picture .user-disk-item__fill {
+  background: var(--ej-download-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
