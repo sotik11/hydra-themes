@@ -2623,6 +2623,41 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Downloads: the main window's night sky. The page is the scrolling box, so
+   the sky stays put. A hero with no cover shows it through. */
+#big-picture .downloads-page {
+  background:
+    var(--ej-night-horizon) center bottom / auto 24vh no-repeat,
+    linear-gradient(
+      0deg,
+      rgba(31, 185, 128, 0.16) 0%,
+      rgba(16, 90, 64, 0.08) 20%,
+      rgba(10, 40, 30, 0) 42%
+    ),
+    var(--ej-night-moon) 88% 9vh / 160px 160px no-repeat,
+    var(--ej-night-stars) 0 0 / 860px 860px repeat,
+    var(--ej-night-stars-small) 0 0 / 520px 520px repeat,
+    radial-gradient(
+      ellipse 110% 50% at 50% 112%,
+      rgba(31, 185, 128, 0.2),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      #030806 0%,
+      #05100b 35%,
+      #081a12 62%,
+      #0c2a1d 85%,
+      #0f3626 100%
+    ) !important;
+}
+#big-picture .downloads-hero {
+  background: transparent !important;
+}
+#big-picture .downloads-hero:not(:has(.downloads-hero__bg)) .downloads-hero__overlay {
+  background: none !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
