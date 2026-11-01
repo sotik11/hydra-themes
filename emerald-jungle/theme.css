@@ -3459,7 +3459,26 @@ video::-webkit-media-controls-timeline {
 /* The download's bar: the main window's mint → emerald fill, not the game's
    colour Hydra sets inline. */
 #big-picture .downloads-progress-stats__fill {
+  position: relative;
+  overflow: hidden;
   background: var(--ej-download-fill) !important;
+}
+#big-picture .downloads-progress-stats__fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -90px;
+  width: 90px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: ej-bar-sheen var(--ej-bar-sheen-period) ease-in-out infinite;
 }
 
 /* The speed chart: gold instead of the game's colour. In each bar the first rect
@@ -3503,6 +3522,7 @@ video::-webkit-media-controls-timeline {
     )::after,
   .list__item:has(.list__item-image:not(.list__item-image--locked))::after,
   .download-group__progress-fill::after,
+  #big-picture .downloads-progress-stats__fill::after,
   .achievement-notification__container::after {
     display: none !important;
   }
