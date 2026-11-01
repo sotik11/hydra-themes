@@ -3366,6 +3366,16 @@ video::-webkit-media-controls-timeline {
   font-size: 18px !important;
 }
 
+/* The seam beside the sidebar: the spacer's margin bares the plain background
+   and the sidebar's shadow darkens the content's edge. The shadow stays only
+   on the opened sidebar, which lies over the content. */
+#big-picture .sidebar-spacer {
+  margin-right: 0 !important;
+}
+#big-picture .sidebar-container:not(:hover):not(:focus-within):not(.sidebar-container--open) {
+  box-shadow: none !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
