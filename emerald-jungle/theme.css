@@ -488,16 +488,15 @@ body {
   .sidebar__menu-item-button-label {
   font-weight: 600 !important;
 }
-/* Game list markers. The favourite heart is white at rest, as Hydra draws it,
-   and red on the hovered row; on a selected row it stays white. The installed
-   tick is a softened green at rest (halfway between the vivid and the pastel
-   tones) and white on a hovered or selected row. */
+/* Game list markers are white at rest, as Hydra draws them, and take their
+   colour on the hovered row: a red favourite heart, a green installed tick. On
+   a selected row they stay white. */
 .sidebar__menu-item:hover:not(.sidebar__menu-item--active)
   .sidebar__game-favorite-icon {
   color: var(--ej-action-favorite) !important;
   opacity: 1 !important;
 }
-.sidebar__menu-item:not(:hover):not(.sidebar__menu-item--active)
+.sidebar__menu-item:hover:not(.sidebar__menu-item--active)
   .sidebar__game-installed-icon {
   color: #46c48c !important;
 }
