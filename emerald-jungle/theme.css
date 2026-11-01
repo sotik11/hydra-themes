@@ -3202,6 +3202,13 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(224, 182, 74, 0.5) !important;
 }
 
+/* Hydra sets "border: none" on these buttons, so a hover's border colour has
+   nothing to paint. */
+#big-picture .horizontal-store-game-card {
+  border-style: solid !important;
+  border-width: 1px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
