@@ -3409,6 +3409,22 @@ video::-webkit-media-controls-timeline {
   box-shadow: none !important;
 }
 
+/* The profile banner: dissolves like the game page's, without Hydra's blurred
+   copy of the picture's bottom. A profile with no banner keeps Hydra's fade. */
+#big-picture .profile-page__hero-bg-layer {
+  -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+}
+#big-picture .profile-page__hero-bg .animated-hero-image__main {
+  object-position: top !important;
+}
+#big-picture .profile-page__hero-bg .animated-hero-image__blend-wrap {
+  display: none !important;
+}
+#big-picture .profile-page__hero-media:has(.animated-hero-image) .profile-page__hero-overlay {
+  background: none !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
