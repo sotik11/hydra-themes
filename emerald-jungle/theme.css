@@ -3285,6 +3285,21 @@ video::-webkit-media-controls-timeline {
   font-size: 20px !important;
 }
 
+/* The power menu and its confirmation: the gold line of the other modals, which
+   Hydra hides here; rows take the active look, icons the solid fill. The red
+   of "shut down" stays. */
+#big-picture .power-menu .modal__divider,
+#big-picture .power-menu-confirmation-backdrop .confirmation-modal .modal__divider {
+  display: block !important;
+}
+#big-picture .power-menu__option:hover {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+#big-picture .power-menu__icon {
+  background: var(--ej-solid-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
