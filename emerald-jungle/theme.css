@@ -2801,10 +2801,10 @@ video::-webkit-media-controls-timeline {
 #big-picture .game-page__comment-card-bottom {
   border-top: 1px solid var(--ej-gold-line) !important;
 }
-#big-picture .game-page__comment-feedback-item--active[aria-label="Like comment"] {
+#big-picture .game-page__comment-feedback-item--active:has(path[d^="M234,80.12"]) {
   color: var(--ej-action-edit) !important;
 }
-#big-picture .game-page__comment-feedback-item--active[aria-label="Dislike comment"] {
+#big-picture .game-page__comment-feedback-item--active:has(path[d^="M239.82,157"]) {
   color: var(--ej-action-favorite) !important;
 }
 
