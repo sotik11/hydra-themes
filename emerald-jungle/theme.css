@@ -727,6 +727,13 @@ body {
   background: var(--ej-action-remove-fill) !important;
   border-color: transparent !important;
 }
+/* The percentage of a running download: white and bold, so it stands out beside
+   the link and apart from the gold bar under the panel. */
+.hero-panel-playtime__download-details small {
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
 /* Hydra's own hero buttons (edit / cloud save) get the same gold outline on
    hover that the action buttons inherit from .button--outline. */
 .game-details__edit-custom-game-button:hover,
