@@ -3300,6 +3300,23 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-solid-fill) !important;
 }
 
+/* The virtual keyboard (it opens with a gamepad only): the sidebar's surface in
+   the section outline; service keys take the solid fill, a pressed or selected
+   key the active look with the gold ring. */
+#big-picture .virtual-keyboard {
+  background: #0b120e !important;
+  border: 1px solid var(--ej-outline) !important;
+}
+#big-picture .virtual-keyboard__key.button--secondary:not([data-key-type="character"]) {
+  background-color: var(--ej-solid-fill) !important;
+}
+#big-picture .virtual-keyboard__key.button--secondary:hover,
+#big-picture .virtual-keyboard__key.button--secondary[data-active="true"] {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
