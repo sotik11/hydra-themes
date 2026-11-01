@@ -3022,8 +3022,7 @@ video::-webkit-media-controls-timeline {
 }
 
 /* The game page: the main window's dimmed night sky, without the horizon. The
-   page is the scrolling box, so the sky stays put. Hydra fades the banner into
-   a fixed near-black; here it fades into the sky's colour. */
+   page is the scrolling box, so the sky stays put. */
 #big-picture .game-page {
   background:
     linear-gradient(
@@ -3035,11 +3034,27 @@ video::-webkit-media-controls-timeline {
     var(--ej-night-stars-small) 0 0 / 520px 520px repeat,
     linear-gradient(180deg, #030806 0%, #05100b 45%, #081a12 100%) !important;
 }
+/* The banner: the main window's height, anchored to the top of the picture. It
+   dissolves into the sky itself, so there is no colour to match and no seam;
+   Hydra's blurred copy of the picture's bottom is dropped along with its fade.
+   The shell keeps Hydra's height, so the page below stays where it was. */
 #big-picture .game-page__hero-shell {
-  background: #060e0a !important;
+  background: transparent !important;
 }
 #big-picture .game-page__hero-overlay {
-  background: linear-gradient(180deg, transparent 0%, 44%, #060e0a 97%) !important;
+  background: none !important;
+}
+#big-picture .game-page__hero-bg-layer {
+  bottom: auto !important;
+  height: var(--ej-game-banner-height) !important;
+  -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
+}
+#big-picture .game-page__hero-shell .animated-hero-image__main {
+  object-position: top !important;
+}
+#big-picture .game-page__hero-shell .animated-hero-image__blend-wrap {
+  display: none !important;
 }
 
 /* "My screenshots" on the game page: a section like its neighbours. */
