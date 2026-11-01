@@ -3237,6 +3237,11 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-gold) !important;
 }
 
+/* The game page's section dividers: gold. */
+#big-picture .game-page .divider {
+  background-color: var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
