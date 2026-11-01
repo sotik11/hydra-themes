@@ -3478,7 +3478,7 @@ video::-webkit-media-controls-timeline {
     transparent
   );
   transform: skewX(-25deg);
-  animation: ej-bar-sheen var(--ej-bar-sheen-period) ease-in-out infinite;
+  animation: ej-bar-sheen calc(var(--ej-bar-sheen-period) * 1.5) ease-in-out infinite;
 }
 /* A paused download stays in the hero: its button then shows the play icon. */
 #big-picture .downloads-hero:has(path[d^="M240,128a15.74"]) ~ .downloads-page__hero-stats-stack .downloads-progress-stats__fill::after {
