@@ -1458,6 +1458,7 @@ video::-webkit-media-controls-timeline {
    (the side column and the library tab's "Pinned" / "All games" headings):
    the same emerald counter. */
 .filter-section__header-count,
+.download-group__header-count,
 .profile-section__count,
 .profile-content__section-badge {
   background-color: var(--ej-active-fill) !important;
