@@ -3209,6 +3209,11 @@ video::-webkit-media-controls-timeline {
   border-width: 1px !important;
 }
 
+/* The achievements summary: a gold frame. */
+#big-picture .game-achievements-page__summary {
+  border-color: var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
