@@ -3480,6 +3480,10 @@ video::-webkit-media-controls-timeline {
   transform: skewX(-25deg);
   animation: ej-bar-sheen var(--ej-bar-sheen-period) ease-in-out infinite;
 }
+/* A paused download stays in the hero: its button then shows the play icon. */
+#big-picture .downloads-hero:has(path[d^="M240,128a15.74"]) ~ .downloads-page__hero-stats-stack .downloads-progress-stats__fill::after {
+  display: none;
+}
 
 /* The speed chart: gold instead of the game's colour. In each bar the first rect
    is the track and the second the value. */
