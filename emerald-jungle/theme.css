@@ -3326,6 +3326,11 @@ video::-webkit-media-controls-timeline {
   fill: var(--ej-action-favorite) !important;
 }
 
+/* The line under a row of tabs: silver. */
+#big-picture .tabs__divider {
+  background-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
