@@ -3184,6 +3184,14 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-gold-line) !important;
 }
 
+/* A hovered catalogue card's fill swallows its source chips: a gold frame
+   keeps them apart. */
+#big-picture .catalogue-card:not(.catalogue-skeleton):hover .source-anchor,
+#big-picture .catalogue-card:not(.catalogue-skeleton):focus-within .source-anchor,
+#big-picture .catalogue-card:not(.catalogue-skeleton)[data-focused="true"] .source-anchor {
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
