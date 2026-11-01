@@ -2360,9 +2360,11 @@ video::-webkit-media-controls-timeline {
 }
 
 /* The base colours: emerald-black surfaces and emerald hairlines instead of
-   neutral greys. --primary stays white: it is also the fill of its buttons. */
+   neutral greys. --primary stays white: it is also the fill of its buttons.
+   --background stays in rgb(): Hydra's hero fade adds alpha to it and only knows
+   rgb() and rgba(); anything else paints the picture solid from a third down. */
 #big-picture {
-  --background: #0a0f0c !important;
+  --background: rgb(10, 15, 12) !important;
   --surface: #0b120e !important;
   --secondary: #12241b !important;
   --secondary-border: rgba(31, 185, 128, 0.18) !important;
