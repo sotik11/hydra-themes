@@ -2599,8 +2599,9 @@ video::-webkit-media-controls-timeline {
 }
 
 /* The playtime strip above the media: the painted glass and soft gold outline
-   of the main window's review prompt. */
-#big-picture .game-page__playtime-bar {
+   of the main window's review prompt. The profile's souvenirs notice shares it. */
+#big-picture .game-page__playtime-bar,
+#big-picture .profile-page__souvenirs-empty-state {
   background:
     linear-gradient(
       115deg,
