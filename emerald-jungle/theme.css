@@ -3214,6 +3214,29 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-gold-line) !important;
 }
 
+/* The gallery: the play badge takes the look of the viewer's round buttons,
+   the controls below it are gold. */
+#big-picture .game-page__media-carousel-play-icon,
+#big-picture .media-viewer__nav-button {
+  background-color: var(--ej-solid-fill) !important;
+  border-color: transparent !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+#big-picture .media-viewer__nav-button:hover {
+  background-color: var(--ej-solid-fill-hover) !important;
+}
+#big-picture .game-page__media-carousel-arrow,
+#big-picture .game-page__media-carousel-arrow svg {
+  color: var(--ej-gold) !important;
+}
+#big-picture .game-page__media-carousel-dot {
+  background-color: var(--ej-gold-line) !important;
+}
+#big-picture .game-page__media-carousel-dot[data-active="true"] {
+  background-color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
