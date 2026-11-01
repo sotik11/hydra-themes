@@ -3056,6 +3056,27 @@ video::-webkit-media-controls-timeline {
 #big-picture .game-page__hero-shell .animated-hero-image__blend-wrap {
   display: none !important;
 }
+/* The logo (or the title) sits where the description was, the description to its
+   right, the buttons on a row of their own. Only the look moves: the order in the
+   markup, and so the gamepad's, stays. */
+#big-picture .game-page__hero-overlay {
+  display: grid !important;
+  grid-template-columns: fit-content(40%) minmax(0, 1fr);
+  align-content: end;
+  align-items: center !important;
+  justify-content: start !important;
+  column-gap: 32px !important;
+}
+#big-picture .game-page__hero-logo,
+#big-picture .game-page__hero-title {
+  max-width: 100% !important;
+}
+#big-picture .game-page__hero-description {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+#big-picture .game-page__hero-actions {
+  grid-column: 1 / -1;
+}
 
 /* "My screenshots" on the game page: a section like its neighbours. */
 #big-picture .game-my-screenshots {
