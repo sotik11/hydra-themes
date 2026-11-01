@@ -2598,27 +2598,20 @@ video::-webkit-media-controls-timeline {
   border-radius: 12px !important;
 }
 
-/* The playtime strip above the media: the painted glass and soft gold outline
-   of the main window's review prompt. The profile's souvenirs notice shares it. */
+/* The playtime strip above the media and the profile's souvenirs and screenshots
+   notices: the main window's description strip ("Released / Publisher"). */
 #big-picture .game-page__playtime-bar,
-#big-picture .profile-page__souvenirs-empty-state {
-  background:
-    linear-gradient(
-      115deg,
-      rgba(255, 255, 255, 0.11) 0%,
-      rgba(255, 255, 255, 0.02) 30%,
-      rgba(255, 255, 255, 0) 48%,
-      rgba(255, 255, 255, 0.05) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(31, 185, 128, 0.2) 0%,
-      rgba(12, 61, 44, 0.34) 100%
-    ) !important;
-  border: 1px solid rgba(224, 182, 74, 0.45) !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+#big-picture .profile-page__souvenirs-empty-state,
+#big-picture .profile-page__screenshots-empty-state {
+  background: var(--ej-header-fill) !important;
+  border: 1px solid var(--ej-outline) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+#big-picture .game-page__playtime-bar *,
+#big-picture .profile-page__souvenirs-empty-state *,
+#big-picture .profile-page__screenshots-empty-state * {
+  color: var(--ej-active-text) !important;
 }
 
 /* Removing a button from the gamepad combo: the solid red of the remove
