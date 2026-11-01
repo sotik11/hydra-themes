@@ -3456,6 +3456,12 @@ video::-webkit-media-controls-timeline {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
+/* The download's bar: the main window's mint → emerald fill, not the game's
+   colour Hydra sets inline. */
+#big-picture .downloads-progress-stats__fill {
+  background: var(--ej-download-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
