@@ -3468,6 +3468,11 @@ video::-webkit-media-controls-timeline {
   fill: var(--ej-gold) !important;
 }
 
+/* The icons beside the speed chart: gold, to go with it. */
+#big-picture .downloads-network-stats__metric svg {
+  color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
