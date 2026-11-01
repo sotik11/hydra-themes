@@ -3332,6 +3332,12 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-silver-line) !important;
 }
 
+/* Screenshot cards: a thin gold frame instead of Hydra's thick white one. */
+#big-picture .screenshot-card:hover,
+#big-picture .screenshot-card[data-focused="true"] {
+  outline: 1px solid var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
