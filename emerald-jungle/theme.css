@@ -3462,6 +3462,12 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-download-fill) !important;
 }
 
+/* The speed chart: gold instead of the game's colour. In each bar the first rect
+   is the track and the second the value. */
+#big-picture .downloads-network-stats__chart g > rect + rect {
+  fill: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
