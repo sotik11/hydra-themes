@@ -3264,6 +3264,11 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-gold) !important;
 }
 
+/* The sidebar's dividers: silver. */
+#big-picture .sidebar-container .divider {
+  background-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
