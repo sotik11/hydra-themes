@@ -3338,6 +3338,16 @@ video::-webkit-media-controls-timeline {
   outline: 1px solid var(--ej-gold-line) !important;
 }
 
+/* The counters beside the screenshot and souvenir headings: the active look of
+   the other counters. */
+#big-picture .profile-page__screenshots-count,
+#big-picture .profile-page__souvenirs-count,
+#big-picture .screenshot-comments__count {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
