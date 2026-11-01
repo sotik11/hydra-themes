@@ -3355,6 +3355,17 @@ video::-webkit-media-controls-timeline {
   transform: none;
 }
 
+/* The profile's name block: larger text, centred on the avatar's height. */
+#big-picture .profile-page__identity {
+  align-items: center !important;
+}
+#big-picture .profile-page__name {
+  font-size: 28px !important;
+}
+#big-picture .profile-page__username {
+  font-size: 18px !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
