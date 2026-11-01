@@ -3348,6 +3348,13 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* In a carousel the zoomed card is cut off by the viewport, so it stays put;
+   the sheen and the gold frame remain. */
+#big-picture .focus-carousel .vertical-game-card:hover {
+  z-index: auto;
+  transform: none;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
