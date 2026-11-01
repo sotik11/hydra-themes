@@ -3160,6 +3160,25 @@ video::-webkit-media-controls-timeline {
   border: 1px solid var(--ej-silver-line) !important;
 }
 
+/* The block's first row keeps off the header, and "show all" is a real button:
+   the solid fill of the viewer's buttons. */
+#big-picture .game-page__achievements-title + .game-page__achievement {
+  margin-top: 8px;
+}
+#big-picture .game-page__achievement-view-all {
+  margin: 8px;
+  padding-inline: 8px !important;
+  background: var(--ej-solid-fill) !important;
+  border-radius: 8px !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+}
+#big-picture .game-page__achievement-view-all:hover {
+  background: var(--ej-solid-fill-hover) !important;
+}
+#big-picture .game-page__achievement-view-all .game-page__achievement-icon-locked {
+  background: transparent !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
