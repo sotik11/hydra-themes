@@ -3067,6 +3067,7 @@ video::-webkit-media-controls-timeline {
   align-items: center !important;
   justify-content: start !important;
   column-gap: 32px !important;
+  padding-bottom: 24px !important;
 }
 #big-picture .game-page__hero-logo,
 #big-picture .game-page__hero-title {
