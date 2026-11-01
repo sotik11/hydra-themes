@@ -3242,6 +3242,28 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-gold-line) !important;
 }
 
+/* Disks: gold marks the chosen one, not the one the window happened to focus
+   on opening; under a gamepad the focused one gets a silver frame. */
+#big-picture .user-disk-item:not(.user-disk-item--selected)[data-focused="true"],
+#big-picture .user-disk-item:not(.user-disk-item--selected):focus,
+#big-picture .user-disk-item:not(.user-disk-item--selected):focus-visible {
+  outline: none !important;
+}
+#big-picture[data-bp-input-mode="gamepad"] .user-disk-item:not(.user-disk-item--selected)[data-focused="true"] {
+  outline: 1px solid var(--ej-silver-line) !important;
+}
+#big-picture .user-disk-item--selected {
+  border-color: var(--ej-gold) !important;
+}
+#big-picture .user-disk-item--selected[data-focused="true"],
+#big-picture .user-disk-item--selected:focus,
+#big-picture .user-disk-item--selected:focus-visible {
+  outline: none !important;
+}
+#big-picture .user-disk-item__selected-icon {
+  color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
