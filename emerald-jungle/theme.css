@@ -3179,6 +3179,11 @@ video::-webkit-media-controls-timeline {
   background: transparent !important;
 }
 
+/* The line under a modal's header: gold, as in the main window. */
+#big-picture .modal__divider {
+  background-color: var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
