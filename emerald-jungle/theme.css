@@ -3274,6 +3274,12 @@ video::-webkit-media-controls-timeline {
   fill: var(--ej-gold) !important;
 }
 
+/* At rest that border stays invisible, or it takes the text colour. Kept below
+   the specificity of the hover rules so that they still colour it. */
+:where(#big-picture) .horizontal-store-game-card {
+  border-color: transparent !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
