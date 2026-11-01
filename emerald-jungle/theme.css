@@ -3317,6 +3317,15 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* Favourite hearts stay white at rest and turn red on the row under the pointer
+   or focus. Not on the selected row: its fill ends in gold, where red is lost.
+   Hydra may set the icon's fill directly, hence both properties. */
+#big-picture .route-anchor:not(.route-anchor--active):hover .route-anchor__favorite__icon,
+#big-picture [data-focus-visible="true"] .route-anchor:not(.route-anchor--active) .route-anchor__favorite__icon {
+  color: var(--ej-action-favorite) !important;
+  fill: var(--ej-action-favorite) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
