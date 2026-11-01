@@ -3269,6 +3269,11 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-silver-line) !important;
 }
 
+/* Hydra paints the gallery arrows through the icon's fill. */
+#big-picture .game-page__media-carousel-arrow svg {
+  fill: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
