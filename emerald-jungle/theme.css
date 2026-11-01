@@ -25,6 +25,7 @@
 :host {
   /* Banner height on game pages (Hydra's own is 350px). */
   --ej-game-banner-height: 500px;
+  --ej-bp-game-banner-height: 580px;
   /* Banner height on profile pages. */
   --ej-profile-banner-height: 500px;
   /* Button corner radius (Hydra's own 8px; a large value such as 999px gives
@@ -3034,8 +3035,8 @@ video::-webkit-media-controls-timeline {
     var(--ej-night-stars-small) 0 0 / 520px 520px repeat,
     linear-gradient(180deg, #030806 0%, #05100b 45%, #081a12 100%) !important;
 }
-/* The banner: the main window's height, anchored to the top of the picture. It
-   dissolves into the sky itself, so there is no colour to match and no seam;
+/* The banner: its own height, running behind the buttons, anchored to the top
+   of the picture. It dissolves into the sky itself, so there is no colour to match and no seam;
    Hydra's blurred copy of the picture's bottom is dropped along with its fade.
    The shell keeps Hydra's height, so the page below stays where it was. */
 #big-picture .game-page__hero-shell {
@@ -3046,7 +3047,7 @@ video::-webkit-media-controls-timeline {
 }
 #big-picture .game-page__hero-bg-layer {
   bottom: auto !important;
-  height: var(--ej-game-banner-height) !important;
+  height: var(--ej-bp-game-banner-height) !important;
   -webkit-mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
   mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
 }
