@@ -1636,6 +1636,12 @@ video::-webkit-media-controls-timeline {
   overflow: hidden;
   background: var(--ej-download-fill) !important;
 }
+/* The speed chart is a canvas in the game's colour, so CSS can only recolour its
+   pixels: any colour goes white, then --ej-gold, and the alpha stays. */
+.download-group__speed-chart-canvas {
+  filter: grayscale(1) brightness(100) brightness(0.6) sepia(1) saturate(2.5)
+    hue-rotate(7deg);
+}
 .download-group__progress-fill::after {
   content: "";
   position: absolute;
