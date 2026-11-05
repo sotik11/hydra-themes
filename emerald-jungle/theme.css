@@ -3507,6 +3507,18 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* The leaderboard sidebar's boards: hover and the chosen one take the menu rows'
+   active look; on a board with a picture the frame drawn over it turns emerald. */
+.leaderboards__side-item:hover,
+.leaderboards__side-item--selected {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.leaderboards__side-item--selected::after {
+  border-color: var(--ej-active-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
