@@ -3519,6 +3519,12 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-active-outline) !important;
 }
 
+/* The icon beside a board's title: the solid fill of the round buttons. */
+.leaderboards__board-icon {
+  background: var(--ej-solid-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
