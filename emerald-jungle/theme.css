@@ -3533,6 +3533,18 @@ video::-webkit-media-controls-timeline {
   border-radius: 12px !important;
 }
 
+/* Leaderboard rows: an emerald hairline and the row hover; the viewer's own row
+   takes the active look. */
+.leaderboard-row--strip::after {
+  border-color: rgba(31, 185, 128, 0.18) !important;
+}
+.leaderboard-row--strip:not(.leaderboard-row--banner):hover {
+  background-color: var(--ej-row-hover) !important;
+}
+.leaderboard-row--viewer:not(.leaderboard-row--banner) {
+  background-color: var(--ej-active-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
