@@ -3497,6 +3497,16 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-gold) !important;
 }
 
+/* ---- Leaderboards and recompilations (Hydra 4.4) ----------------------- */
+/* The leaderboard selectors (rating, period, the sidebar's "Categories / By
+   game", the game page's board): the active segment of the other toggles. */
+.leaderboards__selector-option--selected,
+.leaderboard-controls__selector-indicator {
+  background: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
