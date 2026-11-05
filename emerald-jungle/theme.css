@@ -946,6 +946,7 @@ video::-webkit-media-controls-timeline {
    modal and the profile boxes (stats / badges / friends). */
 .sidebar-section,
 .filter-section,
+.recompilation-filter-toggle,
 .review-prompt-banner,
 .hero-panel,
 .modal,
@@ -992,6 +993,7 @@ video::-webkit-media-controls-timeline {
    between header and (black) body. The hairline is an inset shadow, so a
    collapsed (0-height) body hides it. */
 .filter-section,
+.recompilation-filter-toggle,
 .sidebar-section,
 .profile-section {
   border-color: var(--ej-outline) !important;
