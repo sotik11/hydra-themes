@@ -3545,6 +3545,13 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-active-fill) !important;
 }
 
+/* The podium cards and the panels: the section outline. The medal colours and
+   Hydra's frame for the viewer and the chosen card stay. */
+.leaderboard-podium__card:not(.leaderboard-podium__card--viewer),
+.leaderboards__panel {
+  border-color: var(--ej-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
