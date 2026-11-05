@@ -3554,6 +3554,20 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-outline) !important;
 }
 
+/* The catalogue's "Recomps" toggle: the glass of the filter sections (see the
+   glass group), the row hover, and when it is on an emerald track with a gold
+   knob. */
+.recompilation-filter-toggle:hover {
+  background: var(--ej-row-hover) !important;
+}
+.recompilation-filter-toggle--checked .recompilation-filter-toggle__switch {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+}
+.recompilation-filter-toggle--checked .recompilation-filter-toggle__knob {
+  background-color: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
