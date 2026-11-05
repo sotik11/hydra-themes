@@ -3568,6 +3568,33 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-gold) !important;
 }
 
+/* The "runs natively on PC" tip beside "PC versions": the review card's surface
+   and the section outline (only the arrow's two visible edges), a gold "New!"
+   chip, solid-fill perks, and a gold spotlight ring and beacon. */
+.recompilations-section__tip {
+  background: #0d0d0d !important;
+  border-color: var(--ej-outline) !important;
+}
+.recompilations-section__tip::after {
+  background: #0d0d0d !important;
+  border-top-color: var(--ej-outline) !important;
+  border-right-color: var(--ej-outline) !important;
+}
+.recompilations-section__tip-chip {
+  background: var(--ej-gold) !important;
+  color: #0d0d0d !important;
+}
+.recompilations-section__tip-perks span {
+  background: var(--ej-solid-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+}
+.recompilations-section--spotlight {
+  outline-color: var(--ej-gold) !important;
+}
+.recompilations-section__beacon {
+  background: var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
