@@ -3636,6 +3636,22 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-outline) !important;
 }
 
+/* Badges: the section outline; the streak badge's ring, chip and progress bar
+   take the title's emerald-to-gold instead of cyan to violet. */
+.leaderboards__badge:not(.leaderboards__badge--locked):not(.leaderboards__badge--streak):not(.leaderboards__badge--ring) {
+  border-color: var(--ej-outline) !important;
+}
+.leaderboards__badge--streak {
+  --chip-bg: var(--ej-title-fill) !important;
+}
+.leaderboards__badge--streak:not(.leaderboards__badge--locked) {
+  box-shadow: 0 0 24px var(--ej-row-hover) !important;
+}
+.leaderboards__badge--streak:not(.leaderboards__badge--locked)::before,
+.leaderboards__badge-bar span {
+  background: var(--ej-title-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
