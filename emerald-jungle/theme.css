@@ -783,6 +783,7 @@ body {
    pressed "installed only" button. The primary button (the main action of a
    dialog or a form, the chosen tab of a pair) looks the same. */
 .button--primary,
+.recompilation-page__hero-buttons .cloud-save-v2__trigger--synced,
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
 .library-view-options__option.active,
@@ -3724,6 +3725,14 @@ video::-webkit-media-controls-timeline {
 .recompilation-install-section__item + .recompilation-install-section__item,
 .recompilation-sidebar__link {
   border-top-color: var(--ej-silver-line) !important;
+}
+
+/* A recompilation's cloud save button, while the saves are in sync, looks like
+   the main button beside it (see the primary group); its cloud then takes the
+   button's text colour instead of blue. Off, it stays as it is. */
+.recompilation-page__hero-buttons .cloud-save-v2__trigger--synced svg,
+.recompilation-page__hero-buttons .cloud-save-v2__trigger--synced:hover svg {
+  color: var(--ej-active-text) !important;
 }
 
 /* ---- Reduced motion --------------------------------------------------- */
