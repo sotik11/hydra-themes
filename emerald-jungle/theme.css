@@ -1461,6 +1461,7 @@ video::-webkit-media-controls-timeline {
    the same emerald counter. */
 .filter-section__header-count,
 .download-group__header-count,
+.game-details__reviews-badge,
 .profile-section__count,
 .profile-content__section-badge {
   background-color: var(--ej-active-fill) !important;
