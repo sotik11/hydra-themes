@@ -3690,6 +3690,21 @@ video::-webkit-media-controls-timeline {
   background-color: rgba(31, 185, 128, 0.18) !important;
 }
 
+/* A recompilation's release rail: emerald ticks, the chosen release gold (like
+   the tab underline); the release's preview card takes the review card's
+   surface and the section outline. */
+.release-rail__item {
+  color: var(--ej-solid-outline) !important;
+}
+.release-rail__item--selected,
+.release-rail__item--highlighted {
+  color: var(--ej-gold) !important;
+}
+.release-rail__preview-card {
+  background: #0d0d0d !important;
+  border-color: var(--ej-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
