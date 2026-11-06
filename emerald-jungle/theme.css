@@ -3617,6 +3617,25 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: rgba(31, 185, 128, 0.18) !important;
 }
 
+/* The activity heatmap (and its legend): the theme's emerald-to-gold instead
+   of cyan, blue and violet; the tip takes the review card's surface and the
+   section outline. */
+.leaderboards__heat--1 {
+  background-color: var(--ej-outline) !important;
+}
+.leaderboards__heat--2 {
+  background-color: #1db980 !important;
+  box-shadow: 0 0 4px var(--ej-outline) !important;
+}
+.leaderboards__heat--3 {
+  background-color: var(--ej-gold) !important;
+  box-shadow: 0 0 6px var(--ej-gold-line) !important;
+}
+.leaderboards__heat-tip {
+  background-color: #0d0d0d !important;
+  border-color: var(--ej-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
