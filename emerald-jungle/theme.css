@@ -3595,10 +3595,10 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-gold) !important;
 }
 
-/* The catalogue's platform groups ("Sony / Nintendo"): the row hover, and the
-   chosen group takes the active segment of the other toggles. */
-.filter-section__group-tab:hover {
-  background-color: var(--ej-row-hover) !important;
+/* The catalogue's platform groups ("Sony / Nintendo"): no fill on hover, and
+   the chosen group takes the active segment of the other toggles. */
+.filter-section__group-tab:not(.filter-section__group-tab--active):hover {
+  background-color: transparent !important;
 }
 .filter-section__group-tab--active {
   background-color: var(--ej-active-fill) !important;
