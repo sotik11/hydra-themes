@@ -3718,6 +3718,13 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-gold) !important;
 }
 
+/* The recompilation sidebar's dividers ("For the game", "About the project"):
+   the silver line. */
+.recompilation-install-section__item + .recompilation-install-section__item,
+.recompilation-sidebar__link {
+  border-top-color: var(--ej-silver-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
