@@ -3595,6 +3595,17 @@ video::-webkit-media-controls-timeline {
   background: var(--ej-gold) !important;
 }
 
+/* The catalogue's platform groups ("Sony / Nintendo"): the row hover, and the
+   chosen group takes the active segment of the other toggles. */
+.filter-section__group-tab:hover {
+  background-color: var(--ej-row-hover) !important;
+}
+.filter-section__group-tab--active {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
