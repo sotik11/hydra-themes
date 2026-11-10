@@ -3811,6 +3811,13 @@ video::-webkit-media-controls-timeline {
     0 0 0 2px var(--ej-solid-outline) !important;
 }
 
+/* The profile box's list rows and its view toggle: the row hover. */
+.release-calendar-box__item:hover,
+.release-calendar-box__view-toggle:hover {
+  background-color: var(--ej-row-hover) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
