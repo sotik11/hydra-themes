@@ -3800,6 +3800,17 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* The profile box: a day with releases gets an emerald ring on hover (today
+   keeps its gold frame inside it). */
+.release-calendar-box__day--has-games:hover {
+  box-shadow: 0 0 0 2px var(--ej-solid-outline) !important;
+}
+.release-calendar-box__day--today.release-calendar-box__day--has-games:hover {
+  box-shadow:
+    inset 0 0 0 2px var(--ej-gold),
+    0 0 0 2px var(--ej-solid-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
