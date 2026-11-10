@@ -3942,6 +3942,12 @@ video::-webkit-media-controls-timeline {
   border-right: 1px solid rgba(31, 185, 128, 0.18) !important;
 }
 
+/* The profile box: the month's own days take the round buttons' solid dark
+   green; the days of the months around it stay grey. */
+.release-calendar-box__day:not(.release-calendar-box__day--outside) {
+  background-color: var(--ej-solid-fill) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
