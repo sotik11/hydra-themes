@@ -3919,6 +3919,23 @@ video::-webkit-media-controls-timeline {
   }
 }
 
+/* Calendar covers zoom on hover like the library covers (same scale and
+   timing) instead of Hydra's small lift. The "no exact date" row scrolls
+   sideways and would cut the zoomed cover off, so it gets room around it;
+   the negative margins keep the row where it was. */
+.release-calendar__game-cover {
+  transition:
+    transform ease 0.2s,
+    box-shadow ease 0.15s !important;
+}
+.release-calendar__game:hover .release-calendar__game-cover {
+  transform: scale(1.05) !important;
+}
+.release-calendar__imprecise-list {
+  padding: 6px 6px 8px !important;
+  margin: -6px -6px 0 !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
