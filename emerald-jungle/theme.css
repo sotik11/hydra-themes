@@ -3735,6 +3735,18 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* ---- Release calendar (fork) ------------------------------------------ */
+/* The fork's release calendar page and its box in the profile. Vanilla Hydra
+   has none of these classes, so the rules do nothing there. */
+/* The month arrows: the outline buttons' gold, like "Today" beside them. */
+.release-calendar__icon-button {
+  border-color: rgba(224, 182, 74, 0.45) !important;
+}
+.release-calendar__icon-button:hover {
+  border-color: rgba(224, 182, 74, 0.8) !important;
+  background: rgba(224, 182, 74, 0.08) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
