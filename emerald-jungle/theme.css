@@ -3780,14 +3780,14 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 0 0 2px var(--ej-gold) !important;
 }
 
-/* The page's grid: the section outline around it, the leaderboard rows'
-   emerald hairline between the days, and the row hover. */
+/* The page's grid: the section outline around it and between the days, and
+   the row hover. */
 .release-calendar__grid {
   border-color: var(--ej-outline) !important;
 }
 .release-calendar__weekday,
 .release-calendar__day {
-  border-color: rgba(31, 185, 128, 0.18) !important;
+  border-color: var(--ej-outline) !important;
 }
 .release-calendar__day:hover:not(:disabled):not(
     .release-calendar__day--selected
@@ -3936,10 +3936,10 @@ video::-webkit-media-controls-timeline {
   margin: -6px -6px 0 !important;
 }
 
-/* Dividers between the weekday names, the same hairline as between the days,
-   so the columns run unbroken from the header down. */
+/* Dividers between the weekday names, the same line as between the days, so
+   the columns run unbroken from the header down. */
 .release-calendar__weekday:not(:last-child) {
-  border-right: 1px solid rgba(31, 185, 128, 0.18) !important;
+  border-right: 1px solid var(--ej-outline) !important;
 }
 
 /* The profile box: the month's own days take the round buttons' solid dark
