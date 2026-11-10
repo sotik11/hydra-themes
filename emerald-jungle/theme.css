@@ -3756,14 +3756,14 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(255, 255, 255, 0.06) !important;
 }
 
-/* The chosen day takes the active look, and the list it opens under its week a
-   faint emerald tint with the section outline below. */
+/* The chosen day takes the active look, and the list it opens under its week
+   the same fill, with the section outline below. */
 .release-calendar__day--selected {
   background-color: var(--ej-active-fill) !important;
   box-shadow: inset 0 0 0 2px var(--ej-active-outline) !important;
 }
 .release-calendar__expanded {
-  background-color: rgba(31, 185, 128, 0.07) !important;
+  background-color: var(--ej-active-fill) !important;
   border-bottom-color: var(--ej-outline) !important;
 }
 
