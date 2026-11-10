@@ -3936,6 +3936,12 @@ video::-webkit-media-controls-timeline {
   margin: -6px -6px 0 !important;
 }
 
+/* Dividers between the weekday names, the same hairline as between the days,
+   so the columns run unbroken from the header down. */
+.release-calendar__weekday:not(:last-child) {
+  border-right: 1px solid rgba(31, 185, 128, 0.18) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
