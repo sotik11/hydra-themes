@@ -3823,6 +3823,11 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-gold) !important;
 }
 
+/* The line under the weekday names: the gold hairline under the page header. */
+.release-calendar__weekday {
+  border-bottom-color: var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
