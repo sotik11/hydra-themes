@@ -3942,6 +3942,12 @@ video::-webkit-media-controls-timeline {
   border-right: 1px solid var(--ej-outline) !important;
 }
 
+/* The profile box: the month's own days take the download sources' dark
+   backing (Settings); the days of the months around it stay as they are. */
+.release-calendar-box__day:not(.release-calendar-box__day--outside) {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
