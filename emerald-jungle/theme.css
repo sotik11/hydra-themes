@@ -3767,6 +3767,16 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: var(--ej-outline) !important;
 }
 
+/* Today: a gold mark with dark figures (like the "New!" chip) on the page, a
+   gold frame in the profile box. */
+.release-calendar__day--today .release-calendar__day-number {
+  background-color: var(--ej-gold) !important;
+  color: #0d0d0d !important;
+}
+.release-calendar-box__day--today {
+  box-shadow: inset 0 0 0 2px var(--ej-gold) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
