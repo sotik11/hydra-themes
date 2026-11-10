@@ -3792,6 +3792,14 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-row-hover) !important;
 }
 
+/* Tags under a cover ("Early access"): the solid fill of the PC versions tip's
+   perks. */
+.release-markers__tag {
+  background-color: var(--ej-solid-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
