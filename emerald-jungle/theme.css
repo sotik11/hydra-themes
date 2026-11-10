@@ -3942,10 +3942,13 @@ video::-webkit-media-controls-timeline {
   border-right: 1px solid var(--ej-outline) !important;
 }
 
-/* The profile box: the month's own days take the download sources' dark
-   backing (Settings); the days of the months around it stay as they are. */
+/* The profile box: the month's own days take the colour the download sources
+   (Settings) show, their dark veil over the page background's green; the
+   days of the months around it stay as they are. */
 .release-calendar-box__day:not(.release-calendar-box__day--outside) {
-  background-color: rgba(0, 0, 0, 0.35) !important;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    #12241b !important;
 }
 
 /* ---- Reduced motion --------------------------------------------------- */
