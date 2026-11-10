@@ -3828,6 +3828,94 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: var(--ej-gold-line) !important;
 }
 
+/* The chosen day's frame gets the sidebar's runner (see the selected game):
+   the same gold head and emerald tail, two pixels thick like the frame. A day
+   is nearly square, so the sides share the lap evenly instead of the row's
+   long top and bottom. */
+.release-calendar__day--selected::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(
+      circle 40px at var(--ej-runner-head-x) var(--ej-runner-head-y),
+      var(--ej-frame-runner-head),
+      transparent
+    ),
+    radial-gradient(
+      circle 96px at var(--ej-runner-tail-x) var(--ej-runner-tail-y),
+      var(--ej-frame-runner-tail),
+      transparent
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation:
+    ej-day-runner-head var(--ej-frame-runner-period) linear infinite,
+    ej-day-runner-tail var(--ej-frame-runner-period) linear 1s infinite;
+}
+@keyframes ej-day-runner-head {
+  0% {
+    --ej-runner-head-x: 0%;
+    --ej-runner-head-y: 0%;
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  16.7% {
+    --ej-runner-head-x: 100%;
+    --ej-runner-head-y: 0%;
+  }
+  30.8% {
+    --ej-runner-head-x: 100%;
+    --ej-runner-head-y: 100%;
+  }
+  47.5% {
+    --ej-runner-head-x: 0%;
+    --ej-runner-head-y: 100%;
+  }
+  60% {
+    opacity: 1;
+  }
+  61.54%,
+  100% {
+    --ej-runner-head-x: 0%;
+    --ej-runner-head-y: 0%;
+    opacity: 0;
+  }
+}
+@keyframes ej-day-runner-tail {
+  0% {
+    --ej-runner-tail-x: 0%;
+    --ej-runner-tail-y: 0%;
+  }
+  16.7% {
+    --ej-runner-tail-x: 100%;
+    --ej-runner-tail-y: 0%;
+  }
+  30.8% {
+    --ej-runner-tail-x: 100%;
+    --ej-runner-tail-y: 100%;
+  }
+  47.5% {
+    --ej-runner-tail-x: 0%;
+    --ej-runner-tail-y: 100%;
+  }
+  61.54%,
+  100% {
+    --ej-runner-tail-x: 0%;
+    --ej-runner-tail-y: 0%;
+  }
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
@@ -3846,6 +3934,7 @@ video::-webkit-media-controls-timeline {
     animation: none !important;
   }
   .sidebar__section--games .sidebar__menu-item--active::before,
+  .release-calendar__day--selected::before,
   .sidebar__menu-item::after,
   .hero-panel-actions__action:has(.octicon-play)::after,
   .game-card::after,
