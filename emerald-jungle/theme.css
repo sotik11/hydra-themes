@@ -783,6 +783,7 @@ body {
    pressed "installed only" button. The primary button (the main action of a
    dialog or a form, the chosen tab of a pair) looks the same. */
 .button--primary,
+.release-calendar__filter-option--active,
 .recompilation-page__hero-buttons .cloud-save-v2__trigger--synced,
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
@@ -3745,6 +3746,13 @@ video::-webkit-media-controls-timeline {
 .release-calendar__icon-button:hover {
   border-color: rgba(224, 182, 74, 0.8) !important;
   background: rgba(224, 182, 74, 0.08) !important;
+}
+
+/* "All releases / My wishlist": the backing of the catalogue's mode toggle;
+   the chosen option takes the active look (see the primary group). */
+.release-calendar__filter {
+  background-color: #0d0d0d !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
 }
 
 /* ---- Reduced motion --------------------------------------------------- */
