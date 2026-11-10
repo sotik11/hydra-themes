@@ -875,16 +875,18 @@ video::-webkit-media-controls-timeline {
 }
 
 /* ---- Cover sheen ------------------------------------------------------ */
-/* Home, library, profile and "Similar games" covers: when the pointer enters, a soft diagonal
+/* Home, library, profile, "Similar games" and release calendar covers: when the pointer enters, a soft diagonal
    highlight crosses the cover once (no loop) and the card lifts a little
    (library and "Similar games" covers zoom instead of lifting). The
    highlight waits off-canvas on the left and snaps back without a transition,
    so it never runs backwards on leave. */
 .game-card,
-.similar-games__card {
+.similar-games__card,
+.release-calendar__game-cover {
   position: relative;
 }
 .game-card::after,
+.release-calendar__game-cover::after,
 .library-game-card__wrapper::after,
 .library-game-card-large::after,
 .user-library-game__wrapper::after,
@@ -899,6 +901,7 @@ video::-webkit-media-controls-timeline {
   transition: none;
 }
 .game-card:hover::after,
+.release-calendar__game:hover .release-calendar__game-cover::after,
 .library-game-card__wrapper:hover::after,
 .library-game-card-large:hover::after,
 .user-library-game__wrapper:hover::after,
@@ -3938,6 +3941,7 @@ video::-webkit-media-controls-timeline {
   .sidebar__menu-item::after,
   .hero-panel-actions__action:has(.octicon-play)::after,
   .game-card::after,
+  .release-calendar__game-cover::after,
   .library-game-card__wrapper::after,
   .library-game-card-large::after,
   .user-library-game__wrapper::after,
