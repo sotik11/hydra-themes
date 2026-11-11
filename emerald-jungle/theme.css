@@ -83,6 +83,8 @@
   --ej-gold-bars: inset 3px 0 0 var(--ej-gold), inset -3px 0 0 var(--ej-gold);
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
+  /* Today in the release calendar: the active fill's strength, in gold. */
+  --ej-today-fill: rgba(224, 182, 74, 0.22);
   /* Hover on game rows and menu items: a thin line that runs out from the
      left under the label — its paint, thickness and how long it takes. */
   --ej-beam-fill: var(--ej-selected-fill);
@@ -3791,7 +3793,7 @@ video::-webkit-media-controls-timeline {
 }
 .release-calendar__day:hover:not(:disabled):not(
     .release-calendar__day--selected
-  ) {
+  ):not(.release-calendar__day--today) {
   background-color: var(--ej-row-hover) !important;
 }
 
@@ -3949,6 +3951,13 @@ video::-webkit-media-controls-timeline {
   background:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
     #12241b !important;
+}
+
+/* Today stands out at a glance: the chosen day's look in gold (also while it
+   is chosen; the runner keeps going round it). */
+.release-calendar__day--today {
+  background-color: var(--ej-today-fill) !important;
+  box-shadow: inset 0 0 0 2px var(--ej-gold-line) !important;
 }
 
 /* ---- Reduced motion --------------------------------------------------- */
