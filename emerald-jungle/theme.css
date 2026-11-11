@@ -3969,6 +3969,16 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: var(--ej-gold-line) !important;
 }
 
+/* ---- Library cover size slider (fork) ---------------------------------- */
+/* The range takes the theme's emerald accent instead of white (fill and
+   thumb); the frame lights up on hover like the filter triggers. */
+.library-cover-size__input {
+  accent-color: #1db980 !important;
+}
+.library-cover-size:hover {
+  border-color: var(--ej-outline) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
