@@ -3960,12 +3960,14 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 0 0 2px var(--ej-gold-line) !important;
 }
 
-/* ...and while today is chosen, the list it opens takes the same gold. */
+/* ...and while today is chosen, the list it opens takes a lighter gold (the
+   outline buttons' hover): over that wide strip the cell's strength turns
+   olive. */
 .release-calendar__week:has(
     .release-calendar__day--today.release-calendar__day--selected
   )
   + .release-calendar__expanded {
-  background-color: var(--ej-today-fill) !important;
+  background-color: rgba(224, 182, 74, 0.08) !important;
   border-bottom-color: var(--ej-gold-line) !important;
 }
 
