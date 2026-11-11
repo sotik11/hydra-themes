@@ -3772,10 +3772,10 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: var(--ej-outline) !important;
 }
 
-/* Today: a gold mark with dark figures (like the "New!" chip) on the page, a
-   gold frame in the profile box. */
+/* Today: an emerald mark with dark figures on the page (it sits on the gold
+   cell), a gold frame in the profile box. */
 .release-calendar__day--today .release-calendar__day-number {
-  background-color: var(--ej-gold) !important;
+  background-color: #1db980 !important;
   color: #0d0d0d !important;
 }
 .release-calendar-box__day--today {
