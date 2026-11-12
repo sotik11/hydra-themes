@@ -3989,6 +3989,12 @@ video::-webkit-media-controls-timeline {
   -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
 }
 
+/* The window and the mini one (version button in the title bar): an emerald
+   frame drawn as a ring, so the iframe keeps its size. */
+.workwonders-widget-iframe {
+  box-shadow: 0 0 0 1px var(--ej-outline), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
