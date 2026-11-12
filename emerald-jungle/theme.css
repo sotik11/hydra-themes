@@ -3995,6 +3995,18 @@ video::-webkit-media-controls-timeline {
   box-shadow: 0 0 0 1px var(--ej-outline), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
+/* ---- Title bar (Hydra 4.4.1) ------------------------------------------- */
+/* The version pill beside the brand: the emerald counter look; hover turns
+   the ring gold. */
+.title-bar__version {
+  background-color: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.title-bar__version:hover {
+  border-color: var(--ej-gold-line) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
