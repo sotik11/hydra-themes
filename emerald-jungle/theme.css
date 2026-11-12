@@ -3979,6 +3979,16 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-outline) !important;
 }
 
+/* ---- Changelog widget (WorkWonders) ------------------------------------ */
+/* The window itself is a third-party iframe, out of the theme's reach; only
+   its host elements in Hydra's DOM are painted. The backdrop gets Hydra's
+   modal dimming plus the glass blur (the widget ships a bare 2px blur). */
+#workwonders-changelog-container {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+}
+
 /* ---- Reduced motion --------------------------------------------------- */
 /* For people who have turned animations down in their system settings
    (Windows: Settings → Accessibility → Visual effects → Animation effects)
