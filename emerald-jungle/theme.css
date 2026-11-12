@@ -4007,11 +4007,11 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-gold-line) !important;
 }
 
-/* Back / forward arrows: the round badge of the old back button (solid
+/* Back / forward arrows: square badges in the old back button's colours (solid
    emerald fill and ring); hover brightens the fill and turns the ring gold.
    A disabled arrow keeps Hydra's dimming. */
 .navigation-arrows__button {
-  border-radius: 50% !important;
+  border-radius: 4px !important;
   background-color: var(--ej-solid-fill) !important;
   box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
 }
