@@ -780,6 +780,12 @@ body {
 .library-toolbar-menu__view:not([data-state="checked"])[data-highlighted] {
   background-color: var(--ej-row-hover) !important;
 }
+/* Its "installed only" switch (the pressed button before 4.4.1): on, the
+   track takes the emerald accent of the cover size slider. */
+.library-toolbar-menu__switch-item[data-state="checked"]
+  .library-toolbar-menu__switch {
+  background-color: #1db980 !important;
+}
 
 /* ...and while not pressed that button looks like an idle view-mode button
    (Hydra's own faint fill instead of the grey slab). */
