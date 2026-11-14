@@ -1277,8 +1277,9 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.7) !important;
 }
 
-/* Badges modal (fork feature — harmless no-op on vanilla): earned/unlocked
-   badges get a gold ring; locked ones keep Hydra's dimmed grey. */
+/* Badges modal: earned badges get a gold ring. Vanilla lists only earned
+   ones; the fork also lists locked ones (--locked), which keep Hydra's
+   dimmed grey. Stays here — it styles vanilla badges too. */
 .all-badges-modal__item:not(.all-badges-modal__item--locked) {
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.7) !important;
 }
