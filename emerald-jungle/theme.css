@@ -764,7 +764,6 @@ body {
 /* Modal list rows are <Button>s too — rectangular (not pill), with the same
    emerald tint + gold hover as the catalogue rows (never plain black). */
 .repacks-modal__repack-button,
-.localizations-modal__card-button,
 .download-settings-modal__downloader-item-wrapper {
   border-radius: 8px !important;
   background: rgba(31, 185, 128, 0.06) !important;
@@ -772,7 +771,6 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
 .repacks-modal__repack-button:hover,
-.localizations-modal__card-button:hover,
 .download-settings-modal__downloader-item-wrapper:hover {
   border-color: rgba(224, 182, 74, 0.4) !important;
   background: rgba(31, 185, 128, 0.12) !important;
@@ -1305,17 +1303,6 @@ video::-webkit-media-controls-timeline {
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.7) !important;
 }
 
-/* Studio filter chips (localizations modal — fork feature; harmless no-op on
-   vanilla, the selector simply matches nothing): same emerald hover + gold
-   ring + emerald wash on the selected chip. */
-.localizations-modal__studio-item:hover {
-  background: rgba(31, 185, 128, 0.14) !important;
-}
-.localizations-modal__studio-item:has(.checkbox-field__input:checked) {
-  background: rgba(31, 185, 128, 0.14) !important;
-  box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.7) !important;
-}
-
 /* Badges modal (fork feature — harmless no-op on vanilla): earned/unlocked
    badges get a gold ring; locked ones keep Hydra's dimmed grey. */
 .all-badges-modal__item:not(.all-badges-modal__item--locked) {
@@ -1562,14 +1549,6 @@ video::-webkit-media-controls-timeline {
   border: 1px solid rgba(31, 185, 128, 0.14) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
 }
-/* Enabled localization sources (checkbox ticked): promote to the download-source
-   look — emerald wash + emerald border. Disabled ones keep Hydra's flat black
-   default. (Fork feature — no-op on vanilla.) */
-.settings-localization-sources__item:has(.checkbox-field__input:checked) {
-  background: rgba(0, 0, 0, 0.35) !important;
-  border: 1px solid rgba(31, 185, 128, 0.14) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-}
 /* Achievements page: the unlocked-achievements progress bar is gold, like the
    bar on unlocked rows (a fully completed game keeps its platinum variant). */
 .achievements-content__user-summary__container__stats__progress-bar:not(
@@ -1618,7 +1597,6 @@ video::-webkit-media-controls-timeline {
 .game-item:hover,
 .notification-item:hover,
 .settings-download-sources__item:hover,
-.settings-localization-sources__item:has(.checkbox-field__input:checked):hover,
 .console-card:hover {
   background: rgba(31, 185, 128, 0.12) !important;
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.5) !important;
@@ -3859,6 +3837,41 @@ video::-webkit-media-controls-timeline {
   background-color: var(--ej-active-fill) !important;
   box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
   color: var(--ej-active-text) !important;
+}
+
+/* ---- Localizations (fork) --------------------------------------------- */
+/* Localizations modal, cards: rectangular rows with the emerald tint and
+   gold hover of the repacks modal rows. */
+.localizations-modal__card-button {
+  border-radius: 8px !important;
+  background: rgba(31, 185, 128, 0.06) !important;
+  border: 1px solid rgba(31, 185, 128, 0.14) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+.localizations-modal__card-button:hover {
+  border-color: rgba(224, 182, 74, 0.4) !important;
+  background: rgba(31, 185, 128, 0.12) !important;
+}
+/* Studio filter chips: the emerald hover of the repacks source chips, a gold
+   ring and emerald wash on the selected chip. */
+.localizations-modal__studio-item:hover {
+  background: rgba(31, 185, 128, 0.14) !important;
+}
+.localizations-modal__studio-item:has(.checkbox-field__input:checked) {
+  background: rgba(31, 185, 128, 0.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.7) !important;
+}
+/* Settings → localization sources: an enabled source (ticked) takes the
+   download-source look — emerald wash + emerald border, and their hover;
+   disabled ones keep Hydra's flat black default. */
+.settings-localization-sources__item:has(.checkbox-field__input:checked) {
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid rgba(31, 185, 128, 0.14) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+.settings-localization-sources__item:has(.checkbox-field__input:checked):hover {
+  background: rgba(31, 185, 128, 0.12) !important;
+  box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.5) !important;
 }
 
 /* ---- Release calendar (fork) ------------------------------------------ */
