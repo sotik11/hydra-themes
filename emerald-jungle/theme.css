@@ -4258,18 +4258,12 @@ video::-webkit-media-controls-timeline {
   display: none !important;
 }
 
-/* Critic scores, Release calendar and Localization sources: the text under
-   the heading is indented like a paragraph, as in the debrid services (32px,
-   past the arrow button and its gap); the headings stay put. Mods is left as
-   it is — it is told by its own account/form blocks. */
+/* Mods, Critic scores, Release calendar and Localization sources: the text
+   under the heading is indented like a paragraph, as in the debrid services
+   and the integration cards (32px, past the arrow button and its gap); the
+   headings stay put. */
 .settings-debrid__section:has(
     > .settings-debrid__section-header .settings-fork-card__title-logo
-  ):not(
-    :has(
-      .settings-fork-card__connected,
-      .settings-fork-card__form,
-      .settings-fork-card__description-container
-    )
   )
   > :not(.settings-debrid__section-header) {
   padding-left: 32px !important;
