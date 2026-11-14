@@ -3950,6 +3950,23 @@ video::-webkit-media-controls-timeline {
   border-bottom-color: var(--ej-gold) !important;
 }
 
+/* Critic scores, Release calendar and Localization sources: the text under
+   the heading is indented like a paragraph, as in the debrid services (32px,
+   past the arrow button and its gap); the headings stay put. Mods is left as
+   it is — it is told by its own account/form blocks. */
+.settings-debrid__section:has(
+    > .settings-debrid__section-header .settings-fork-card__title-logo
+  ):not(
+    :has(
+      .settings-fork-card__connected,
+      .settings-fork-card__form,
+      .settings-fork-card__description-container
+    )
+  )
+  > :not(.settings-debrid__section-header) {
+  padding-left: 32px !important;
+}
+
 /* ---- Release calendar (fork) ------------------------------------------ */
 /* The fork's release calendar page and its box in the profile. Vanilla Hydra
    has none of these classes, so the rules do nothing there. */
