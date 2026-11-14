@@ -4148,6 +4148,14 @@ video::-webkit-media-controls-timeline {
   animation: ej-title-shimmer var(--ej-title-shimmer-period) ease-in-out infinite;
 }
 
+/* ---- Critic scores (fork) ---------------------------------------------- */
+/* Game page, "Critic scores" rows: on hover the emerald fill and hairline of
+   the leaderboard rows (instead of Hydra's grey). */
+.critic-scores__row:hover {
+  background: var(--ej-row-hover) !important;
+  border-color: rgba(31, 185, 128, 0.18) !important;
+}
+
 /* ---- Reduced motion (fork) ------------------------------------------- */
 /* Same as the theme's own block above, for the fork's moving parts. */
 @media (prefers-reduced-motion: reduce) {
