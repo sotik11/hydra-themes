@@ -485,16 +485,12 @@ body {
   font-weight: 600 !important;
 }
 /* Game list markers are white at rest, as Hydra draws them, and take their
-   colour on the hovered row: a red favourite heart, a green installed tick. On
-   a selected row they stay white. */
+   colour on the hovered row: a red favourite heart (the fork's installed
+   tick is in the fork-only tail). On a selected row they stay white. */
 .sidebar__menu-item:hover:not(.sidebar__menu-item--active)
   .sidebar__game-favorite-icon {
   color: var(--ej-action-favorite) !important;
   opacity: 1 !important;
-}
-.sidebar__menu-item:hover:not(.sidebar__menu-item--active)
-  .sidebar__game-installed-icon {
-  color: #46c48c !important;
 }
 
 /* ---- Hover beam ------------------------------------------------------ */
@@ -3783,6 +3779,14 @@ video::-webkit-media-controls-timeline {
   --ej-action-localization: #1a9fff;
   --ej-action-steam: #3e62c0;
   --ej-action-epic: #c8d0d8;
+}
+
+/* ---- Sidebar (fork) --------------------------------------------------- */
+/* The installed tick in the game list: white at rest like the heart, green
+   on the hovered row; on a selected row it stays white. */
+.sidebar__menu-item:hover:not(.sidebar__menu-item--active)
+  .sidebar__game-installed-icon {
+  color: #46c48c !important;
 }
 
 /* ---- Game page buttons (fork) ----------------------------------------- */
