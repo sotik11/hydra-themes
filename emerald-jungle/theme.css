@@ -1534,6 +1534,21 @@ video::-webkit-media-controls-timeline {
   + .settings-context-panel__divider {
   display: none !important;
 }
+/* Inside it a thin silver line (the settings dividers' hairline) between the
+   services, halfway: Hydra's extra gaps under a section are dropped, so the
+   line has the list's own 16px above it and 16px below. */
+.settings-debrid > .settings-debrid__section {
+  margin-bottom: 0 !important;
+}
+.settings-debrid
+  > .settings-debrid__section:not(.settings-debrid__section--expanded)
+  > .settings-debrid__section-header {
+  margin-bottom: 0 !important;
+}
+.settings-debrid > .settings-debrid__section + .settings-debrid__section {
+  border-top: 1px solid var(--ej-silver-line) !important;
+  padding-top: 16px !important;
+}
 
 /* Profile "Change banner" menu: hovered/focused item looks like a sidebar
    row (the first item is focused as soon as the menu opens). */
