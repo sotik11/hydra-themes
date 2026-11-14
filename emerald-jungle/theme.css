@@ -1549,6 +1549,15 @@ video::-webkit-media-controls-timeline {
   border-top: 1px solid var(--ej-silver-line) !important;
   padding-top: 16px !important;
 }
+/* The text under each heading is indented like a paragraph, to where the
+   service name starts (past the 24px arrow button and the 8px gap); the
+   headings stay put. */
+.settings-debrid__description,
+.settings-debrid
+  > .settings-debrid__section
+  > :not(.settings-debrid__section-header) {
+  padding-left: 32px !important;
+}
 
 /* Profile "Change banner" menu: hovered/focused item looks like a sidebar
    row (the first item is focused as soon as the menu opens). */
