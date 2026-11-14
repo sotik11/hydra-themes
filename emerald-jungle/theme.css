@@ -1090,7 +1090,8 @@ video::-webkit-media-controls-timeline {
 }
 .collections-filter__trigger,
 .library-multi-select__trigger,
-.library-select__trigger {
+.library-select__trigger,
+.library-toolbar-menu__trigger {
   border-color: rgba(31, 185, 128, 0.25) !important;
 }
 
