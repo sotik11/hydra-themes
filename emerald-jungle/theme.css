@@ -1517,6 +1517,22 @@ video::-webkit-media-controls-timeline {
 .settings-context-panel__divider {
   border-top-color: var(--ej-silver-line) !important;
 }
+/* Settings → Integrations, the collapsible sections (Real-Debrid, Premiumize,
+   AllDebrid, TorBox; the fork builds its own sections on them too): framed
+   like the integration cards above them (RetroAchievements, Epic) — Hydra's
+   own values. A collapsed one drops the gap under its header, so the frame
+   sits evenly around it. */
+.settings-debrid__section {
+  padding: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0.12) !important;
+  margin-bottom: 0 !important;
+}
+.settings-debrid__section:not(.settings-debrid__section--expanded)
+  > .settings-debrid__section-header {
+  margin-bottom: 0 !important;
+}
 
 /* Profile "Change banner" menu: hovered/focused item looks like a sidebar
    row (the first item is focused as soon as the menu opens). */
@@ -4180,21 +4196,10 @@ video::-webkit-media-controls-timeline {
 
 /* ---- Settings → Integrations (fork) ----------------------------------- */
 /* The fork's sections (Mods, Critic scores, Release calendar, Localization
-   sources) are built on Hydra's collapsible debrid section, which has no
-   frame. They are told from the vanilla debrid sections by the fork's logo
-   in their header and get the frame of the vanilla integration cards above
-   them (RetroAchievements, Epic) — Hydra's own values. */
-.settings-debrid__section:has(
-    > .settings-debrid__section-header .settings-fork-card__title-logo
-  ) {
-  padding: 16px !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 8px !important;
-  background: rgba(0, 0, 0, 0.12) !important;
-  margin-bottom: 0 !important;
-}
-/* Inside the frame the fork's own nudge that lined the Nexus avatar up with
-   the framed cards is no longer needed. */
+   sources) are built on Hydra's collapsible debrid section, framed above
+   like the vanilla ones; they are told apart by the fork's logo in their
+   header. Inside the frame the fork's own nudge that lined the Nexus avatar
+   up with the framed cards is no longer needed. */
 .settings-debrid__section:has(
     > .settings-debrid__section-header .settings-fork-card__title-logo
   )
