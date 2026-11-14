@@ -766,12 +766,19 @@ body {
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
 .library-view-options__option.active,
+.library-toolbar-menu__view[data-state="checked"],
 .scan-games-modal__mode-option--active,
 .scan-games-modal__choice--active,
 .library-installed-filter__button[aria-pressed="true"] {
   background: var(--ej-active-fill) !important;
   border-color: var(--ej-active-outline) !important;
   color: var(--ej-active-text) !important;
+}
+/* The view tiles of the 4.4.1 Sort menu: a tile that is not chosen takes the
+   emerald row hover instead of Hydra's grey. */
+.library-toolbar-menu__view:not([data-state="checked"]):hover,
+.library-toolbar-menu__view:not([data-state="checked"])[data-highlighted] {
+  background-color: var(--ej-row-hover) !important;
 }
 
 /* ...and while not pressed that button looks like an idle view-mode button
