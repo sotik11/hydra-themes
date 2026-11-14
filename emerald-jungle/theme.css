@@ -784,7 +784,6 @@ body {
    pressed "installed only" button. The primary button (the main action of a
    dialog or a form, the chosen tab of a pair) looks the same. */
 .button--primary,
-.release-calendar__filter-option--active,
 .recompilation-page__hero-buttons .cloud-save-v2__trigger--synced,
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
@@ -876,18 +875,16 @@ video::-webkit-media-controls-timeline {
 }
 
 /* ---- Cover sheen ------------------------------------------------------ */
-/* Home, library, profile, "Similar games" and release calendar covers: when the pointer enters, a soft diagonal
+/* Home, library, profile and "Similar games" covers: when the pointer enters, a soft diagonal
    highlight crosses the cover once (no loop) and the card lifts a little
    (library and "Similar games" covers zoom instead of lifting). The
    highlight waits off-canvas on the left and snaps back without a transition,
    so it never runs backwards on leave. */
 .game-card,
-.similar-games__card,
-.release-calendar__game-cover {
+.similar-games__card {
   position: relative;
 }
 .game-card::after,
-.release-calendar__game-cover::after,
 .library-game-card__wrapper::after,
 .library-game-card-large::after,
 .user-library-game__wrapper::after,
@@ -902,7 +899,6 @@ video::-webkit-media-controls-timeline {
   transition: none;
 }
 .game-card:hover::after,
-.release-calendar__game:hover .release-calendar__game-cover::after,
 .library-game-card__wrapper:hover::after,
 .library-game-card-large:hover::after,
 .user-library-game__wrapper:hover::after,
@@ -1469,7 +1465,6 @@ video::-webkit-media-controls-timeline {
 .filter-section__header-count,
 .download-group__header-count,
 .game-details__reviews-badge,
-.release-calendar__day-more,
 .recompilation-page__tab-badge,
 .profile-section__count,
 .profile-content__section-badge {
@@ -3830,6 +3825,39 @@ video::-webkit-media-controls-timeline {
 :host {
   /* Gold wash of today's cell in the release calendar. */
   --ej-today-fill: rgba(224, 182, 74, 0.22);
+}
+
+/* ---- Fork elements in shared recipes --------------------------------- */
+/* Fork copies of rules that live above for vanilla elements (same values). */
+/* Active segment look (as .button--primary). */
+.release-calendar__filter-option--active {
+  background: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+/* Cover sheen (as the library and home covers). */
+.release-calendar__game-cover {
+  position: relative;
+}
+.release-calendar__game-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--ej-sheen);
+  transform: translateX(-130%);
+  transition: none;
+}
+.release-calendar__game:hover .release-calendar__game-cover::after {
+  transform: translateX(130%);
+  transition: transform var(--ej-sheen-duration) ease-in-out;
+}
+/* Emerald counter (as the section-header counters). */
+.release-calendar__day-more {
+  background-color: var(--ej-active-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
 }
 
 /* ---- Release calendar (fork) ------------------------------------------ */
