@@ -1517,6 +1517,23 @@ video::-webkit-media-controls-timeline {
 .settings-context-panel__divider {
   border-top-color: var(--ej-silver-line) !important;
 }
+/* Settings → Integrations, the "Debrid services" block (heading, text and
+   the four services): one frame around all of it, like the integration
+   cards above (RetroAchievements, Epic) — Hydra's own values; the dividers
+   above and below it go, the frame keeps it apart. */
+.settings-context-panel__group:has(> .settings-debrid) {
+  padding: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0.12) !important;
+}
+.settings-context-panel__divider:has(
+    + .settings-context-panel__group > .settings-debrid
+  ),
+.settings-context-panel__group:has(> .settings-debrid)
+  + .settings-context-panel__divider {
+  display: none !important;
+}
 
 /* Profile "Change banner" menu: hovered/focused item looks like a sidebar
    row (the first item is focused as soon as the menu opens). */
