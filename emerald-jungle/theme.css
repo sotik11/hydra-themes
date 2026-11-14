@@ -4124,9 +4124,36 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-outline) !important;
 }
 
+/* ---- Title bar (fork) -------------------------------------------------- */
+/* The page title the fork puts back between the arrows and the search: the
+   look of the old header title — Sora, large, uppercase, spaced, with the
+   emerald → gold wave (--ej-name-shimmer) running through the letters every
+   few seconds. Its cell caps the width; a long title ends with an ellipsis. */
+.title-bar__title {
+  font-family: "Sora", "Noto Sans", sans-serif !important;
+  font-size: 1.5em !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  background-image: var(--ej-name-shimmer) !important;
+  background-repeat: no-repeat !important;
+  background-size: 300% 100% !important;
+  /* not !important: that would beat the animation that moves it */
+  background-position: 100% 0;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: ej-title-shimmer var(--ej-title-shimmer-period) ease-in-out infinite;
+}
+
 /* ---- Reduced motion (fork) ------------------------------------------- */
 /* Same as the theme's own block above, for the fork's moving parts. */
 @media (prefers-reduced-motion: reduce) {
+  .title-bar__title {
+    animation: none !important;
+  }
   .release-calendar__day--selected::before,
   .release-calendar__game-cover::after {
     display: none !important;
