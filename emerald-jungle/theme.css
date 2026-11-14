@@ -4178,6 +4178,43 @@ video::-webkit-media-controls-timeline {
   border-color: rgba(31, 185, 128, 0.18) !important;
 }
 
+/* ---- Settings → Integrations (fork) ----------------------------------- */
+/* The fork's sections (Mods, Critic scores, Release calendar, Localization
+   sources) are built on Hydra's collapsible debrid section, which has no
+   frame. They are told from the vanilla debrid sections by the fork's logo
+   in their header and get the frame of the vanilla integration cards above
+   them (RetroAchievements, Epic) — Hydra's own values. */
+.settings-debrid__section:has(
+    > .settings-debrid__section-header .settings-fork-card__title-logo
+  ) {
+  padding: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0.12) !important;
+  margin-bottom: 0 !important;
+}
+/* Inside the frame the fork's own nudge that lined the Nexus avatar up with
+   the framed cards is no longer needed. */
+.settings-debrid__section:has(
+    > .settings-debrid__section-header .settings-fork-card__title-logo
+  )
+  .settings-fork-card__connected {
+  padding-left: 0 !important;
+}
+/* The cards follow each other like the vanilla ones: no divider before a
+   fork card, except the one after the debrid list, which keeps that list
+   apart. */
+.settings-context-panel__divider:has(
+    + .settings-debrid__section
+      > .settings-debrid__section-header
+      .settings-fork-card__title-logo
+  ):not(
+    .settings-context-panel__group:has(.settings-debrid__section)
+      + .settings-context-panel__divider
+  ) {
+  display: none !important;
+}
+
 /* ---- Reduced motion (fork) ------------------------------------------- */
 /* Same as the theme's own block above, for the fork's moving parts. */
 @media (prefers-reduced-motion: reduce) {
