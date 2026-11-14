@@ -1551,11 +1551,13 @@ video::-webkit-media-controls-timeline {
 }
 /* The text under each heading is indented like a paragraph, to where the
    service name starts (past the 24px arrow button and the 8px gap); the
-   headings stay put. */
+   headings stay put. The integration cards above (Steam, Epic,
+   RetroAchievements) indent their content by as much. */
 .settings-debrid__description,
 .settings-debrid
   > .settings-debrid__section
-  > :not(.settings-debrid__section-header) {
+  > :not(.settings-debrid__section-header),
+.settings-integration-card__content {
   padding-left: 32px !important;
 }
 
