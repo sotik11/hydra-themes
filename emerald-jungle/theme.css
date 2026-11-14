@@ -780,7 +780,7 @@ body {
 
 /* Active segmented toggles (catalogue "Modern/Classics", library "All/PC/…",
    the scan-games modal's "Automatic/Manual" and its picked match), active
-   view-mode buttons (library, the fork's wishlist page) and the library's
+   view-mode buttons (library) and the library's
    pressed "installed only" button. The primary button (the main action of a
    dialog or a form, the chosen tab of a pair) looks the same. */
 .button--primary,
@@ -788,7 +788,6 @@ body {
 .catalogue-mode-toggle__option--active,
 .library-category-filter__option--active,
 .library-view-options__option.active,
-.wishlist__view-button--active,
 .scan-games-modal__mode-option--active,
 .scan-games-modal__choice--active,
 .library-installed-filter__button[aria-pressed="true"] {
@@ -3829,8 +3828,10 @@ video::-webkit-media-controls-timeline {
 
 /* ---- Fork elements in shared recipes --------------------------------- */
 /* Fork copies of rules that live above for vanilla elements (same values). */
-/* Active segment look (as .button--primary). */
-.release-calendar__filter-option--active {
+/* Active segment look (as .button--primary): the calendar filter, the
+   wishlist page's view-mode buttons. */
+.release-calendar__filter-option--active,
+.wishlist__view-button--active {
   background: var(--ej-active-fill) !important;
   border-color: var(--ej-active-outline) !important;
   color: var(--ej-active-text) !important;
