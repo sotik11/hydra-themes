@@ -1473,11 +1473,6 @@ video::-webkit-media-controls-timeline {
   ) {
   background-color: var(--ej-gold) !important;
 }
-/* The fork's mods modal (Popular / New / Updated): there the underline is the
-   active tab's own bottom border. */
-.mods-modal__tab--active {
-  border-bottom-color: var(--ej-gold) !important;
-}
 
 /* Profile filters (library / souvenirs tabs): framed like the catalogue and
    library toggles, with the current value as the emerald "active segment";
@@ -3872,6 +3867,13 @@ video::-webkit-media-controls-timeline {
 .settings-localization-sources__item:has(.checkbox-field__input:checked):hover {
   background: rgba(31, 185, 128, 0.12) !important;
   box-shadow: inset 0 0 0 1px rgba(224, 182, 74, 0.5) !important;
+}
+
+/* ---- Mods (fork) ------------------------------------------------------ */
+/* Mods modal (Popular / New / Updated): the gold underline of the other tabs;
+   here it is the active tab's own bottom border. */
+.mods-modal__tab--active {
+  border-bottom-color: var(--ej-gold) !important;
 }
 
 /* ---- Release calendar (fork) ------------------------------------------ */
