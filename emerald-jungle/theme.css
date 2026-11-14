@@ -84,7 +84,6 @@
   /* Gold hairlines and dividers. */
   --ej-gold-line: rgba(224, 182, 74, 0.55);
   /* Today in the release calendar: the active fill's strength, in gold. */
-  --ej-today-fill: rgba(224, 182, 74, 0.22);
   /* Hover on game rows and menu items: a thin line that runs out from the
      left under the label — its paint, thickness and how long it takes. */
   --ej-beam-fill: var(--ej-selected-fill);
@@ -3742,6 +3741,97 @@ video::-webkit-media-controls-timeline {
   color: var(--ej-active-text) !important;
 }
 
+/* ---- Changelog widget (WorkWonders) ------------------------------------ */
+/* The window itself is a third-party iframe, out of the theme's reach; only
+   its host elements in Hydra's DOM are painted. The backdrop gets Hydra's
+   modal dimming plus the glass blur (the widget ships a bare 2px blur). */
+#workwonders-changelog-container {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(14px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
+}
+
+/* The window and the mini one (version button in the title bar): an emerald
+   frame drawn as a ring, so the iframe keeps its size. */
+.workwonders-widget-iframe {
+  box-shadow: 0 0 0 1px var(--ej-outline), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* ---- Title bar (Hydra 4.4.1) ------------------------------------------- */
+/* The version pill beside the brand: the emerald counter look; hover turns
+   the ring gold. */
+.title-bar__version {
+  background-color: var(--ej-active-fill) !important;
+  border-color: var(--ej-active-outline) !important;
+  color: var(--ej-active-text) !important;
+}
+.title-bar__version:hover {
+  border-color: var(--ej-gold-line) !important;
+}
+
+/* Back / forward arrows: square badges in the old back button's colours (solid
+   emerald fill and ring); hover brightens the fill and turns the ring gold.
+   A disabled arrow keeps Hydra's dimming. */
+.navigation-arrows__button {
+  border-radius: 4px !important;
+  background-color: var(--ej-solid-fill) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
+}
+.navigation-arrows__button:hover:not(:disabled) {
+  background-color: var(--ej-solid-fill-hover) !important;
+  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
+}
+
+/* ---- Reduced motion --------------------------------------------------- */
+/* For people who have turned animations down in their system settings
+   (Windows: Settings → Accessibility → Visual effects → Animation effects)
+   nothing in the theme moves by itself or runs in a loop. Gone are the
+   shimmer in the header title and in the game names, the runner on the
+   selected game's frame, and every sheen (sidebar rows, covers, the Play
+   button, achievements, the download bar, the achievement pop-up). What
+   stays is everything that is still, and the two things that happen once in
+   answer to the pointer: the line under a hovered row and the soft change of
+   the profile picture. */
+@media (prefers-reduced-motion: reduce) {
+  .header__title,
+  .sidebar__section--games
+    .sidebar__menu-item:not(.sidebar__menu-item--active):hover
+    .sidebar__menu-item-button-label {
+    animation: none !important;
+  }
+  .sidebar__section--games .sidebar__menu-item--active::before,
+  .sidebar__menu-item::after,
+  .hero-panel-actions__action:has(.octicon-play)::after,
+  .game-card::after,
+  .library-game-card__wrapper::after,
+  .library-game-card-large::after,
+  .user-library-game__wrapper::after,
+  .similar-games__card::after,
+  .achievements__item:has(
+      .achievements__item-image:not(.achievements__item-image--locked)
+    )::after,
+  .list__item:has(.list__item-image:not(.list__item-image--locked))::after,
+  .download-group__progress-fill::after,
+  #big-picture .downloads-progress-stats__fill::after,
+  .achievement-notification__container::after {
+    display: none !important;
+  }
+}
+
+/* ======================================================================
+   FORK-ONLY — everything below styles elements that exist only in the
+   "Hydra Localized" fork (sotik11/hydra) and not in vanilla Hydra. On
+   vanilla these selectors match nothing. To drop fork support, delete from
+   here to the end of the file. (Two vanilla rules elsewhere mention fork
+   classes only inside :not(...) — the Steam button colour and the badges
+   ring — they stay where they are and need no change.)
+   ====================================================================== */
+:root,
+:host {
+  /* Gold wash of today's cell in the release calendar. */
+  --ej-today-fill: rgba(224, 182, 74, 0.22);
+}
+
 /* ---- Release calendar (fork) ------------------------------------------ */
 /* The fork's release calendar page and its box in the profile. Vanilla Hydra
    has none of these classes, so the rules do nothing there. */
@@ -3979,81 +4069,11 @@ video::-webkit-media-controls-timeline {
   border-color: var(--ej-outline) !important;
 }
 
-/* ---- Changelog widget (WorkWonders) ------------------------------------ */
-/* The window itself is a third-party iframe, out of the theme's reach; only
-   its host elements in Hydra's DOM are painted. The backdrop gets Hydra's
-   modal dimming plus the glass blur (the widget ships a bare 2px blur). */
-#workwonders-changelog-container {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-  backdrop-filter: blur(14px) saturate(1.1) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(1.1) !important;
-}
-
-/* The window and the mini one (version button in the title bar): an emerald
-   frame drawn as a ring, so the iframe keeps its size. */
-.workwonders-widget-iframe {
-  box-shadow: 0 0 0 1px var(--ej-outline), 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-}
-
-/* ---- Title bar (Hydra 4.4.1) ------------------------------------------- */
-/* The version pill beside the brand: the emerald counter look; hover turns
-   the ring gold. */
-.title-bar__version {
-  background-color: var(--ej-active-fill) !important;
-  border-color: var(--ej-active-outline) !important;
-  color: var(--ej-active-text) !important;
-}
-.title-bar__version:hover {
-  border-color: var(--ej-gold-line) !important;
-}
-
-/* Back / forward arrows: square badges in the old back button's colours (solid
-   emerald fill and ring); hover brightens the fill and turns the ring gold.
-   A disabled arrow keeps Hydra's dimming. */
-.navigation-arrows__button {
-  border-radius: 4px !important;
-  background-color: var(--ej-solid-fill) !important;
-  box-shadow: inset 0 0 0 1px var(--ej-solid-outline) !important;
-}
-.navigation-arrows__button:hover:not(:disabled) {
-  background-color: var(--ej-solid-fill-hover) !important;
-  box-shadow: inset 0 0 0 1px var(--ej-gold-line) !important;
-}
-
-/* ---- Reduced motion --------------------------------------------------- */
-/* For people who have turned animations down in their system settings
-   (Windows: Settings → Accessibility → Visual effects → Animation effects)
-   nothing in the theme moves by itself or runs in a loop. Gone are the
-   shimmer in the header title and in the game names, the runner on the
-   selected game's frame, and every sheen (sidebar rows, covers, the Play
-   button, achievements, the download bar, the achievement pop-up). What
-   stays is everything that is still, and the two things that happen once in
-   answer to the pointer: the line under a hovered row and the soft change of
-   the profile picture. */
+/* ---- Reduced motion (fork) ------------------------------------------- */
+/* Same as the theme's own block above, for the fork's moving parts. */
 @media (prefers-reduced-motion: reduce) {
-  .header__title,
-  .sidebar__section--games
-    .sidebar__menu-item:not(.sidebar__menu-item--active):hover
-    .sidebar__menu-item-button-label {
-    animation: none !important;
-  }
-  .sidebar__section--games .sidebar__menu-item--active::before,
   .release-calendar__day--selected::before,
-  .sidebar__menu-item::after,
-  .hero-panel-actions__action:has(.octicon-play)::after,
-  .game-card::after,
-  .release-calendar__game-cover::after,
-  .library-game-card__wrapper::after,
-  .library-game-card-large::after,
-  .user-library-game__wrapper::after,
-  .similar-games__card::after,
-  .achievements__item:has(
-      .achievements__item-image:not(.achievements__item-image--locked)
-    )::after,
-  .list__item:has(.list__item-image:not(.list__item-image--locked))::after,
-  .download-group__progress-fill::after,
-  #big-picture .downloads-progress-stats__fill::after,
-  .achievement-notification__container::after {
+  .release-calendar__game-cover::after {
     display: none !important;
   }
 }
